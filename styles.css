@@ -1,9 +1,57 @@
 ﻿body {
-    background: lightgrey;
-    font-family: Arial, Helvetica, sans-serif;
+    background: #f8feff;
+    font-family: "Times New Roman", Times, serif;
+    margin: 40px;
 }
 
 h1 {
     color: royalblue;
     text-align: center;
+}
+
+/* Project Styling */
+
+h3 {
+    text-align: center;
+    font-style: italic;
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.project {
+    width: 30%;
+    margin: 10px;
+    padding: 20px 10px;
+    background: cornflowerblue;
+    border-radius: 25%;
+}
+
+    .project img {
+        width: 300px;
+        height: 300px;
+        margin: 10px;
+        border: 2px solid white;
+        display: block;
+        margin: auto;
+    }
+
+        .project img:hover {
+            border: 2px solid rgb(126, 14, 201);
+        }
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.project a:hover {
+    color: rgb(126, 14, 201);
+}
+
+.project p {
+    text-align: center;
+    margin: 15px;
 }
