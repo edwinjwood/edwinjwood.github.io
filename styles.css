@@ -10,53 +10,50 @@ h1 {
 
 /* Project Styling */
 
-h3 {
-    text-align: center;
-    font-style: italic;
-}
-
 .projects {
     display: flex;
     flex-wrap: wrap;
-    max-width: 300px;
-    justify-content: center;
 }
+
 .project {
     width: 30%;
     margin: 10px;
-    padding: 10px 10px;
-    
-    background: cornflowerblue;
-
+    padding: 20px 10px;
+    background: #698C78;
 }
-
 
     .project img {
         width: 200px;
-        height: 200px;
         margin: 10px;
-        border: 2px solid white;
-        display: block; 
+        border: 2px solid #698C78;
+        display: block;
         margin: auto;
     }
 
         .project img:hover {
-            border: 2px solid rgb(126, 14, 201);
+            border: 2px solid black;
         }
+
+
+
+h3 {
+    text-align: center;
+}
 
 a {
     text-decoration: none;
-    color: black;
+    color: bisque;
 }
 
-.project a:hover {
-    color: rgb(126, 14, 201);
-}
+    a:hover {
+        color: white;
+    }
 
-.project p {
-    text-align: center;
-    margin: 30px;
-}
+
+
+
+
+
 
 
 
