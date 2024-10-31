@@ -1,0 +1,27 @@
+1. 
+Created a Node structure with pointers. 
+
+Created a BST class with insert, inorder traversal, simple search, search with nodes, find the min, find the max, and remove.
+-insert - creates the root node and the compares values to figure out where to place the rest of the nodes
+-inorder traversal - traverses the left side and then right side of tree and shows the values 
+-search - starts at root, moves down left side and then right side to find value
+-searchWithNodes - outputs nodes until it finds or does not find the value
+-findMin - travels left side of tree to find smallest value
+-findMax - travels right side of tree to find largest value
+-remove - finds value and removes and restructures the tree
+
+Created a main function with case statement. Cases call the above functions.
+Case 1 - Creates BST. Asks for user input of element size and for values. 
+Case 2 - Inserts a node. Uses search function to see if node already exists.
+Case 3 - Removes node. Uses search function to see if node exists.
+Case 4 - Finds the max
+Case 5 - Finds the min
+Case 6 - Searches for value and returns nodes on the way to that value. If not found, search ket not found.
+Case 7 - Exits program
+All cases use inorder traversal function, to display nodes in tree.
+
+2. 
+Struggled to figure out how to dynamically create a vector of n size based on user input of integers. Had to ask how many elements in the vector to start.
+
+3. 
+I used g++ BinarySearchTree_Wood_Edwin.cpp -o BinarySearchTree_Wood_Edwin to compile.

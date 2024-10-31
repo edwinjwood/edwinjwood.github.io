@@ -5,6 +5,7 @@
 }
 h1 {
     color: royalblue;
+    margin-left: -70px;
     text-align: center;
 }
 
@@ -49,7 +50,27 @@ a {
         color: white;
     }
 
+.about {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 100px;
+    margin-left: 20px;
+    justify-content: center;
+}
 
+    .about p {
+        width: 50%;
+        text-align: center;
+        margin: auto;
+        line-height: 125%;
+    }
+
+    .about img {
+        width: 200px;
+        height: 200px;
+        border-radius: 25%;
+        /*border: 2px solid rgb(126, 14, 201);*/
+    }
 
 
 
