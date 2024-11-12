@@ -1,12 +1,14 @@
 ﻿body {
-    background: #f8feff;
-    font-family: "Times New Roman", Times, serif;
+    background: #FFFFFF;
+    font-family: "Eudoxussans", sans-serif;
     margin: 40px;
 }
 h1 {
-    color: royalblue;
+    color: #5E3BEE;
     margin-left: -70px;
     text-align: center;
+    font-family: "Eudoxussans", sans-serif;
+    font-weight: 700;
 }
 
 /* Project Styling */
@@ -20,7 +22,7 @@ h1 {
     width: 30%;
     margin: 10px;
     padding: 20px 10px;
-    background: #698C78;
+    background: #007A78;
 }
 
     .project img {
@@ -39,6 +41,7 @@ h1 {
 
 h3 {
     text-align: center;
+    color: #DE8350;
 }
 
 a {
