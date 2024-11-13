@@ -1,15 +1,103 @@
-﻿body {
-    background: #FFFFFF;
-    font-family: "Eudoxussans", sans-serif;
-    margin: 40px;
+﻿
+
+body {
+    min-block-size: 100vb;
+    box-sizing: border-box;
+    line-height: 1.5;
+    font-size: 1.4rem;
+    font-family: sans-serif;
+    background: linear-gradient( 120deg, hsl(260 80% 50%), hsl(0 100% 50%) );
+    color: hsl(261deg 100% 85%);
 }
-h1 {
-    color: #5E3BEE;
-    margin-left: -70px;
-    text-align: center;
-    font-family: "Eudoxussans", sans-serif;
-    font-weight: 700;
+
+a {
+    color: hsl(261deg 70% 80%);
 }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 3rem;
+    row-gap: 1rem;
+    margin: 2rem;
+    padding-block: 2.2rem;
+    padding-inline: 3rem;
+    border-radius: 0.5rem;
+    background-color: hsl(292deg 84% 5% / 50%);
+}
+
+.header__logo {
+    margin: 0;
+}
+
+.header__img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+.header__ul {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+}
+.header__li {
+    position: relative;
+    border-radius: 0.5rem;
+    background: hsl(302deg 59% 5% / 50%);
+}
+
+.header__a {
+    display: block;
+    padding-inline: 1rem;
+    padding-block: 0.5rem;
+    text-decoration: none;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+    border-radius: inherit;
+    transition: all 0.2s ease-in-out;
+}
+    .header__a::before {
+        content: "";
+        position: absolute;
+        inset-block-start: 100%;
+        inset-inline-start: -100%;
+        block-size: 100%;
+        inline-size: 100%;
+        background: hsl(261deg 80% 90%);
+        z-index: -1;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .header__a:hover {
+        color: hsl(302deg 70% 5% / 90%);
+    }
+        .header__a:hover::before {
+            inset-block-start: 0;
+            inset-inline-start: 0;
+        }
+
+.header__li:has(+ li:hover) .header__a::before {
+    inset-inline-start: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+    .header {
+        padding-block-start: 2rem;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+
+
+
+
 
 /* Project Styling */
 
@@ -74,6 +162,7 @@ a {
         border-radius: 25%;
         /*border: 2px solid rgb(126, 14, 201);*/
     }
+
 
 
 
