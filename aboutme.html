@@ -67,6 +67,16 @@
             });
             current = i;
           }
+
+          // Fade out and navigate to layr.html
+          function fadeToLayr() {
+            const main = document.getElementById('main') || document.querySelector('main');
+            main.style.transition = 'opacity 0.5s';
+            main.style.opacity = '0';
+            setTimeout(() => {
+              window.location.href = 'layr.html';
+            }, 500);
+          }
           tabButtons.forEach((btn, i) => {
             btn.addEventListener('click', () => activateTab(i));
           });
@@ -85,8 +95,12 @@
             touchEndX = e.changedTouches[0].clientX;
             const dx = touchEndX - touchStartX;
             if (Math.abs(dx) > 40) { // threshold
-              if (dx < 0 && current < tabButtons.length - 1) {
-                activateTab(current + 1);
+              if (dx < 0) {
+                if (current < tabButtons.length - 1) {
+                  activateTab(current + 1);
+                } else {
+                  fadeToLayr();
+                }
               } else if (dx > 0 && current > 0) {
                 activateTab(current - 1);
               }
