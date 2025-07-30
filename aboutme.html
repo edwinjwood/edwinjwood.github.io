@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
@@ -14,7 +14,7 @@
 
     <!-- Our custom CSS -->
     <link rel="stylesheet" href="index.css">
-    <title>Edwin's Portfolio</title>
+    <title>An Introduction</title>
     <script src="navigation.js" defer></script>
     <script src="tabs.js" defer></script>
 
@@ -30,15 +30,15 @@
         <nav>
             <ul id="primary-navigation" data-visible="false" class="primary-navigation underline-indicators flex">
                 <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="index.html"><span aria-hidden="true">00</span>Home</a></li>
-                <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="layr.html"><span aria-hidden="true">01</span>LAYR</a></li>
-                <li class="active"><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="projects.html"><span aria-hidden="true">02</span>Projects</a></li>
+                <li class="active"><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="aboutme.html"><span aria-hidden="true">01</span>About Me</a></li>
+                <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="layr.html"><span aria-hidden="true">02</span>LAYR</a></li>
                 <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="files/Edwin J. Wood - Resume.pdf" target="_blank"><span aria-hidden="true">03</span>Resume</a></li>
             </ul>
         </nav>
     </header>
 
     <main id="main" class="grid-container grid-container--crew flow">
-        <h1 class="numbered-title"><span aria-hidden="true">02</span> Meet your crew</h1>
+        <h1 class="numbered-title"><span aria-hidden="true">02</span>An Introduction</h1>
 
         <div class="dot-indicators flex" role="tablist" aria-label="crew member list">
             <button aria-selected="true" aria-controls="commander-tab" role="tab" data-image="commander-image" tabindex="0"><span class="sr-only">The commander</span></button>
@@ -47,7 +47,7 @@
             <button aria-selected="false" aria-controls="crew-tab" role="tab" data-image="crew-image" tabindex="-1"><span class="sr-only">The crew engineer</span></button>
         </div>
         <script>
-        // Crew dot indicator tab logic for projects.html
+        // Crew dot indicator tab logic for aboutme.html
         document.addEventListener('DOMContentLoaded', function() {
           const tabButtons = document.querySelectorAll('.dot-indicators [role="tab"]');
           const tabPanels = document.querySelectorAll('.crew-details[role="tabpanel"]');
@@ -70,56 +70,60 @@
         });
         </script>
 
-        <!-- commander -->
+        <!-- builder -->
         <article class="crew-details flow" id="commander-tab" role="tabpanel" tabindex="0">
             <header class="flow flow--space-small">
-                <h2 class="fs-600 ff-serif uppercase">Commander</h2>
+                <h2 class="fs-600 ff-serif uppercase">The Builder</h2>
                 <p class="fs-700 uppercase ff-serif">Edwin Wood</p>
             </header>
             <p>
-                Douglas Gerald Hurley is an American engineer, former Marine Corps pilot
-                and former NASA astronaut. He launched into space for the third time as
-                commander of Crew Dragon Demo-2.
+                I’ve always gravitated toward systems — not just how they’re built, 
+                but how they connect people, solve problems, and evolve over time. 
+                Whether leading a customer platform redesign or modernizing internal tools, 
+                I find energy in shaping technology that actually moves the business forward. 
+                I build with intention, always aiming for clarity, utility, and momentum.
             </p>
         </article>
 
         <!-- mission specialist -->
         <article hidden class="crew-details flow" id="mission-tab" role="tabpanel" tabindex="0">
             <header class="flow flow--space-small">
-                <h2 class="fs-600 ff-serif uppercase">Mission Specialist</h2>
-                <p class="fs-700 uppercase ff-serif">Mark SHuttleworth</p>
+                <h2 class="fs-600 ff-serif uppercase">The Leader</h2>
+                <p class="fs-700 uppercase ff-serif">Edwin Wood</p>
             </header>
             <p>
-                Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind
-                the Linux-based Ubuntu operating system. Shuttleworth became the first South
-                African to travel to space as a space tourist.
+                Leadership, for me, is about showing up consistently — especially when things get hard. 
+                I’ve led teams through mergers, re-orgs, and high-growth phases, always keeping people 
+                at the center. I’m proud of the trust I’ve built across departments and the way I’ve 
+                helped others grow into their own leadership. Titles come and go, but how you lead sticks.
             </p>
         </article>
 
         <!-- pilot -->
         <article hidden class="crew-details flow" id="pilot-tab" role="tabpanel" tabindex="0">
             <header class="flow flow--space-small">
-                <h2 class="fs-600 ff-serif uppercase">Pilot</h2>
-                <p class="fs-700 uppercase ff-serif">Victor Glover</p>
+                <h2 class="fs-600 ff-serif uppercase">The Strategist</h2>
+                <p class="fs-700 uppercase ff-serif">Edwin Wood</p>
             </header>
             <p>
-                Pilot on the first operational flight of the SpaceX Crew Dragon to the
-                International Space Station. Glover is a commander in the U.S. Navy where
-                he pilots an F/A-18.He was a crew member of Expedition 64, and served as a
-                station systems flight engineer.
+                I’ve been fortunate to operate at the intersection of business and technology — 
+                seeing how tools and processes can either slow a team down or unlock something new. 
+                I like asking hard questions, pushing for better alignment, and translating complexity 
+                into something actionable. I think in terms of systems, incentives, and long-term value.
             </p>
         </article>
 
         <!-- engineer -->
         <article hidden class="crew-details flow" id="crew-tab" role="tabpanel" tabindex="0">
             <header class="flow flow--space-small">
-                <h2 class="fs-600 ff-serif uppercase">Flight Engineer</h2>
-                <p class="fs-700 uppercase ff-serif">Anousheh Ansari</p>
+                <h2 class="fs-600 ff-serif uppercase">The Survivor</h2>
+                <p class="fs-700 uppercase ff-serif">Edwin Wood</p>
             </header>
             <p>
-                Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems.
-                Ansari was the fourth self-funded space tourist, the first self-funded woman to
-                fly to the ISS, and the first Iranian in space.
+                Life doesn’t always follow a straight path. After surviving colon cancer at 42, 
+                I returned to school to finish what I started over a decade ago. That experience 
+                reshaped my perspective — on urgency, on purpose, and on why I care so deeply about 
+                the work I do. I’m still building, still learning, and more motivated than ever.
             </p>
         </article>
 
@@ -129,16 +133,16 @@
             <img src="assets/crew/Headshot.png" alt="Douglas Hurley">
         </picture>
         <picture hidden id="mission-image">
-            <source srcset="assets/crew/image-mark-shuttleworth.webp" type="image/webp">
-            <img src="assets/crew/image-mark-shuttleworth.png" alt="Douglas Hurley">
+            <source srcset="assets/crew/headshot.webp" type="image/webp">
+            <img src="assets/crew/Headshot.png" alt="Douglas Hurley">
         </picture>
         <picture hidden id="pilot-image">
-            <source srcset="assets/crew/image-victor-glover.webp" type="image/webp">
-            <img src="assets/crew/image-victor-glover.png" alt="Douglas Hurley">
+            <source srcset="assets/crew/headshot.webp" type="image/webp">
+            <img src="assets/crew/Headshot.png" alt="Douglas Hurley">
         </picture>
         <picture hidden id="crew-image">
-            <source srcset="assets/crew/image-anousheh-ansari.webp" type="image/webp">
-            <img src="assets/crew/image-anousheh-ansari.png" alt="Douglas Hurley">
+            <source srcset="assets/crew/headshot.webp" type="image/webp">
+            <img src="assets/crew/Headshot.png" alt="Douglas Hurley">
         </picture>
     </main>
 </body>

@@ -1,48 +1,39 @@
 
-// Fade out E tab when a non-E tab is selected, and only hide after transition
+
+// Simple tab logic: default to first tab (L) selected
 document.addEventListener('DOMContentLoaded', function() {
   const tabList = document.querySelector('.tab-list');
   if (!tabList) return;
-  const eTab = tabList.querySelector('.e-tab');
-  let eTabState = 'visible'; // 'visible', 'fading', 'collapsed', 'gone'
+  const tabs = tabList.querySelectorAll('[role="tab"]');
+  const panels = document.querySelectorAll('[role="tabpanel"]');
+  const images = document.querySelectorAll('picture');
 
-  // Tab click handler (fade/collapse E tab)
-  tabList.addEventListener('click', function(e) {
-    const clicked = e.target.closest('button[role="tab"]');
-    if (!clicked) return;
-    if (!clicked.classList.contains('e-tab')) {
-      if (eTabState === 'visible') {
-        eTab.classList.add('e-fading');
-        eTabState = 'fading';
-      }
+  // Set first tab (L) as selected by default
+  tabs.forEach((tab, i) => {
+    if (i === 0) {
+      tab.setAttribute('aria-selected', 'true');
+      tab.setAttribute('tabindex', '0');
     } else {
-      // Reset E tab if clicked
-      eTab.classList.remove('e-fading', 'e-collapsed', 'e-gone');
-      tabList.classList.remove('e-collapse-gap');
-      eTabState = 'visible';
+      tab.setAttribute('aria-selected', 'false');
+      tab.setAttribute('tabindex', '-1');
+    }
+  });
+  panels.forEach((panel, i) => {
+    if (i === 0) {
+      panel.removeAttribute('hidden');
+    } else {
+      panel.setAttribute('hidden', '');
+    }
+  });
+  images.forEach((img, i) => {
+    if (i === 0) {
+      img.removeAttribute('hidden');
+    } else {
+      img.setAttribute('hidden', '');
     }
   });
 
-  // Animate E tab fade/collapse, then remove from layout
-  if (eTab) {
-    eTab.addEventListener('transitionend', function(ev) {
-      if (eTabState === 'fading' && ev.propertyName === 'opacity') {
-        eTab.classList.remove('e-fading');
-        eTab.classList.add('e-collapsed');
-        tabList.classList.add('e-collapse-gap');
-        eTabState = 'collapsed';
-      } else if (eTabState === 'collapsed' && (ev.propertyName === 'width' || ev.propertyName === 'min-width' || ev.propertyName === 'max-width')) {
-      // Remove E tab from layout after all transitions for perfect spacing
-      setTimeout(function() {
-        eTab.classList.add('e-gone');
-        eTabState = 'gone';
-      }, 900); // after both width and gap transitions (400ms + 500ms)
-      }
-    });
-  }
-
   // Keyboard navigation for tabs
-  const tabs = tabList.querySelectorAll('[role="tab"]');
   let tabFocus = 0;
   tabList.addEventListener('keydown', changeTabFocus);
   tabs.forEach((tab) => {
