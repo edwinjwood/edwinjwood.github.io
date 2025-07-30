@@ -17,6 +17,56 @@
     <title>LAYR</title>
     <script src="navigation.js" defer></script>
     <script src="tabs.js" defer></script>
+    <script>
+    // Swipe gesture support for LAYR tab list
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabButtons = document.querySelectorAll('.tab-list [role="tab"]');
+      const tabPanels = document.querySelectorAll('.destination-info[role="tabpanel"]');
+      const images = [
+        document.getElementById('moon-image'),
+        document.getElementById('mars-image'),
+        document.getElementById('europa-image'),
+        document.getElementById('titan-image')
+      ];
+      let current = 0;
+      function activateTab(i) {
+        tabButtons.forEach((b, j) => {
+          b.setAttribute('aria-selected', j === i ? 'true' : 'false');
+          b.tabIndex = j === i ? 0 : -1;
+          tabPanels[j].hidden = j !== i;
+          images[j].hidden = j !== i;
+        });
+        current = i;
+      }
+      tabButtons.forEach((btn, i) => {
+        btn.addEventListener('click', () => activateTab(i));
+      });
+
+      // Swipe gesture support for mobile
+      let touchStartX = null;
+      let touchEndX = null;
+      const main = document.getElementById('main') || document.querySelector('main');
+      main.addEventListener('touchstart', function(e) {
+        if (e.touches.length === 1) {
+          touchStartX = e.touches[0].clientX;
+        }
+      });
+      main.addEventListener('touchend', function(e) {
+        if (touchStartX === null) return;
+        touchEndX = e.changedTouches[0].clientX;
+        const dx = touchEndX - touchStartX;
+        if (Math.abs(dx) > 40) { // threshold
+          if (dx < 0 && current < tabButtons.length - 1) {
+            activateTab(current + 1);
+          } else if (dx > 0 && current > 0) {
+            activateTab(current - 1);
+          }
+        }
+        touchStartX = null;
+        touchEndX = null;
+      });
+    });
+    </script>
 </head>
 
 <body class="destination">
