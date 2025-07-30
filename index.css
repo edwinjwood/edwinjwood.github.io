@@ -1,4 +1,58 @@
-﻿/* ------------------- */
+﻿/* Remove E tab from layout after collapse for perfect spacing */
+.tab-list .e-tab.e-gone {
+  display: none !important;
+}
+/* Make tab buttons easier to click */
+.tab-list button[role="tab"] {
+  padding: 0.75em 1.5em;
+  min-width: 3rem;
+  min-height: 3rem;
+  border-radius: 2em;
+  cursor: pointer;
+}
+.tab-list {
+  min-width: 22rem;
+  display: flex;
+  gap: 2.5rem;
+  justify-content: center;
+  transition: gap 0.5s cubic-bezier(.4,0,.2,1);
+}
+
+/* Tab list gap after E tab collapse */
+.tab-list.e-collapse-gap {
+  gap: 1.2rem;
+}
+
+/* Prevent content jump when switching articles */
+.destination-info {
+  min-height: 18rem; /* Adjust to match your tallest article */
+}
+/* --- E tab animation and collapse --- */
+.tab-list .e-tab {
+  transition: opacity 0.4s cubic-bezier(.4,0,.2,1), width 0.4s cubic-bezier(.4,0,.2,1), min-width 0.4s, padding 0.4s;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+.tab-list .e-tab.e-fading {
+  opacity: 0;
+  pointer-events: none;
+}
+.tab-list .e-tab.e-collapsed {
+  width: 0 !important;
+  min-width: 0 !important;
+  max-width: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  border: none;
+  opacity: 0;
+  pointer-events: none;
+  position: static;
+  visibility: collapse;
+}
+/* ------------------- */
 /* Custom properties   */
 /* ------------------- */
 
@@ -292,7 +346,7 @@ select {
 
 
 /* ------------------- */
-/* Compontents         */
+/* Components         */
 /* ------------------- */
 
 .large-button {
@@ -549,11 +603,12 @@ body {
 
 
 .grid-container {
-    text-align: center;
     display: grid;
     place-items: center;
+    text-align: center;
     padding-inline: 1rem;
-    padding-bottom: 4rem;
+    margin-inline: auto;
+    max-width: 80rem;
 }
 
     .grid-container p:not([class]) {
@@ -657,18 +712,32 @@ body {
         grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(1rem, 1fr);
     }
 
+  /* Base home layout for mobile */
+  .grid-container--home {
+    padding-bottom: 0; /* Remove the large bottom padding */
+    align-items: center; /* Center items vertically instead of aligning to end */
+    justify-content: center;
+    min-height: 80vh; /* Set a minimum height to ensure vertical centering */
+    grid-template-areas:
+        'title'
+        'button';
+}
+
+@media (min-width: 45em) {
     .grid-container--home {
-        padding-bottom: max(6rem, 20vh);
-        align-items: end;
+        grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(2rem, 1fr);
+        grid-template-areas: '. title button .';
+        min-height: 85vh; /* Slightly taller on larger screens */
     }
-
-        .grid-container--home > *:first-child {
-            grid-column: 2;
-        }
-
-        .grid-container--home > *:last-child {
-            grid-column: 3;
-        }
+    
+    .grid-container--home > *:first-child {
+        grid-area: title;
+    }
+    
+    .grid-container--home > *:last-child {
+        grid-area: button;
+    }
+}
 
     .grid-container--destination {
         justify-items: start;
@@ -702,4 +771,6 @@ body {
             align-self: end;
             max-width: 90%;
         }
+
+        
 }
