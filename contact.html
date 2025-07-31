@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <title>Contact | LAYR</title>
+    <script src="navigation.js" defer></script>
+</head>
+<body class="contact">
+    <a class="skip-to-content" href="#main">Skip to content</a>
+    <header class="primary-header flex">
+        <div>
+            <img src="./assets/shared/logo.svg" alt="space tourism logo" class="logo">
+        </div>
+        <button class="mobile-nav-toggle" aria-controls="primary-navigation"><span class="sr-only" aria-expanded="false">Menu</span></button>
+        <nav>
+            <ul id="primary-navigation" data-visible="false" class="primary-navigation underline-indicators flex">
+                <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="index.html"><span aria-hidden="true">00</span>Home</a></li>
+                <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="aboutme.html"><span aria-hidden="true">01</span>About Me</a></li>
+                <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="layr.html"><span aria-hidden="true">02</span>LAYR</a></li>
+                <li class="active"><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="contact.html"><span aria-hidden="true">03</span>Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main" class="contact-main">
+        <div class="contact-form-center">
+            <h1 class="numbered-title"><span aria-hidden="true">03</span>Contact</h1>
+            <form class="contact-form" action="https://formspree.io/f/mrbllrae" method="POST" autocomplete="off">
+                <label for="name" class="sr-only">Name</label>
+                <input type="text" id="name" name="name" placeholder="Name" required>
+                <label for="email" class="sr-only">Email</label>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <label for="message" class="sr-only">Message</label>
+                <textarea id="message" name="message" placeholder="Message" rows="5" required></textarea>
+                <button type="submit" class="contact-btn ff-serif uppercase">Send</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

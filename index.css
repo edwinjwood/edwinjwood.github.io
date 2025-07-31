@@ -1,4 +1,103 @@
-﻿/* Remove E tab from layout after collapse for perfect spacing */
+﻿/* contact page background (same as layr.html) */
+.contact {
+  background-image: url(./assets/destination/background-destination-mobile.jpg);
+}
+
+@media (min-width: 35rem) {
+  .contact {
+    background-position: center center;
+    background-image: url(./assets/destination/background-destination-tablet.jpg);
+  }
+}
+
+@media (min-width: 45rem) {
+  .contact {
+    background-image: url(./assets/destination/background-destination-desktop.jpg);
+  }
+}
+/* Contact form rectangular button */
+.contact-btn {
+  font-size: 1.1rem;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  border: none;
+  background: hsl(var(--clr-white));
+  color: hsl(var(--clr-dark));
+  font-family: var(--ff-serif);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px 0 hsl(var(--clr-dark) / 0.08);
+}
+.contact-btn:hover,
+.contact-btn:focus {
+  background: hsl(var(--clr-light));
+  color: hsl(var(--clr-dark));
+  outline: none;
+}
+/* Contact page title and container spacing */
+.contact-form-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  gap: 2.5rem;
+}
+
+.contact-title {
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.contact-title h1 {
+  margin: 0;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: hsl(var(--clr-white) / 0.04);
+  padding: 2.5rem 2rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 2px 16px 0 hsl(var(--clr-dark) / 0.10);
+}
+/* Centered contact form container */
+.contact-form-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  font-size: 1.1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid hsl(var(--clr-white) / 0.18);
+  background: hsl(var(--clr-white) / 0.10);
+  color: #fff;
+  margin: 0;
+  resize: vertical;
+  transition: border-color 0.2s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: hsl(var(--clr-light));
+}
+
+.contact-form button {
+  margin-top: 0.5rem;
+}
+/* Remove E tab from layout after collapse for perfect spacing */
 .tab-list .e-tab.e-gone {
   display: none !important;
 }
