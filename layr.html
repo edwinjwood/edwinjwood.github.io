@@ -14,19 +14,20 @@
 
     <!-- Our custom CSS -->
     <link rel="stylesheet" href="index.css">
-    <title>LAYR</title>
+    <title>LAYR Services</title>
     <script src="navigation.js" defer></script>
     <script src="tabs.js" defer></script>
+    <script src="page-swipe.js" defer></script>
     <script>
-    // Swipe gesture support for LAYR tab list
+    // Swipe gesture support for LAYR services tabs only
     document.addEventListener('DOMContentLoaded', function() {
       const tabButtons = document.querySelectorAll('.tab-list [role="tab"]');
       const tabPanels = document.querySelectorAll('.destination-info[role="tabpanel"]');
       const images = [
-        document.getElementById('moon-image'),
-        document.getElementById('mars-image'),
-        document.getElementById('europa-image'),
-        document.getElementById('titan-image')
+        document.getElementById('leadership-service'),
+        document.getElementById('architecture-service'),
+        document.getElementById('yield-service'),
+        document.getElementById('relationships-service')
       ];
       let current = 0;
       function activateTab(i) {
@@ -42,28 +43,38 @@
         btn.addEventListener('click', () => activateTab(i));
       });
 
-      // Swipe gesture support for mobile
+      // Swipe gesture support for mobile - only within tab area
       let touchStartX = null;
       let touchEndX = null;
-      const main = document.getElementById('main') || document.querySelector('main');
-      main.addEventListener('touchstart', function(e) {
-        if (e.touches.length === 1) {
-          touchStartX = e.touches[0].clientX;
-        }
-      });
-      main.addEventListener('touchend', function(e) {
-        if (touchStartX === null) return;
-        touchEndX = e.changedTouches[0].clientX;
-        const dx = touchEndX - touchStartX;
-        if (Math.abs(dx) > 40) { // threshold
-          if (dx < 0 && current < tabButtons.length - 1) {
-            activateTab(current + 1);
-          } else if (dx > 0 && current > 0) {
-            activateTab(current - 1);
+      const tabArea = document.querySelector('.grid-container--destination');
+      
+      tabArea.addEventListener('touchstart', function(e) {
+        // Only handle swipes within tab list or tab panels
+        if (e.target.closest('.tab-list') || e.target.closest('[role="tabpanel"]')) {
+          if (e.touches.length === 1) {
+            touchStartX = e.touches[0].clientX;
+            e.stopPropagation(); // Prevent page swipe
           }
         }
-        touchStartX = null;
-        touchEndX = null;
+      });
+      
+      tabArea.addEventListener('touchend', function(e) {
+        // Only handle swipes within tab list or tab panels
+        if (e.target.closest('.tab-list') || e.target.closest('[role="tabpanel"]')) {
+          if (touchStartX === null) return;
+          touchEndX = e.changedTouches[0].clientX;
+          const dx = touchEndX - touchStartX;
+          if (Math.abs(dx) > 40) { // threshold
+            if (dx < 0 && current < tabButtons.length - 1) {
+              activateTab(current + 1);
+            } else if (dx > 0 && current > 0) {
+              activateTab(current - 1);
+            }
+          }
+          touchStartX = null;
+          touchEndX = null;
+          e.stopPropagation(); // Prevent page swipe
+        }
       });
     });
     </script>
@@ -80,123 +91,162 @@
             <ul id="primary-navigation" data-visible="false" class="primary-navigation underline-indicators flex">
                 <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="index.html"><span aria-hidden="true">00</span>Home</a></li>
                 <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="aboutme.html"><span aria-hidden="true">01</span>About Me</a></li>
-                <li class="active"><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="layr.html"><span aria-hidden="true">02</span>LAYR</a></li>
+                <li class="active"><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="layr.html"><span aria-hidden="true">02</span>Services</a></li>
                 <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="contact.html"><span aria-hidden="true">03</span>Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main id="main" class="grid-container grid-container--destination flow">
-        <h1 class="numbered-title"><span aria-hidden="true">02</span> Pick a pillar</h1>
+        <h1 class="numbered-title"><span aria-hidden="true">02</span> Choose your service</h1>
 
-        <picture hidden id="moon-image">
+        <picture hidden id="leadership-service">
             <source srcset="assets/destination/mentoring.webp" type="image/webp">
-            <img src="assets/destination/mentoring.png" alt="the moon">
+            <img src="assets/destination/mentoring.png" alt="leadership consulting services">
         </picture>
-        <picture hidden id="mars-image">
+        <picture hidden id="architecture-service">
             <source srcset="assets/destination/technical-support.webp" type="image/webp">
-            <img src="assets/destination/technical-support.png" alt="the planet mars">
+            <img src="assets/destination/technical-support.png" alt="architecture consulting services">
         </picture>
-        <picture hidden id="europa-image">
+        <picture hidden id="yield-service">
             <source srcset="assets/destination/business.webp" type="image/webp">
-            <img src="assets/destination/business.png" alt="the planet europa">
+            <img src="assets/destination/business.png" alt="yield optimization services">
         </picture>
-        <picture hidden id="titan-image">
+        <picture hidden id="relationships-service">
             <source srcset="assets/destination/conversation.webp" type="image/webp">
-            <img src="assets/destination/conversation.png" alt="the moon titan">
+            <img src="assets/destination/conversation.png" alt="revenue optimization services">
         </picture>
 
-        <div class="tab-list underline-indicators flex" role="tablist" aria-label="destination list">
-            <button aria-selected="false" role="tab" aria-controls="moon-tab" class="uppercase ff-sans-cond text-accent letter-spacing-2" tabindex="0" data-image="moon-image">L</button>
-            <button aria-selected="false" role="tab" aria-controls="mars-tab" class="uppercase ff-sans-cond text-accent letter-spacing-2" tabindex="-1" data-image="mars-image">A</button>
-            <button aria-selected="false" role="tab" aria-controls="europa-tab" class="uppercase ff-sans-cond text-accent letter-spacing-2" tabindex="-1" data-image="europa-image">Y</button>
-            <button aria-selected="false" role="tab" aria-controls="titan-tab" class="uppercase ff-sans-cond text-accent letter-spacing-2" tabindex="-1" data-image="titan-image">R</button>
+        <div class="tab-list underline-indicators flex" role="tablist" aria-label="services list">
+            <button aria-selected="false" role="tab" aria-controls="leadership-consulting" class="uppercase ff-sans-cond text-accent letter-spacing-2" tabindex="0" data-image="leadership-service">L</button>
+            <button aria-selected="false" role="tab" aria-controls="architecture-consulting" class="uppercase ff-sans-cond text-accent letter-spacing-2" tabindex="-1" data-image="architecture-service">A</button>
+            <button aria-selected="false" role="tab" aria-controls="yield-consulting" class="uppercase ff-sans-cond text-accent letter-spacing-2" tabindex="-1" data-image="yield-service">Y</button>
+            <button aria-selected="false" role="tab" aria-controls="relationships-consulting" class="uppercase ff-sans-cond text-accent letter-spacing-2" tabindex="-1" data-image="relationships-service">R</button>
         </div>
 
-
-        <!-- Leadership -->
-        <article hidden class="destination-info flow" id="moon-tab" tabindex="0" role="tabpanel">
-            <h2 class="fs-800 uppercase ff-serif">Leadership</h2>
+        <!-- Leadership Consulting -->
+        <article hidden class="destination-info flow" id="leadership-consulting" tabindex="0" role="tabpanel">
+            <h2 class="fs-800 uppercase ff-serif">Leadership Consulting</h2>
 
             <p>
-                Guiding vision into velocity.
+                Transform your technical vision into executable delivery. Drawing from experience managing 20+ cross-functional teams 
+                across multiple M&A integrations, I help organizations build resilient engineering leadership that drives measurable business outcomes.
             </p>
 
             <div class="destination-meta flex">
                 <div>
-                    <h3 class="text-accent fs-200 uppercase">Years of Technical Leadership</h3>
-                    <p class="ff-serif uppercase">13+ Years</p>
+                    <h3 class="text-accent fs-200 uppercase">Service Areas</h3>
+                    <ul class="ff-serif">
+                        <li>Cross-Functional Platform Delivery</li>
+                        <li>Distributed Agile Team Management</li>
+                        <li>M&A Technical Integration</li>
+                        <li>Performance Tracking & KPIs</li>
+                    </ul>
                 </div>
                 <div>
-                    <h3 class="text-accent fs-200 uppercase">M&A Integrations Supported</h3>
-                    <p class="ff-serif uppercase">4</p>
+                    <h3 class="text-accent fs-200 uppercase">Proven Results</h3>
+                    <ul class="ff-serif">
+                        <li>Led 20+ Person Engineering Organizations</li>
+                        <li>Managed Multimillion-Dollar Software Portfolios</li>
+                        <li>Delivered Multiple Post-Merger Consolidations</li>
+                        <li>Established Data-Driven Engineering Metrics</li>
+                    </ul>
                 </div>
             </div>
         </article>
 
-        <!-- Architecture -->
-        <article hidden class="destination-info flow" id="mars-tab" tabindex="0" role="tabpanel">
-            <h2 class="fs-800 uppercase ff-serif">Architecture</h2>
+        <!-- Architecture Consulting -->
+        <article hidden class="destination-info flow" id="architecture-consulting" tabindex="0" role="tabpanel">
+            <h2 class="fs-800 uppercase ff-serif">Architecture Consulting</h2>
 
             <p>
-                Building platforms that scale with purpose.
+                Design scalable platforms that grow with your business. Leveraging experience modernizing legacy systems and 
+                consolidating platforms across multiple M&As, I help you build cloud-native architectures with proven CI/CD and observability frameworks.
             </p>
 
             <div class="destination-meta flex">
                 <div>
-                    <h3 class="text-accent fs-200 uppercase">Customer Platforms Managed</h3>
-                    <p class="ff-serif uppercase">15+</p>
+                    <h3 class="text-accent fs-200 uppercase">Service Areas</h3>
+                    <ul class="ff-serif">
+                        <li>Cloud Migration (AWS/Azure)</li>
+                        <li>Platform Consolidation & Integration</li>
+                        <li>CI/CD Pipeline Implementation</li>
+                        <li>Identity & Access Management (OAuth2/MFA)</li>
+                    </ul>
                 </div>
                 <div>
-                    <h3 class="text-accent fs-200 uppercase">API Modernization Initiatives Led</h3>
-                    <p class="ff-serif uppercase">8+</p>
+                    <h3 class="text-accent fs-200 uppercase">Proven Experience</h3>
+                    <ul class="ff-serif">
+                        <li>Unified Customer Portals & CRM Systems</li>
+                        <li>Observability & Performance Monitoring</li>
+                        <li>On-Prem to Cloud Modernization</li>
+                        <li>Enterprise Security Architecture</li>
+                    </ul>
                 </div>
             </div>
         </article>
 
-        <!-- Europa -->
-        <article hidden class="destination-info flow" id="europa-tab" tabindex="0" role="tabpanel">
-            <h2 class="fs-800 uppercase ff-serif">Yield</h2>
+        <!-- Yield Optimization -->
+        <article hidden class="destination-info flow" id="yield-consulting" tabindex="0" role="tabpanel">
+            <h2 class="fs-800 uppercase ff-serif">Yield Optimization</h2>
 
             <p>
-                Turning complexity into measurable outcomes.
+                Turn technical investments into measurable business outcomes. Using proven methodologies from platform consolidations 
+                and performance optimization initiatives, I help organizations maximize ROI through data-driven engineering practices and operational excellence.
             </p>
             <div class="destination-meta flex">
                 <div>
-                    <h3 class="text-accent fs-200 uppercase">Avg. distance</h3>
-                    <p class="ff-serif uppercase">628 mil. km</p>
+                    <h3 class="text-accent fs-200 uppercase">Service Areas</h3>
+                    <ul class="ff-serif">
+                        <li>Platform Performance & Scalability</li>
+                        <li>Engineering Metrics & KPIs</li>
+                        <li>Resource Planning & Budget Optimization</li>
+                        <li>Technical Debt Reduction</li>
+                    </ul>
                 </div>
                 <div>
-                    <h3 class="text-accent fs-200 uppercase">Est. travel time</h3>
-                    <p class="ff-serif uppercase">3 years</p>
+                    <h3 class="text-accent fs-200 uppercase">Measurable Outcomes</h3>
+                    <ul class="ff-serif">
+                        <li>40% Reduction in Support Volume</li>
+                        <li>Improved Sprint Velocity & Throughput</li>
+                        <li>Faster Deployment Cycles</li>
+                        <li>Enhanced Platform Resiliency</li>
+                    </ul>
                 </div>
             </div>
         </article>
 
-        <!-- Titan -->
-        <article hidden class="destination-info flow" id="titan-tab" tabindex="0" role="tabpanel">
-            <h2 class="fs-800 uppercase ff-serif">Relationships</h2>
+        <!-- Revenue Optimization -->
+        <article hidden class="destination-info flow" id="relationships-consulting" tabindex="0" role="tabpanel">
+            <h2 class="fs-800 uppercase ff-serif">Revenue Optimization</h2>
 
             <p>
-                People first, outcomes follow.
+                Drive measurable revenue growth through strategic platform development. Leveraging experience building customer portals, 
+                CRM consolidations, and sales tools, I help organizations create digital experiences that improve conversion, retention, and customer lifetime value.
             </p>
 
             <div class="destination-meta flex">
                 <div>
-                    <h3 class="text-accent fs-200 uppercase">Avg. distance</h3>
-                    <p class="ff-serif uppercase">1.6 bil. km</p>
+                    <h3 class="text-accent fs-200 uppercase">Service Areas</h3>
+                    <ul class="ff-serif">
+                        <li>Customer Experience Platforms</li>
+                        <li>Sales & Marketing Tool Integration</li>
+                        <li>Data-Driven Personalization</li>
+                        <li>Funnel Optimization & Analytics</li>
+                    </ul>
                 </div>
                 <div>
-                    <h3 class="text-accent fs-200 uppercase">Est. travel time</h3>
-                    <p class="ff-serif uppercase">7 years</p>
+                    <h3 class="text-accent fs-200 uppercase">Proven Impact</h3>
+                    <ul class="ff-serif">
+                        <li>Improved Lead Conversion Rates</li>
+                        <li>Enhanced User Satisfaction Scores</li>
+                        <li>Increased Platform Adoption</li>
+                        <li>Streamlined Customer Onboarding</li>
+                    </ul>
                 </div>
             </div>
         </article>
     </main>
 
-    <body>
-
-
-
-    </body>
+</body>
 </html>

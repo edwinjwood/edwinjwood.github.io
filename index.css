@@ -895,3 +895,29 @@ body {
 
         
 }
+
+/* Service list styling for LAYR services page */
+.destination-info ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.destination-info ul li {
+    padding: 0.25rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.destination-info ul li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: hsl( var(--clr-light) );
+    opacity: 0.7;
+}
+
+.destination-meta ul li {
+    font-size: var(--fs-300);
+    text-transform: none;
+}

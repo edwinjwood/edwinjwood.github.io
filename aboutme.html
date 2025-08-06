@@ -31,7 +31,7 @@
             <ul id="primary-navigation" data-visible="false" class="primary-navigation underline-indicators flex">
                 <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="index.html"><span aria-hidden="true">00</span>Home</a></li>
                 <li class="active"><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="aboutme.html"><span aria-hidden="true">01</span>About Me</a></li>
-                <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="layr.html"><span aria-hidden="true">02</span>LAYR</a></li>
+                <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="layr.html"><span aria-hidden="true">02</span>Services</a></li>
                 <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="contact.html"><span aria-hidden="true">03</span>Contact</a></li>
             </ul>
         </nav>
@@ -68,13 +68,13 @@
             current = i;
           }
 
-          // Fade out and navigate to layr.html
+          // Fade out and navigate to skills.html
           function fadeToLayr() {
             const main = document.getElementById('main') || document.querySelector('main');
             main.style.transition = 'opacity 0.5s';
             main.style.opacity = '0';
             setTimeout(() => {
-              window.location.href = 'layr.html';
+              window.location.href = 'skills.html';
             }, 500);
           }
           tabButtons.forEach((btn, i) => {
@@ -189,5 +189,6 @@
             <img src="assets/crew/survivor.png" alt="EW-survivor">
         </picture>
     </main>
+    <script src="page-swipe.js" defer></script>
 </body>
 </html>

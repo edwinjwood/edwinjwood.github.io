@@ -11,7 +11,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A991ED0D-4EDA-49AC-A5AB-F45F3D342883}"
 	ProjectSection(SolutionItems) = preProject
 		crew-commander.html = crew-commander.html
-	layr.html = layr.html
+	skills.html = skills.html
 		crew-engineer.html = crew-engineer.html
 		crew-pilot.html = crew-pilot.html
 		crew-specialist.html = crew-specialist.html
