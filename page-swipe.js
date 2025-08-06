@@ -19,6 +19,38 @@ document.addEventListener('DOMContentLoaded', function() {
     let touchStartY = null;
     let touchEndY = null;
     
+    // Function to check if we're on the LAYR services page and get current tab
+    function getCurrentTabIndex() {
+        if (currentPath !== 'layr.html') return null;
+        
+        const activeTab = document.querySelector('.tab-list [role="tab"][aria-selected="true"]');
+        if (!activeTab) return 0; // Default to first tab
+        
+        const allTabs = document.querySelectorAll('.tab-list [role="tab"]');
+        return Array.from(allTabs).indexOf(activeTab);
+    }
+    
+    // Function to check if page swipe should be allowed
+    function shouldAllowPageSwipe(direction) {
+        // For non-LAYR pages, always allow
+        if (currentPath !== 'layr.html') return true;
+        
+        const currentTabIndex = getCurrentTabIndex();
+        if (currentTabIndex === null) return true;
+        
+        // Only allow next page swipe if on last tab (index 3 = "R")
+        if (direction === 'next') {
+            return currentTabIndex === 3;
+        }
+        
+        // Only allow previous page swipe if on first tab (index 0 = "L") 
+        if (direction === 'prev') {
+            return currentTabIndex === 0;
+        }
+        
+        return false;
+    }
+    
     // Add swipe navigation (but not to services page tabs area)
     const body = document.body;
     
@@ -52,11 +84,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 80) {
             let targetPage = null;
             
-            if (dx > 0 && currentIndex > 0) {
-                // Swipe right - go to previous page
+            if (dx > 0 && currentIndex > 0 && shouldAllowPageSwipe('prev')) {
+                // Swipe right - go to previous page (only if allowed)
                 targetPage = pages[currentIndex - 1];
-            } else if (dx < 0 && currentIndex < pages.length - 1) {
-                // Swipe left - go to next page  
+            } else if (dx < 0 && currentIndex < pages.length - 1 && shouldAllowPageSwipe('next')) {
+                // Swipe left - go to next page (only if allowed)
                 targetPage = pages[currentIndex + 1];
             }
             
