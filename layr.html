@@ -49,8 +49,11 @@
       const tabArea = document.querySelector('.grid-container--destination');
       
       tabArea.addEventListener('touchstart', function(e) {
-        // Only handle swipes within tab list or tab panels
-        if (e.target.closest('.tab-list') || e.target.closest('[role="tabpanel"]')) {
+        // Handle swipes within tab list, tab panels, OR images
+        if (e.target.closest('.tab-list') || 
+            e.target.closest('[role="tabpanel"]') ||
+            e.target.closest('picture') || 
+            e.target.tagName === 'IMG') {
           if (e.touches.length === 1) {
             touchStartX = e.touches[0].clientX;
             e.stopPropagation(); // Prevent page swipe
@@ -59,8 +62,11 @@
       });
       
       tabArea.addEventListener('touchend', function(e) {
-        // Only handle swipes within tab list or tab panels
-        if (e.target.closest('.tab-list') || e.target.closest('[role="tabpanel"]')) {
+        // Handle swipes within tab list, tab panels, OR images
+        if (e.target.closest('.tab-list') || 
+            e.target.closest('[role="tabpanel"]') ||
+            e.target.closest('picture') || 
+            e.target.tagName === 'IMG') {
           if (touchStartX === null) return;
           touchEndX = e.changedTouches[0].clientX;
           const dx = touchEndX - touchStartX;

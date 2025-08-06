@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'index.html',
         'aboutme.html', 
         'layr.html',
+        'projects.html',
         'contact.html'
     ];
     
