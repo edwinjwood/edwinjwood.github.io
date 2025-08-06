@@ -78,8 +78,11 @@
           const tabArea = document.querySelector('.grid-container--crew');
           
           tabArea.addEventListener('touchstart', function(e) {
-            // Only handle swipes within dot indicators or crew details
-            if (e.target.closest('.dot-indicators') || e.target.closest('[role="tabpanel"]')) {
+            // Handle swipes within dot indicators, crew details, OR images
+            if (e.target.closest('.dot-indicators') || 
+                e.target.closest('[role="tabpanel"]') ||
+                e.target.closest('picture') || 
+                e.target.tagName === 'IMG') {
               if (e.touches.length === 1) {
                 touchStartX = e.touches[0].clientX;
                 e.stopPropagation(); // Prevent page swipe
@@ -88,8 +91,11 @@
           });
           
           tabArea.addEventListener('touchend', function(e) {
-            // Only handle swipes within dot indicators or crew details
-            if (e.target.closest('.dot-indicators') || e.target.closest('[role="tabpanel"]')) {
+            // Handle swipes within dot indicators, crew details, OR images
+            if (e.target.closest('.dot-indicators') || 
+                e.target.closest('[role="tabpanel"]') ||
+                e.target.closest('picture') || 
+                e.target.tagName === 'IMG') {
               if (touchStartX === null) return;
               touchEndX = e.changedTouches[0].clientX;
               const dx = touchEndX - touchStartX;

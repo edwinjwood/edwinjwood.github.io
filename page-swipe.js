@@ -87,10 +87,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const body = document.body;
     
     body.addEventListener('touchstart', function(e) {
-        // Don't interfere with tab navigation areas
+        // Don't interfere with tab navigation areas or images
         if (e.target.closest('.tab-list') || 
             e.target.closest('[role="tabpanel"]') ||
-            e.target.closest('.dot-indicators')) {
+            e.target.closest('.dot-indicators') ||
+            e.target.closest('picture') ||
+            e.target.tagName === 'IMG') {
             return;
         }
         
@@ -101,10 +103,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }, { passive: true });
     
     body.addEventListener('touchend', function(e) {
-        // Don't interfere with tab navigation areas
+        // Don't interfere with tab navigation areas or images
         if (e.target.closest('.tab-list') || 
             e.target.closest('[role="tabpanel"]') ||
-            e.target.closest('.dot-indicators')) {
+            e.target.closest('.dot-indicators') ||
+            e.target.closest('picture') ||
+            e.target.tagName === 'IMG') {
             return;
         }
         
