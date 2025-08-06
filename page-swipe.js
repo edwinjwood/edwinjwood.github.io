@@ -19,6 +19,17 @@ document.addEventListener('DOMContentLoaded', function() {
     let touchStartY = null;
     let touchEndY = null;
     
+    // Function to check if we're on the About Me page and get current tab
+    function getCurrentAboutMeTabIndex() {
+        if (currentPath !== 'aboutme.html') return null;
+        
+        const activeTab = document.querySelector('.dot-indicators [role="tab"][aria-selected="true"]');
+        if (!activeTab) return 0; // Default to first tab
+        
+        const allTabs = document.querySelectorAll('.dot-indicators [role="tab"]');
+        return Array.from(allTabs).indexOf(activeTab);
+    }
+    
     // Function to check if we're on the LAYR services page and get current tab
     function getCurrentTabIndex() {
         if (currentPath !== 'layr.html') return null;
@@ -32,31 +43,54 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Function to check if page swipe should be allowed
     function shouldAllowPageSwipe(direction) {
-        // For non-LAYR pages, always allow
-        if (currentPath !== 'layr.html') return true;
-        
-        const currentTabIndex = getCurrentTabIndex();
-        if (currentTabIndex === null) return true;
-        
-        // Only allow next page swipe if on last tab (index 3 = "R")
-        if (direction === 'next') {
-            return currentTabIndex === 3;
+        // For About Me page, check current tab
+        if (currentPath === 'aboutme.html') {
+            const currentTabIndex = getCurrentAboutMeTabIndex();
+            if (currentTabIndex === null) return true;
+            
+            // Only allow next page swipe if on last tab (index 3 = "The Survivor")
+            if (direction === 'next') {
+                return currentTabIndex === 3;
+            }
+            
+            // Only allow previous page swipe if on first tab (index 0 = "The Builder") 
+            if (direction === 'prev') {
+                return currentTabIndex === 0;
+            }
+            
+            return false;
         }
         
-        // Only allow previous page swipe if on first tab (index 0 = "L") 
-        if (direction === 'prev') {
-            return currentTabIndex === 0;
+        // For LAYR services page, check current tab
+        if (currentPath === 'layr.html') {
+            const currentTabIndex = getCurrentTabIndex();
+            if (currentTabIndex === null) return true;
+            
+            // Only allow next page swipe if on last tab (index 3 = "R")
+            if (direction === 'next') {
+                return currentTabIndex === 3;
+            }
+            
+            // Only allow previous page swipe if on first tab (index 0 = "L") 
+            if (direction === 'prev') {
+                return currentTabIndex === 0;
+            }
+            
+            return false;
         }
         
-        return false;
+        // For other pages, always allow
+        return true;
     }
     
     // Add swipe navigation (but not to services page tabs area)
     const body = document.body;
     
     body.addEventListener('touchstart', function(e) {
-        // Don't interfere with services page tab navigation
-        if (e.target.closest('.tab-list') || e.target.closest('[role="tabpanel"]')) {
+        // Don't interfere with tab navigation areas
+        if (e.target.closest('.tab-list') || 
+            e.target.closest('[role="tabpanel"]') ||
+            e.target.closest('.dot-indicators')) {
             return;
         }
         
@@ -67,8 +101,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }, { passive: true });
     
     body.addEventListener('touchend', function(e) {
-        // Don't interfere with services page tab navigation
-        if (e.target.closest('.tab-list') || e.target.closest('[role="tabpanel"]')) {
+        // Don't interfere with tab navigation areas
+        if (e.target.closest('.tab-list') || 
+            e.target.closest('[role="tabpanel"]') ||
+            e.target.closest('.dot-indicators')) {
             return;
         }
         

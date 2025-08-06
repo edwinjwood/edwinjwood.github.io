@@ -68,45 +68,42 @@
             current = i;
           }
 
-          // Fade out and navigate to skills.html
-          function fadeToLayr() {
-            const main = document.getElementById('main') || document.querySelector('main');
-            main.style.transition = 'opacity 0.5s';
-            main.style.opacity = '0';
-            setTimeout(() => {
-              window.location.href = 'skills.html';
-            }, 500);
-          }
           tabButtons.forEach((btn, i) => {
             btn.addEventListener('click', () => activateTab(i));
           });
 
-          // Swipe gesture support for mobile
+          // Swipe gesture support for mobile - only within tab area
           let touchStartX = null;
           let touchEndX = null;
-          const main = document.getElementById('main') || document.querySelector('main');
-          main.addEventListener('touchstart', function(e) {
-            if (e.touches.length === 1) {
-              touchStartX = e.touches[0].clientX;
-            }
-          });
-          main.addEventListener('touchend', function(e) {
-            if (touchStartX === null) return;
-            touchEndX = e.changedTouches[0].clientX;
-            const dx = touchEndX - touchStartX;
-            if (Math.abs(dx) > 40) { // threshold
-              if (dx < 0) {
-                if (current < tabButtons.length - 1) {
-                  activateTab(current + 1);
-                } else {
-                  fadeToLayr();
-                }
-              } else if (dx > 0 && current > 0) {
-                activateTab(current - 1);
+          const tabArea = document.querySelector('.grid-container--crew');
+          
+          tabArea.addEventListener('touchstart', function(e) {
+            // Only handle swipes within dot indicators or crew details
+            if (e.target.closest('.dot-indicators') || e.target.closest('[role="tabpanel"]')) {
+              if (e.touches.length === 1) {
+                touchStartX = e.touches[0].clientX;
+                e.stopPropagation(); // Prevent page swipe
               }
             }
-            touchStartX = null;
-            touchEndX = null;
+          });
+          
+          tabArea.addEventListener('touchend', function(e) {
+            // Only handle swipes within dot indicators or crew details
+            if (e.target.closest('.dot-indicators') || e.target.closest('[role="tabpanel"]')) {
+              if (touchStartX === null) return;
+              touchEndX = e.changedTouches[0].clientX;
+              const dx = touchEndX - touchStartX;
+              if (Math.abs(dx) > 40) { // threshold
+                if (dx < 0 && current < tabButtons.length - 1) {
+                  activateTab(current + 1);
+                } else if (dx > 0 && current > 0) {
+                  activateTab(current - 1);
+                }
+              }
+              touchStartX = null;
+              touchEndX = null;
+              e.stopPropagation(); // Prevent page swipe
+            }
           });
         });
         </script>
