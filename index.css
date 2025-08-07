@@ -1319,3 +1319,57 @@ body {
         min-height: 100vh;
     }
 }
+
+/* Mobile optimizations for services page */
+@media (max-width: 45em) {
+    .services-header {
+        padding: 2rem 1rem;
+        min-height: 40vh;
+        gap: 1rem;
+    }
+    
+    .services-header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .services-header p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    
+    .pillars-section {
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+    
+    .pillar-card {
+        padding: 1.5rem 1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .pillar-content h2 {
+        font-size: 1.75rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .pillar-content p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        margin-bottom: 1rem;
+    }
+    
+    .pillar-content ul {
+        font-size: 0.85rem;
+    }
+    
+    .pillar-content ul li {
+        padding: 0.5rem 0;
+        padding-left: 2rem;
+        margin-left: 0;
+    }
+    
+    .pillar-content ul li:before {
+        left: 0;
+    }
+}
