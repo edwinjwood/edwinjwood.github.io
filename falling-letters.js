@@ -158,8 +158,39 @@ document.addEventListener('DOMContentLoaded', function() {
         lastScrollY = currentScrollY;
     }
 
-    // Initial calculation
+    // Initial calculation and state setup
     calculateConvergencePoints();
+    
+    // Check initial scroll position to set correct state
+    function initializeState() {
+        const currentScrollY = window.scrollY;
+        const contentRect = contentSection.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        const isMobile = viewportHeight < 700 || window.innerWidth < 768;
+        const topThreshold = isMobile ? 200 : 150;
+        
+        // If we're scrolled past the top threshold, start with title hidden
+        if (currentScrollY >= topThreshold) {
+            animationTriggered = true;
+            titlePage.style.display = 'none';
+            companyTitle.classList.remove('pulsar');
+            letters.forEach((letter) => {
+                letter.classList.remove('blip-in');
+                letter.classList.add('blip-out');
+            });
+        } else {
+            // We're at the top, ensure title is visible
+            animationTriggered = false;
+            titlePage.style.display = 'flex';
+            letters.forEach((letter) => {
+                letter.classList.add('blip-in');
+                letter.classList.remove('blip-out');
+            });
+        }
+    }
+    
+    // Initialize the correct state based on scroll position
+    initializeState();
 
     // Recalculate on resize
     window.addEventListener('resize', calculateConvergencePoints);
