@@ -1,4 +1,30 @@
-﻿/* contact page background (same as layr.html) */
+﻿/* Home page side-by-side container for intro sections */
+.home-side-by-side {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 1200px;
+  margin: 0 auto 2rem auto;
+}
+
+.home-side-by-side .what-is-section,
+.home-side-by-side .how-help-section {
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0;
+  max-width: 100%;
+}
+
+@media (max-width: 900px) {
+  .home-side-by-side {
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 100%;
+  }
+}
+/* contact page background (same as layr.html) */
 .contact {
   background-image: url(./assets/destination/background-destination-mobile.jpg);
 }
@@ -1130,7 +1156,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
+    align-items: flex-start;
     background: hsl( var(--clr-dark) / .3);
     border-radius: 1rem;
     backdrop-filter: blur(10px);
@@ -1140,6 +1166,7 @@ body {
 .how-help-section h2 {
     margin-bottom: 2rem;
     text-shadow: 2px 2px 4px hsl( var(--clr-dark) / .8);
+    text-align: left;
 }
 
 .how-help-section p {
@@ -1147,6 +1174,7 @@ body {
     line-height: 1.6;
     font-size: 1.125rem;
     text-shadow: 1px 1px 2px hsl( var(--clr-dark) / .8);
+    text-align: left;
 }
 
 .cta-section {
