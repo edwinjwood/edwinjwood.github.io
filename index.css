@@ -644,7 +644,7 @@ body {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    background-attachment: scroll;
+    background-attachment: fixed;
 }
 
 @media (min-width: 35rem) {
@@ -659,6 +659,8 @@ body {
     .home {
         background-image: url(./assets/home/background-home-desktop.jpg);
         background-attachment: fixed;
+        background-size: cover;
+        background-position: center center;
     }
 }
 
