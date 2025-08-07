@@ -1217,11 +1217,24 @@ body {
     }
 }
 
-/* Targeted fix for real mobile browsers (iOS Safari specifically) */
+/* Targeted fix for real mobile browsers - keep background fixed but make it work */
 @supports (-webkit-touch-callout: none) {
     @media (max-width: 480px) and (orientation: portrait) {
         .home {
-            background-attachment: scroll !important;
+            background-attachment: fixed !important;
+            background-size: cover !important;
+            background-position: center center !important;
+            /* iOS Safari specific fixes for fixed backgrounds */
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+        
+        /* Ensure body and html have proper height */
+        html, body {
+            height: 100%;
+            -webkit-overflow-scrolling: touch;
         }
     }
 }
