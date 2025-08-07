@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+    <!-- Google fonts test-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&family=Barlow:wght@400;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Our custom CSS -->
+    <link rel="stylesheet" href="index.css">
+    <title>LAYR</title>
+    <script src="navigation.js" defer></script>
+</head>
+<body class="home">
+    <a class="skip-to-content" href="#main">Skip to content</a>
+    <header class="primary-header flex">
+        <div>
+            <img src="./assets/shared/logo.svg" alt="space tourism logo" class="logo">
+        </div>
+        <button class="mobile-nav-toggle" aria-controls="primary-navigation"><span class="sr-only" aria-expanded="false">Menu</span></button>
+        <nav>
+            <ul id="primary-navigation" data-visible="false" class="primary-navigation underline-indicators flex">
+                <li class="active"><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="index.html"><span aria-hidden="true">00</span>Home</a></li>
+                <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="aboutme.html"><span aria-hidden="true">01</span>About Me</a></li>
+                <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="layr.html"><span aria-hidden="true">02</span>Services</a></li>
+                <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="contact.html"><span aria-hidden="true">03</span>Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main" class="grid-container grid-container--home">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div>
+                <h1 class="text-accent fs-500 ff-sans-cond uppercase letter-spacing-1">
+                    <span class="d-block fs-900 ff-serif text-white">LAYR</span>
+                </h1>
+
+                <p>
+                    Where connection meets strategy, and innovation drives results. 
+                    I'm Edwin — a tech leader who believes that great technology starts with understanding 
+                    people, markets, and possibilities. Let's explore what we can build together.
+                </p>
+            </div>
+            <div>
+                <a href="#pillars" class="large-button uppercase ff-serif text-dark bg-white">Explore Our Approach</a>
+            </div>
+        </section>
+
+        <!-- Pillars Section -->
+        <section id="pillars" class="pillars-section">
+            <!-- Connection Pillar -->
+            <article class="pillar-card">
+                <div class="pillar-content">
+                    <h2 class="fs-700 ff-serif text-white">Connection</h2>
+                    <p class="text-accent fs-300 uppercase ff-sans-cond letter-spacing-2">Who • What</p>
+                    <p>
+                        Great technology starts with understanding people and systems. I focus on connecting 
+                        the right teams, stakeholders, and technologies to create solutions that truly serve 
+                        their intended purpose. It's about bridging gaps between vision and execution.
+                    </p>
+                    <ul class="ff-serif">
+                        <li>Stakeholder Alignment & Communication</li>
+                        <li>Cross-Functional Team Integration</li>
+                        <li>User-Centered System Design</li>
+                        <li>Technology & Business Bridging</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Strategy Pillar -->
+            <article class="pillar-card">
+                <div class="pillar-content">
+                    <h2 class="fs-700 ff-serif text-white">Strategy</h2>
+                    <p class="text-accent fs-300 uppercase ff-sans-cond letter-spacing-2">Why • Where • When</p>
+                    <p>
+                        Every successful platform needs a clear strategic foundation. I help organizations 
+                        define their 'why', map their destination, and time their moves for maximum impact. 
+                        Strategy isn't just planning—it's creating a roadmap for sustainable growth.
+                    </p>
+                    <ul class="ff-serif">
+                        <li>Business Objective Definition & Alignment</li>
+                        <li>Technology Roadmap & Architecture Planning</li>
+                        <li>Market Timing & Competitive Positioning</li>
+                        <li>Resource Allocation & Priority Setting</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Innovation Pillar -->
+            <article class="pillar-card">
+                <div class="pillar-content">
+                    <h2 class="fs-700 ff-serif text-white">Innovation</h2>
+                    <p class="text-accent fs-300 uppercase ff-sans-cond letter-spacing-2">How • Now</p>
+                    <p>
+                        Innovation is where strategy meets reality. I translate vision into working solutions, 
+                        leveraging modern technologies and proven methodologies to deliver platforms that 
+                        don't just work today, but evolve with tomorrow's needs.
+                    </p>
+                    <ul class="ff-serif">
+                        <li>Modern Architecture & Cloud Solutions</li>
+                        <li>Agile Development & Rapid Prototyping</li>
+                        <li>Performance Optimization & Scalability</li>
+                        <li>Emerging Technology Integration</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div>
+                <h2 class="fs-600 ff-serif text-white">Ready to Build Something Great?</h2>
+                <p>Let's connect your vision with strategic execution and innovative solutions.</p>
+            </div>
+            <div>
+                <a href="aboutme.html" class="large-button uppercase ff-serif text-dark bg-white">Learn More About Me</a>
+            </div>
+        </section>
+    </main>
+
+    <script src="page-swipe.js" defer></script>
+
+</body>
+</html>

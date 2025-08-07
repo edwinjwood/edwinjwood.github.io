@@ -921,3 +921,96 @@ body {
     font-size: var(--fs-300);
     text-transform: none;
 }
+
+/* ----------------------------- */
+/* Pillar Layout (New Home Page) */
+/* ----------------------------- */
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    min-height: 80vh;
+    justify-content: center;
+    text-align: center;
+}
+
+.pillars-section {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1rem;
+}
+
+.pillar-card {
+    background: hsl( var(--clr-white) / .05);
+    border: 1px solid hsl( var(--clr-white) / .1);
+    border-radius: 1rem;
+    padding: 3rem 2rem;
+    text-align: left;
+}
+
+.pillar-content h2 {
+    margin-bottom: 0.5rem;
+}
+
+.pillar-content > p:first-of-type {
+    margin-bottom: 1.5rem;
+}
+
+.pillar-content ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 2rem;
+}
+
+.pillar-content ul li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid hsl( var(--clr-white) / .1);
+    position: relative;
+    padding-left: 2rem;
+}
+
+.pillar-content ul li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: hsl( var(--clr-light) );
+}
+
+.pillar-content ul li:last-child {
+    border-bottom: none;
+}
+
+.cta-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+/* Updated home grid layout */
+.grid-container--home {
+    display: block;
+    padding: 0;
+}
+
+@media (min-width: 45em) {
+    .pillars-section {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        display: grid;
+        gap: 2rem;
+        align-items: start;
+        padding: 4rem 2rem;
+    }
+    
+    .hero-section {
+        min-height: 100vh;
+    }
+}
