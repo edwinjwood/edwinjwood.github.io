@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', function() {
     let animationTriggered = false;
     let lastScrollY = window.scrollY;
     let scrollTimeout = null;
+    let scrollDirection = null;
+    let scrollVelocity = 0;
+    let isAnimating = false;
 
     // Set different blip durations for each letter
     const blipSettings = [
@@ -42,7 +45,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function blipOut() {
+        if (isAnimating) return; // Prevent animation if already animating
+        
         animationTriggered = true;
+        isAnimating = true;
         calculateConvergencePoints();
         
         // Start letter convergence animations with staggered delays
@@ -62,11 +68,15 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             titlePage.style.display = 'none';
             companyTitle.classList.remove('pulsar');
+            isAnimating = false; // Animation complete
         }, 1800);
     }
 
     function blipIn() {
+        if (isAnimating) return; // Prevent animation if already animating
+        
         animationTriggered = false;
+        isAnimating = true;
         titlePage.style.display = 'flex';
         calculateConvergencePoints();
         
@@ -93,6 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     letter.style.transform = '';
                 }, blipSettings[reverseIndex].delay);
             });
+            isAnimating = false; // Animation complete
         }, 300); // Show converged point for 300ms then explode
     }
 
@@ -101,27 +112,44 @@ document.addEventListener('DOMContentLoaded', function() {
         const contentRect = contentSection.getBoundingClientRect();
         const viewportHeight = window.innerHeight;
         
+        // Calculate scroll velocity and direction
+        const scrollDelta = currentScrollY - lastScrollY;
+        scrollVelocity = Math.abs(scrollDelta);
+        
+        // Determine scroll direction with momentum consideration
+        if (scrollDelta > 5) {
+            scrollDirection = 'down';
+        } else if (scrollDelta < -5) {
+            scrollDirection = 'up';
+        }
+        // If scroll delta is small, keep previous direction to handle momentum
+        
+        // Skip if we're currently animating
+        if (isAnimating) {
+            lastScrollY = currentScrollY;
+            return;
+        }
+        
         // More robust mobile detection and thresholds
         const isMobile = viewportHeight < 700 || window.innerWidth < 768;
         const triggerDistance = isMobile ? 200 : 250;
-        const topThreshold = isMobile ? 150 : 120;
+        const topThreshold = isMobile ? 200 : 150; // Increased mobile threshold
         
-        // Add minimum scroll difference to prevent jittery behavior
-        const scrollDifference = Math.abs(currentScrollY - lastScrollY);
-        const minScrollDifference = isMobile ? 10 : 5;
-        
-        if (scrollDifference < minScrollDifference) {
-            return; // Ignore small scroll movements
+        // Require minimum scroll velocity to prevent jitter
+        const minVelocity = isMobile ? 15 : 10;
+        if (scrollVelocity < minVelocity) {
+            lastScrollY = currentScrollY;
+            return;
         }
         
         // Scrolling down - blip out when content comes into view
-        if (currentScrollY > lastScrollY && !animationTriggered) {
+        if (scrollDirection === 'down' && !animationTriggered) {
             if (contentRect.top <= viewportHeight + triggerDistance) {
                 blipOut();
             }
         }
-        // Scrolling up - blip in when we're near the top (with larger threshold)
-        else if (currentScrollY < lastScrollY && animationTriggered) {
+        // Scrolling up - blip in when we're near the top
+        else if (scrollDirection === 'up' && animationTriggered) {
             if (currentScrollY < topThreshold) {
                 blipIn();
             }
