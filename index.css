@@ -999,6 +999,17 @@ body {
     padding: 2rem 1.5rem;
     text-align: left;
     margin-bottom: 1rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Pillar cards adapt to lighter background areas */
+@media (max-width: 45em) {
+    .pillar-card:nth-child(2),
+    .pillar-card:nth-child(3) {
+        background: hsl( var(--clr-dark) / .8);
+        border: 1px solid hsl( var(--clr-white) / .2);
+        box-shadow: 0 4px 12px hsl( var(--clr-dark) / .3);
+    }
 }
 
 .pillar-content h2 {
