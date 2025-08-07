@@ -132,8 +132,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // More robust mobile detection and thresholds
         const isMobile = viewportHeight < 700 || window.innerWidth < 768;
-        const triggerDistance = isMobile ? 200 : 250;
-        const topThreshold = isMobile ? 200 : 150; // Increased mobile threshold
+        const triggerDistance = isMobile ? 100 : 150; // Reduced for faster trigger
+        const topThreshold = isMobile ? 200 : 150;
         
         // Require minimum scroll velocity to prevent jitter
         const minVelocity = isMobile ? 15 : 10;
