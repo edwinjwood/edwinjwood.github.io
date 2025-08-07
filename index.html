@@ -45,6 +45,9 @@
             </h1>
         </section>
 
+        <!-- Scroll Indicator removed -->
+        </section>
+
         <!-- Content that appears as title dissolves -->
         <section class="content-reveal">
 
@@ -77,9 +80,27 @@
         </section>
     </main>
 
+
     <script src="page-swipe.js" defer></script>
     <script src="falling-letters.js" defer></script>
     <script src="parallax.js" defer></script>
+
+    <script>
+    // Fade in the content as user scrolls
+    window.addEventListener('scroll', function() {
+      const content = document.querySelector('.content-reveal');
+      if (!content) return;
+      const max = 120; // px to fully fade in
+      const y = window.scrollY;
+      let contentOpacity = Math.min(y / max, 1);
+      content.style.opacity = contentOpacity;
+    });
+    // Start with content hidden
+    document.addEventListener('DOMContentLoaded', function() {
+      const content = document.querySelector('.content-reveal');
+      if (content) content.style.opacity = 0;
+    });
+    </script>
 
 </body>
 </html>

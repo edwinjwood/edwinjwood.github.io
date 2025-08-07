@@ -1,4 +1,73 @@
-﻿/* Home page side-by-side container for intro sections */
+﻿.scroll-indicator {
+  position: fixed;
+  left: 50%;
+  bottom: 2.5rem;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  animation: fadein 1.5s 1.5s both;
+  pointer-events: none;
+  transition: opacity 0.5s cubic-bezier(.6,0,.4,1);
+}
+
+.rocket-svg {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+/* Smooth fade for content reveal */
+.content-reveal {
+  transition: opacity 0.6s cubic-bezier(.6,0,.4,1);
+}
+
+@keyframes rocket-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(18px); }
+}
+
+.scroll-indicator .scroll-text {
+  color: #fff;
+  font-family: var(--ff-sans-cond, 'Barlow Condensed', Arial, sans-serif);
+  font-size: 1.1rem;
+  letter-spacing: 0.12em;
+  opacity: 0.8;
+  text-shadow: 0 2px 8px #000, 0 0 2px #fff2;
+  margin-top: 0.2rem;
+  text-align: center;
+}
+
+.scroll-indicator .arrow {
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-left: 4px solid #fff;
+  border-bottom: 4px solid #fff;
+  transform: rotate(-45deg);
+  margin-bottom: 0.5rem;
+  animation: bounce-arrow 1.2s infinite;
+  opacity: 0.8;
+}
+
+.scroll-indicator .scroll-text {
+  color: #fff;
+  font-family: var(--ff-sans-cond, 'Barlow Condensed', Arial, sans-serif);
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  opacity: 0.7;
+}
+
+@keyframes bounce-arrow {
+  0%, 100% { transform: translateY(0) rotate(-45deg); }
+  50% { transform: translateY(12px) rotate(-45deg); }
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+/* Home page side-by-side container for intro sections */
 .home-side-by-side {
   display: flex;
   flex-direction: row;

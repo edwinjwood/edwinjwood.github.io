@@ -15,6 +15,120 @@
     <!-- Our custom CSS -->
     <link rel="stylesheet" href="index.css">
     <style>
+        /* Slideshow styles */
+        .services-slideshow {
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            gap: 0.5rem;
+            position: relative;
+            margin-bottom: 2.5rem;
+        }
+        .slideshow-track {
+            flex: 1 1 0;
+            min-width: 0;
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            position: relative;
+        }
+        .slide {
+            display: none;
+            width: 100%;
+            max-width: 100%;
+            transition: opacity 0.4s;
+        }
+        .slide.active {
+            display: block;
+            opacity: 1;
+        }
+        .slideshow-arrow {
+            background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(30,40,80,0.35) 100%);
+            border: 1.5px solid rgba(255,255,255,0.25);
+            color: #fff;
+            font-size: 2.4rem;
+            font-family: inherit;
+            border-radius: 50%;
+            width: 3.2rem;
+            height: 3.2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 24px 0 rgba(0,0,0,0.18), 0 1.5px 0 0 #fff2 inset;
+            transition: background 0.2s, box-shadow 0.2s, border 0.2s, color 0.2s;
+            align-self: center;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            outline: none;
+        }
+        .slideshow-arrow:hover,
+        .slideshow-arrow:focus {
+            background: linear-gradient(135deg, rgba(255,255,255,0.32) 0%, rgba(30,40,80,0.55) 100%);
+            color: #ffe082;
+            border: 2px solid #ffe082;
+            box-shadow: 0 6px 32px 0 #ffe08244, 0 2px 0 0 #fff4 inset;
+        }
+        .slideshow-dots {
+            margin-top: 1rem;
+        }
+        .slideshow-dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            margin: 0 6px;
+            background: #fff3;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+            transition: background 0.2s;
+        }
+        .slideshow-dot.active {
+            background: #fff;
+        }
+        @media (max-width: 900px) {
+            .services-slideshow {
+                flex-direction: column;
+            }
+            .slideshow-arrow {
+                display: none;
+            }
+            .slideshow-track {
+                position: relative;
+                min-height: 480px;
+            }
+            .slide {
+                position: relative;
+                width: 100%;
+                max-width: 100%;
+                min-height: 420px;
+                opacity: 0;
+                z-index: 1;
+                pointer-events: none;
+                box-shadow: none;
+                transition: opacity 0.4s;
+                display: none;
+            }
+            .slide.active {
+                opacity: 1;
+                z-index: 2;
+                pointer-events: auto;
+                display: block;
+            }
+            .slide .section-content,
+            .slide .pillar {
+                text-align: center !important;
+                align-items: center;
+                justify-content: center;
+            }
+            /* Left-align bullet points and main text except accent line */
+            .slide ul,
+            .slide ul li,
+            .slide p.text-white {
+                text-align: left !important;
+                align-items: flex-start;
+                justify-content: flex-start;
+            }
+        }
         /* Services Page Styling */
         .page-header {
             text-align: center;
@@ -143,7 +257,7 @@
                 <h1 class="numbered-title"><span aria-hidden="true">01</span>Services</h1>
             </div>
             <!-- What We Offer Section -->
-            <section class="about-section" style="margin-bottom: 2.5rem;">
+            <section class="about-section what-we-offer-section" style="margin-bottom: 2.5rem; max-width: 850px; margin-left: auto; margin-right: auto;">
                 <div class="section-header">
                     <h2 class="fs-700 ff-serif text-white">What We Offer</h2>
                     <div class="section-accent"></div>
@@ -155,77 +269,154 @@
                 </div>
             </section>
             <!-- Pillars Section -->
-            <div class="services-pillars">
-                <!-- Connection Pillar -->
-                <section class="pillar about-section">
-                    <div class="section-header">
-                        <h2 class="fs-700 ff-serif text-white">Connection</h2>
-                        <div class="section-accent"></div>
-                    </div>
-                    <div class="section-content">
-                        <p class="text-accent fs-300 uppercase ff-sans-cond letter-spacing-2">Who • What</p>
-                        <p class="text-white">
-                            Modern systems require seamless integration across teams, applications, 
-                            and connected devices. LAYR analyzes and advises on unified approaches 
-                            that connect vendor relationships, system integrations, and IoT ecosystems.
-                        </p>
-                        <ul class="ff-serif text-white">
-                            <li>Cross-Functional Team Coordination</li>
-                            <li>Third-Party Vendor & API Integration</li>
-                            <li>Connected Device & IoT Architecture</li>
-                            <li>End-to-End System Communication</li>
-                        </ul>
-                    </div>
-                </section>
-                <!-- Strategy Pillar -->
-                <section class="pillar about-section">
-                    <div class="section-header">
-                        <h2 class="fs-700 ff-serif text-white">Strategy</h2>
-                        <div class="section-accent"></div>
-                    </div>
-                    <div class="section-content">
-                        <p class="text-accent fs-300 uppercase ff-sans-cond letter-spacing-2">Why • Where • When</p>
-                        <p class="text-white">
-                            Every platform needs clear direction. LAYR helps organizations 
-                            set priorities, build roadmaps, and align technical capabilities 
-                            with business goals.
-                        </p>
-                        <ul class="ff-serif text-white">
-                            <li>Business Objective Definition & Alignment</li>
-                            <li>Technology Roadmap & Architecture Planning</li>
-                            <li>Market Timing & Competitive Positioning</li>
-                            <li>Resource Allocation & Priority Setting</li>
-                        </ul>
-                    </div>
-                </section>
-                <!-- Innovation Pillar -->
-                <section class="pillar about-section">
-                    <div class="section-header">
-                        <h2 class="fs-700 ff-serif text-white">Innovation</h2>
-                        <div class="section-accent"></div>
-                    </div>
-                    <div class="section-content">
-                        <p class="text-accent fs-300 uppercase ff-sans-cond letter-spacing-2">How • Now</p>
-                        <p class="text-white">
-                            LAYR provides strategic guidance and stays technically involved to implement 
-                            the plans we advise on. We work alongside your teams using modern technologies 
-                            and proven methods to execute strategies that deliver results.
-                        </p>
-                        <ul class="ff-serif text-white">
-                            <li>Modern Architecture & Cloud Solutions</li>
-                            <li>Agile Development & Rapid Prototyping</li>
-                            <li>Performance Optimization & Scalability</li>
-                            <li>Emerging Technology Integration</li>
-                        </ul>
-                    </div>
-                </section>
+            <div class="services-slideshow" style="max-width: 850px; margin-left: auto; margin-right: auto;">
+                <button class="slideshow-arrow prev" aria-label="Previous">&#8592;</button>
+                <div class="slideshow-track">
+                    <!-- Slide 1: Connection -->
+                    <section class="pillar about-section slide" data-slide="0">
+                        <div class="section-header">
+                            <h2 class="fs-700 ff-serif text-white">Connection</h2>
+                            <div class="section-accent"></div>
+                        </div>
+                        <div class="section-content">
+                            <p class="text-accent fs-300 uppercase ff-sans-cond letter-spacing-2">Who • What</p>
+                            <p class="text-white">
+                                Modern systems require seamless integration across teams, applications, 
+                                and connected devices. LAYR analyzes and advises on unified approaches 
+                                that connect vendor relationships, system integrations, and IoT ecosystems.
+                            </p>
+                            <ul class="ff-serif text-white">
+                                <li>Cross-Functional Team Coordination</li>
+                                <li>Third-Party Vendor & API Integration</li>
+                                <li>Connected Device & IoT Architecture</li>
+                                <li>End-to-End System Communication</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <!-- Slide 2: Strategy -->
+                    <section class="pillar about-section slide" data-slide="1">
+                        <div class="section-header">
+                            <h2 class="fs-700 ff-serif text-white">Strategy</h2>
+                            <div class="section-accent"></div>
+                        </div>
+                        <div class="section-content">
+                            <p class="text-accent fs-300 uppercase ff-sans-cond letter-spacing-2">Why • Where • When</p>
+                            <p class="text-white">
+                                Every platform needs clear direction. LAYR helps organizations 
+                                set priorities, build roadmaps, and align technical capabilities 
+                                with business goals.
+                            </p>
+                            <ul class="ff-serif text-white">
+                                <li>Business Objective Definition & Alignment</li>
+                                <li>Technology Roadmap & Architecture Planning</li>
+                                <li>Market Timing & Competitive Positioning</li>
+                                <li>Resource Allocation & Priority Setting</li>
+                            </ul>
+                        </div>
+                    </section>
+                    <!-- Slide 3: Innovation -->
+                    <section class="pillar about-section slide" data-slide="2">
+                        <div class="section-header">
+                            <h2 class="fs-700 ff-serif text-white">Innovation</h2>
+                            <div class="section-accent"></div>
+                        </div>
+                        <div class="section-content">
+                            <p class="text-accent fs-300 uppercase ff-sans-cond letter-spacing-2">How • Now</p>
+                            <p class="text-white">
+                                LAYR provides strategic guidance and stays technically involved to implement 
+                                the plans we advise on. We work alongside your teams using modern technologies 
+                                and proven methods to execute strategies that deliver results.
+                            </p>
+                            <ul class="ff-serif text-white">
+                                <li>Modern Architecture & Cloud Solutions</li>
+                                <li>Agile Development & Rapid Prototyping</li>
+                                <li>Performance Optimization & Scalability</li>
+                                <li>Emerging Technology Integration</li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+                <button class="slideshow-arrow next" aria-label="Next">&#8594;</button>
             </div>
+            <div class="slideshow-dots" style="text-align:center; margin-top:1rem;"></div>
             <!-- Call to Action -->
             <div style="text-align: center; margin-top: 2.5rem;">
                 <a href="about.html" class="large-button uppercase ff-serif text-dark bg-white">About</a>
             </div>
         </div>
     </main>
+
+    <script>
+    // Slideshow logic with stacked card effect on mobile
+    document.addEventListener('DOMContentLoaded', function() {
+        const slides = Array.from(document.querySelectorAll('.slide'));
+        const prevBtn = document.querySelector('.slideshow-arrow.prev');
+        const nextBtn = document.querySelector('.slideshow-arrow.next');
+        const dotsContainer = document.querySelector('.slideshow-dots');
+        const track = document.querySelector('.slideshow-track');
+        let current = 0;
+        let touchStartX = null;
+        let touchEndX = null;
+
+        function showSlide(idx) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === idx);
+            });
+            Array.from(dotsContainer.children).forEach((dot, i) => {
+                dot.classList.toggle('active', i === idx);
+            });
+            current = idx;
+        }
+
+        // Touch swipe support for mobile
+        if (track) {
+            track.addEventListener('touchstart', function(e) {
+                if (e.touches.length === 1) {
+                    touchStartX = e.touches[0].clientX;
+                }
+            });
+            track.addEventListener('touchmove', function(e) {
+                if (e.touches.length === 1) {
+                    touchEndX = e.touches[0].clientX;
+                }
+            });
+            track.addEventListener('touchend', function(e) {
+                if (touchStartX !== null && touchEndX !== null && Math.abs(touchEndX - touchStartX) > 40) {
+                    if (touchEndX < touchStartX) {
+                        // Swipe left, next slide
+                        showSlide((current + 1) % slides.length);
+                    } else if (touchEndX > touchStartX) {
+                        // Swipe right, prev slide
+                        showSlide((current - 1 + slides.length) % slides.length);
+                    }
+                }
+                touchStartX = null;
+                touchEndX = null;
+            });
+        }
+
+        // Create dots
+        slides.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.className = 'slideshow-dot' + (i === 0 ? ' active' : '');
+            dot.setAttribute('aria-label', 'Go to slide ' + (i+1));
+            dot.addEventListener('click', () => showSlide(i));
+            dotsContainer.appendChild(dot);
+        });
+
+        if (prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', () => {
+                showSlide((current - 1 + slides.length) % slides.length);
+            });
+            nextBtn.addEventListener('click', () => {
+                showSlide((current + 1) % slides.length);
+            });
+        }
+
+        // Show first slide
+        slides[0].classList.add('active');
+    });
+    </script>
 
 </body>
 </html>
