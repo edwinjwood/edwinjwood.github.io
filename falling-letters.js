@@ -100,15 +100,19 @@ document.addEventListener('DOMContentLoaded', function() {
         const contentRect = contentSection.getBoundingClientRect();
         const viewportHeight = window.innerHeight;
         
+        // Adjust trigger distance based on viewport size (mobile vs desktop)
+        const triggerDistance = viewportHeight < 700 ? 100 : 200;
+        
         // Scrolling down - blip out when content comes into view
         if (currentScrollY > lastScrollY && !animationTriggered) {
-            if (contentRect.top <= viewportHeight + 200) {
+            if (contentRect.top <= viewportHeight + triggerDistance) {
                 blipOut();
             }
         }
         // Scrolling up - blip in when we're near the top
         else if (currentScrollY < lastScrollY && animationTriggered) {
-            if (currentScrollY < 100) {
+            const topThreshold = viewportHeight < 700 ? 50 : 100;
+            if (currentScrollY < topThreshold) {
                 blipIn();
             }
         }
@@ -123,7 +127,10 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', calculateConvergencePoints);
 
     // Check scroll position
-    window.addEventListener('scroll', checkScroll);
+    window.addEventListener('scroll', checkScroll, { passive: true });
+    
+    // Add touch event support for mobile
+    window.addEventListener('touchmove', checkScroll, { passive: true });
     
     // Initial check in case pillars are already in view
     checkScroll();

@@ -677,6 +677,10 @@ body {
 /* home */
 .home {
     background-image: url(./assets/home/background-home-mobile.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 @media (min-width: 35rem) {
@@ -1114,7 +1118,11 @@ body {
     position: relative;
     z-index: 1;
     margin-top: 100vh;
-    background: hsl(var(--clr-dark));
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 1rem;
 }
 
 .what-is-section {
@@ -1125,16 +1133,22 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background: hsl( var(--clr-dark) / .3);
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl( var(--clr-white) / .1);
 }
 
 .what-is-section h2 {
     margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px hsl( var(--clr-dark) / .8);
 }
 
 .what-is-section p {
     max-width: 600px;
     line-height: 1.6;
     font-size: 1.125rem;
+    text-shadow: 1px 1px 2px hsl( var(--clr-dark) / .8);
 }
 
 .how-help-section {
@@ -1146,16 +1160,22 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
+    background: hsl( var(--clr-dark) / .3);
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl( var(--clr-white) / .1);
 }
 
 .how-help-section h2 {
     margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px hsl( var(--clr-dark) / .8);
 }
 
 .how-help-section p {
     max-width: 600px;
     line-height: 1.6;
     font-size: 1.125rem;
+    text-shadow: 1px 1px 2px hsl( var(--clr-dark) / .8);
 }
 
 .cta-section {
@@ -1169,11 +1189,32 @@ body {
 
 /* Mobile responsive adjustments */
 @media (max-width: 45em) {
+    .company-title {
+        font-size: 4rem;
+        flex-direction: row;
+        justify-content: center;
+        gap: 0.05em;
+    }
+    
+    .content-reveal {
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+    
     .what-is-section,
     .how-help-section {
-        padding: 3rem 1rem;
+        padding: 3rem 1.5rem;
         min-height: 50vh;
         align-items: flex-start;
+        background: hsl( var(--clr-dark) / .4);
+        backdrop-filter: blur(8px);
+    }
+    
+    .what-is-section h2,
+    .how-help-section h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        text-shadow: 2px 2px 6px hsl( var(--clr-dark) / .9);
     }
     
     .how-help-section {
@@ -1189,6 +1230,13 @@ body {
     .how-help-section p {
         max-width: 100%;
         font-size: 1rem;
+        line-height: 1.5;
+        text-shadow: 1px 1px 3px hsl( var(--clr-dark) / .9);
+    }
+    
+    .cta-section {
+        padding: 3rem 1.5rem;
+        min-height: 30vh;
     }
 }
 
