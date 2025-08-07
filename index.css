@@ -1217,6 +1217,15 @@ body {
     }
 }
 
+/* Targeted fix for real mobile browsers (iOS Safari specifically) */
+@supports (-webkit-touch-callout: none) {
+    @media (max-width: 480px) and (orientation: portrait) {
+        .home {
+            background-attachment: scroll !important;
+        }
+    }
+}
+
 /* Updated home grid layout */
 .grid-container--home {
     display: block;
