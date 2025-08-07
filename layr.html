@@ -16,77 +16,9 @@
     <link rel="stylesheet" href="index.css">
     <title>LAYR Services</title>
     <script src="navigation.js" defer></script>
-    <script src="tabs.js" defer></script>
-    <script src="page-swipe.js" defer></script>
-    <script>
-    // Swipe gesture support for LAYR services tabs only
-    document.addEventListener('DOMContentLoaded', function() {
-      const tabButtons = document.querySelectorAll('.tab-list [role="tab"]');
-      const tabPanels = document.querySelectorAll('.destination-info[role="tabpanel"]');
-      const images = [
-        document.getElementById('leadership-service'),
-        document.getElementById('architecture-service'),
-        document.getElementById('yield-service'),
-        document.getElementById('relationships-service')
-      ];
-      let current = 0;
-      function activateTab(i) {
-        tabButtons.forEach((b, j) => {
-          b.setAttribute('aria-selected', j === i ? 'true' : 'false');
-          b.tabIndex = j === i ? 0 : -1;
-          tabPanels[j].hidden = j !== i;
-          images[j].hidden = j !== i;
-        });
-        current = i;
-      }
-      tabButtons.forEach((btn, i) => {
-        btn.addEventListener('click', () => activateTab(i));
-      });
-
-      // Swipe gesture support for mobile - only within tab area
-      let touchStartX = null;
-      let touchEndX = null;
-      const tabArea = document.querySelector('.grid-container--destination');
-      
-      tabArea.addEventListener('touchstart', function(e) {
-        // Handle swipes within tab list, tab panels, OR images
-        if (e.target.closest('.tab-list') || 
-            e.target.closest('[role="tabpanel"]') ||
-            e.target.closest('picture') || 
-            e.target.tagName === 'IMG') {
-          if (e.touches.length === 1) {
-            touchStartX = e.touches[0].clientX;
-            e.stopPropagation(); // Prevent page swipe
-          }
-        }
-      });
-      
-      tabArea.addEventListener('touchend', function(e) {
-        // Handle swipes within tab list, tab panels, OR images
-        if (e.target.closest('.tab-list') || 
-            e.target.closest('[role="tabpanel"]') ||
-            e.target.closest('picture') || 
-            e.target.tagName === 'IMG') {
-          if (touchStartX === null) return;
-          touchEndX = e.changedTouches[0].clientX;
-          const dx = touchEndX - touchStartX;
-          if (Math.abs(dx) > 40) { // threshold
-            if (dx < 0 && current < tabButtons.length - 1) {
-              activateTab(current + 1);
-            } else if (dx > 0 && current > 0) {
-              activateTab(current - 1);
-            }
-          }
-          touchStartX = null;
-          touchEndX = null;
-          e.stopPropagation(); // Prevent page swipe
-        }
-      });
-    });
-    </script>
 </head>
 
-<body class="destination">
+<body class="home">
     <a class="skip-to-content" href="#main">Skip to content</a>
     <header class="primary-header flex">
         <div>
@@ -103,155 +35,85 @@
         </nav>
     </header>
 
-    <main id="main" class="grid-container grid-container--destination flow">
-        <h1 class="numbered-title"><span aria-hidden="true">02</span> Choose your service</h1>
-
-        <picture hidden id="leadership-service">
-            <source srcset="assets/destination/mentoring.webp" type="image/webp">
-            <img src="assets/destination/mentoring.png" alt="leadership consulting services">
-        </picture>
-        <picture hidden id="architecture-service">
-            <source srcset="assets/destination/technical-support.webp" type="image/webp">
-            <img src="assets/destination/technical-support.png" alt="architecture consulting services">
-        </picture>
-        <picture hidden id="yield-service">
-            <source srcset="assets/destination/business.webp" type="image/webp">
-            <img src="assets/destination/business.png" alt="yield optimization services">
-        </picture>
-        <picture hidden id="relationships-service">
-            <source srcset="assets/destination/conversation.webp" type="image/webp">
-            <img src="assets/destination/conversation.png" alt="revenue optimization services">
-        </picture>
-
-        <div class="tab-list underline-indicators flex" role="tablist" aria-label="services list">
-            <button aria-selected="false" role="tab" aria-controls="leadership-consulting" class="uppercase ff-sans-cond text-accent letter-spacing-2" tabindex="0" data-image="leadership-service">L</button>
-            <button aria-selected="false" role="tab" aria-controls="architecture-consulting" class="uppercase ff-sans-cond text-accent letter-spacing-2" tabindex="-1" data-image="architecture-service">A</button>
-            <button aria-selected="false" role="tab" aria-controls="yield-consulting" class="uppercase ff-sans-cond text-accent letter-spacing-2" tabindex="-1" data-image="yield-service">Y</button>
-            <button aria-selected="false" role="tab" aria-controls="relationships-consulting" class="uppercase ff-sans-cond text-accent letter-spacing-2" tabindex="-1" data-image="relationships-service">R</button>
-        </div>
-
-        <!-- Leadership Consulting -->
-        <article hidden class="destination-info flow" id="leadership-consulting" tabindex="0" role="tabpanel">
-            <h2 class="fs-800 uppercase ff-serif">Leadership Consulting</h2>
-
-            <p>
-                Transform your technical vision into executable delivery. Drawing from experience managing multi-faceted engineering teams 
-                across multiple M&A integrations, I help organizations build resilient engineering leadership that drives measurable business outcomes.
+    <main id="main" class="grid-container grid-container--home">
+        <!-- Services Header -->
+        <section class="services-header">
+            <h1 class="fs-900 ff-sans-cond uppercase text-white letter-spacing-2">Our Services</h1>
+            <p class="fs-400 text-white">
+                Strategic execution for evolving technical challenges. 
+                We connect teams, define strategy, and deliver results.
             </p>
+        </section>
 
-            <div class="destination-meta flex">
-                <div>
-                    <h3 class="text-accent fs-200 uppercase">Service Areas</h3>
+        <!-- Pillars Section -->
+        <section class="pillars-section">
+            <!-- Connection Pillar -->
+            <article class="pillar-card">
+                <div class="pillar-content">
+                    <h2 class="fs-700 ff-serif text-white">Connection</h2>
+                    <p class="text-accent fs-300 uppercase ff-sans-cond letter-spacing-2">Who • What</p>
+                    <p>
+                        Modern systems require seamless integration across teams, applications, 
+                        and connected devices. LAYR analyzes and advises on unified approaches 
+                        that connect vendor relationships, system integrations, and IoT ecosystems.
+                    </p>
                     <ul class="ff-serif">
-                        <li>Cross-Functional Platform Delivery</li>
-                        <li>Distributed Agile Team Management</li>
-                        <li>M&A Technical Integration</li>
-                        <li>Performance Tracking & KPIs</li>
+                        <li>Cross-Functional Team Coordination</li>
+                        <li>Third-Party Vendor & API Integration</li>
+                        <li>Connected Device & IoT Architecture</li>
+                        <li>End-to-End System Communication</li>
                     </ul>
                 </div>
-                <div>
-                    <h3 class="text-accent fs-200 uppercase">Proven Results</h3>
+            </article>
+
+            <!-- Strategy Pillar -->
+            <article class="pillar-card">
+                <div class="pillar-content">
+                    <h2 class="fs-700 ff-serif text-white">Strategy</h2>
+                    <p class="text-accent fs-300 uppercase ff-sans-cond letter-spacing-2">Why • Where • When</p>
+                    <p>
+                        Every platform needs clear direction. LAYR helps organizations 
+                        set priorities, build roadmaps, and align technical capabilities 
+                        with business goals.
+                    </p>
                     <ul class="ff-serif">
-                        <li>Led Multi-Faceted Engineering Organizations</li>
-                        <li>Managed Multimillion-Dollar Software Portfolios</li>
-                        <li>Delivered Multiple Post-Merger Consolidations</li>
-                        <li>Established Data-Driven Engineering Metrics</li>
+                        <li>Business Objective Definition & Alignment</li>
+                        <li>Technology Roadmap & Architecture Planning</li>
+                        <li>Market Timing & Competitive Positioning</li>
+                        <li>Resource Allocation & Priority Setting</li>
                     </ul>
                 </div>
+            </article>
+
+            <!-- Innovation Pillar -->
+            <article class="pillar-card">
+                <div class="pillar-content">
+                    <h2 class="fs-700 ff-serif text-white">Innovation</h2>
+                    <p class="text-accent fs-300 uppercase ff-sans-cond letter-spacing-2">How • Now</p>
+                    <p>
+                        LAYR provides strategic guidance and stays technically involved to implement 
+                        the plans we advise on. We work alongside your teams using modern technologies 
+                        and proven methods to execute strategies that deliver results.
+                    </p>
+                    <ul class="ff-serif">
+                        <li>Modern Architecture & Cloud Solutions</li>
+                        <li>Agile Development & Rapid Prototyping</li>
+                        <li>Performance Optimization & Scalability</li>
+                        <li>Emerging Technology Integration</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <div>
+                <p>Ready to transform your technical challenges into strategic advantages?</p>
             </div>
-        </article>
-
-        <!-- Architecture Consulting -->
-        <article hidden class="destination-info flow" id="architecture-consulting" tabindex="0" role="tabpanel">
-            <h2 class="fs-800 uppercase ff-serif">Architecture Consulting</h2>
-
-            <p>
-                Design scalable platforms that grow with your business. Leveraging experience modernizing legacy systems and 
-                consolidating platforms across enterprise M&As, I help you build cloud-native architectures with proven CI/CD and observability frameworks.
-            </p>
-
-            <div class="destination-meta flex">
-                <div>
-                    <h3 class="text-accent fs-200 uppercase">Service Areas</h3>
-                    <ul class="ff-serif">
-                        <li>Cloud Migration (AWS/Azure)</li>
-                        <li>Platform Consolidation & Integration</li>
-                        <li>CI/CD Pipeline Implementation</li>
-                        <li>Identity & Access Management (OAuth2/MFA)</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-accent fs-200 uppercase">Proven Experience</h3>
-                    <ul class="ff-serif">
-                        <li>Enterprise Customer Portals & CRM Systems</li>
-                        <li>Comprehensive Observability & Performance Monitoring</li>
-                        <li>Legacy-to-Cloud Modernization Strategies</li>
-                        <li>Scalable Enterprise Security Architecture</li>
-                    </ul>
-                </div>
+            <div>
+                <a href="contact.html" class="large-button uppercase ff-serif text-dark bg-white">Get Started</a>
             </div>
-        </article>
-
-        <!-- Yield Optimization -->
-        <article hidden class="destination-info flow" id="yield-consulting" tabindex="0" role="tabpanel">
-            <h2 class="fs-800 uppercase ff-serif">Yield Optimization</h2>
-
-            <p>
-                Maximize internal operational efficiency and reduce costs through strategic technical improvements. Using proven methodologies from enterprise platform consolidations 
-                and performance optimization initiatives, I help organizations achieve better ROI from existing investments through data-driven engineering practices and operational excellence.
-            </p>
-            <div class="destination-meta flex">
-                <div>
-                    <h3 class="text-accent fs-200 uppercase">Service Areas</h3>
-                    <ul class="ff-serif">
-                        <li>Internal Platform Performance & Scalability</li>
-                        <li>Operational Engineering Metrics & KPIs</li>
-                        <li>Cost-Effective Resource Planning & Budget Optimization</li>
-                        <li>Strategic Technical Debt Reduction</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-accent fs-200 uppercase">Efficiency Outcomes</h3>
-                    <ul class="ff-serif">
-                        <li>Significant Reduction in Support Volume & Costs</li>
-                        <li>Enhanced Team Productivity & Development Velocity</li>
-                        <li>Streamlined Deployment & Release Processes</li>
-                        <li>Improved System Reliability & Reduced Downtime</li>
-                    </ul>
-                </div>
-            </div>
-        </article>
-
-        <!-- Revenue Optimization -->
-        <article hidden class="destination-info flow" id="relationships-consulting" tabindex="0" role="tabpanel">
-            <h2 class="fs-800 uppercase ff-serif">Revenue Optimization</h2>
-
-            <p>
-                Drive measurable revenue growth through customer-facing platform development. Leveraging experience building enterprise customer portals, 
-                comprehensive CRM consolidations, and sales enablement tools, I help organizations create market-facing digital experiences that directly improve conversion, retention, and customer lifetime value.
-            </p>
-
-            <div class="destination-meta flex">
-                <div>
-                    <h3 class="text-accent fs-200 uppercase">Service Areas</h3>
-                    <ul class="ff-serif">
-                        <li>Customer-Facing Experience Platforms</li>
-                        <li>Revenue-Generating Sales & Marketing Tool Integration</li>
-                        <li>Market-Driven Data Personalization & Targeting</li>
-                        <li>Customer Acquisition Funnel Optimization & Analytics</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-accent fs-200 uppercase">Revenue Impact</h3>
-                    <ul class="ff-serif">
-                        <li>Enhanced Lead Conversion & Customer Acquisition Rates</li>
-                        <li>Elevated Customer Satisfaction & Market Engagement</li>
-                        <li>Accelerated Market Penetration & User Growth</li>
-                        <li>Optimized Customer Journey & Revenue Retention</li>
-                    </ul>
-                </div>
-            </div>
-        </article>
+        </section>
     </main>
 
 </body>

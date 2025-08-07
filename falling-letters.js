@@ -1,7 +1,7 @@
 // Pulsar Blip Letters Animation
 document.addEventListener('DOMContentLoaded', function() {
     const letters = document.querySelectorAll('.letter');
-    const pillarsSection = document.getElementById('pillars');
+    const contentSection = document.querySelector('.content-reveal');
     const titlePage = document.querySelector('.title-page');
     const companyTitle = document.querySelector('.company-title');
     let animationTriggered = false;
@@ -97,12 +97,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function checkScroll() {
         const currentScrollY = window.scrollY;
-        const pillarsRect = pillarsSection.getBoundingClientRect();
+        const contentRect = contentSection.getBoundingClientRect();
         const viewportHeight = window.innerHeight;
         
-        // Scrolling down - blip out when pillars come into view
+        // Scrolling down - blip out when content comes into view
         if (currentScrollY > lastScrollY && !animationTriggered) {
-            if (pillarsRect.top <= viewportHeight + 200) {
+            if (contentRect.top <= viewportHeight + 200) {
                 blipOut();
             }
         }
