@@ -135,9 +135,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const triggerDistance = isMobile ? 100 : 150; // Reduced for faster trigger
         const topThreshold = isMobile ? 200 : 150;
         
-        // Require minimum scroll velocity to prevent jitter
-        const minVelocity = isMobile ? 15 : 10;
-        if (scrollVelocity < minVelocity) {
+        // For initial page loads, be more lenient with velocity requirements
+        const isInitialVisit = !animationTriggered && currentScrollY === 0;
+        const minVelocity = isInitialVisit ? 5 : (isMobile ? 15 : 10); // Much lower threshold for first scroll
+        
+        // Skip velocity check if we're close to trigger point (make it more responsive)
+        const isNearTrigger = !animationTriggered && contentRect.top <= viewportHeight + (triggerDistance * 2);
+        if (!isNearTrigger && scrollVelocity < minVelocity) {
             lastScrollY = currentScrollY;
             return;
         }
