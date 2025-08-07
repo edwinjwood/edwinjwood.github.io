@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const companyTitle = document.querySelector('.company-title');
     let animationTriggered = false;
     let lastScrollY = window.scrollY;
+    let scrollTimeout = null;
 
     // Set different blip durations for each letter
     const blipSettings = [
@@ -100,10 +101,18 @@ document.addEventListener('DOMContentLoaded', function() {
         const contentRect = contentSection.getBoundingClientRect();
         const viewportHeight = window.innerHeight;
         
-        // More generous trigger distances for mobile
+        // More robust mobile detection and thresholds
         const isMobile = viewportHeight < 700 || window.innerWidth < 768;
-        const triggerDistance = isMobile ? 150 : 200;
-        const topThreshold = isMobile ? 80 : 100;
+        const triggerDistance = isMobile ? 200 : 250;
+        const topThreshold = isMobile ? 150 : 120;
+        
+        // Add minimum scroll difference to prevent jittery behavior
+        const scrollDifference = Math.abs(currentScrollY - lastScrollY);
+        const minScrollDifference = isMobile ? 10 : 5;
+        
+        if (scrollDifference < minScrollDifference) {
+            return; // Ignore small scroll movements
+        }
         
         // Scrolling down - blip out when content comes into view
         if (currentScrollY > lastScrollY && !animationTriggered) {
@@ -111,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 blipOut();
             }
         }
-        // Scrolling up - blip in when we're near the top
+        // Scrolling up - blip in when we're near the top (with larger threshold)
         else if (currentScrollY < lastScrollY && animationTriggered) {
             if (currentScrollY < topThreshold) {
                 blipIn();
@@ -127,11 +136,26 @@ document.addEventListener('DOMContentLoaded', function() {
     // Recalculate on resize
     window.addEventListener('resize', calculateConvergencePoints);
 
-    // Check scroll position
-    window.addEventListener('scroll', checkScroll, { passive: true });
+    // Debounced scroll handler for better mobile performance
+    function debouncedCheckScroll() {
+        if (scrollTimeout) {
+            clearTimeout(scrollTimeout);
+        }
+        
+        // Immediate check for responsive feel
+        checkScroll();
+        
+        // Debounced check to prevent rapid firing
+        scrollTimeout = setTimeout(() => {
+            checkScroll();
+        }, 50);
+    }
+
+    // Check scroll position with debouncing
+    window.addEventListener('scroll', debouncedCheckScroll, { passive: true });
     
-    // Add touch event support for mobile
-    window.addEventListener('touchmove', checkScroll, { passive: true });
+    // Remove touchmove listener as it can cause conflicts
+    // window.addEventListener('touchmove', checkScroll, { passive: true });
     
     // Initial check in case pillars are already in view
     checkScroll();
