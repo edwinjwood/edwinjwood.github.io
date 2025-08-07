@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function updateParallax() {
         const scrolled = window.pageYOffset;
-        const rate = scrolled * -0.2; // Subtle parallax rate
+        const rate = scrolled * -0.1; // Even more subtle for mobile
         
         // Apply parallax to the body background
         document.body.style.backgroundPosition = `center ${rate}px`;
@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Only apply on larger screens where background-attachment: fixed works better
-    if (window.innerWidth > 768) {
+    // Only apply on larger screens where it won't interfere with mobile scrolling
+    if (window.innerWidth > 768 && window.innerHeight > 600) {
         window.addEventListener('scroll', requestTick, { passive: true });
     }
 });

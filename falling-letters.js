@@ -100,8 +100,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const contentRect = contentSection.getBoundingClientRect();
         const viewportHeight = window.innerHeight;
         
-        // Adjust trigger distance based on viewport size (mobile vs desktop)
-        const triggerDistance = viewportHeight < 700 ? 100 : 200;
+        // More generous trigger distances for mobile
+        const isMobile = viewportHeight < 700 || window.innerWidth < 768;
+        const triggerDistance = isMobile ? 150 : 200;
+        const topThreshold = isMobile ? 80 : 100;
         
         // Scrolling down - blip out when content comes into view
         if (currentScrollY > lastScrollY && !animationTriggered) {
@@ -111,7 +113,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         // Scrolling up - blip in when we're near the top
         else if (currentScrollY < lastScrollY && animationTriggered) {
-            const topThreshold = viewportHeight < 700 ? 50 : 100;
             if (currentScrollY < topThreshold) {
                 blipIn();
             }

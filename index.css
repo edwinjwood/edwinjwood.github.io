@@ -97,10 +97,6 @@
 .contact-form button {
   margin-top: 0.5rem;
 }
-/* Remove E tab from layout after collapse for perfect spacing */
-.tab-list .e-tab.e-gone {
-  display: none !important;
-}
 /* Make tab buttons easier to click */
 .tab-list button[role="tab"] {
   padding: 0.75em 1.5em;
@@ -114,44 +110,12 @@
   display: flex;
   gap: 2.5rem;
   justify-content: center;
-  transition: gap 0.5s cubic-bezier(.4,0,.2,1);
-}
-
-/* Tab list gap after E tab collapse */
-.tab-list.e-collapse-gap {
-  gap: 1.2rem;
 }
 
 /* Prevent content jump when switching articles */
 .destination-info {
   min-height: 18rem; /* Adjust to match your tallest article */
 }
-/* --- E tab animation and collapse --- */
-.tab-list .e-tab {
-  transition: opacity 0.4s cubic-bezier(.4,0,.2,1), width 0.4s cubic-bezier(.4,0,.2,1), min-width 0.4s, padding 0.4s;
-  overflow: hidden;
-  position: relative;
-  z-index: 1;
-}
-.tab-list .e-tab.e-fading {
-  opacity: 0;
-  pointer-events: none;
-}
-.tab-list .e-tab.e-collapsed {
-  width: 0 !important;
-  min-width: 0 !important;
-  max-width: 0 !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  border: none;
-  opacity: 0;
-  pointer-events: none;
-  position: static;
-  visibility: collapse;
-}
-/* ------------------- */
 /* Custom properties   */
 /* ------------------- */
 
@@ -680,19 +644,21 @@ body {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: scroll;
 }
 
 @media (min-width: 35rem) {
     .home {
         background-position: center center;
         background-image: url(./assets/home/background-home-tablet.jpg);
+        background-attachment: fixed;
     }
 }
 
 @media (min-width: 45rem) {
     .home {
         background-image: url(./assets/home/background-home-desktop.jpg);
+        background-attachment: fixed;
     }
 }
 
