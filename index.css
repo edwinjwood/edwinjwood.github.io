@@ -1042,6 +1042,15 @@ body {
     text-align: center;
 }
 
+.cta-section p {
+    background: hsl( var(--clr-dark) / .7);
+    padding: 1.5rem 2rem;
+    border-radius: 0.5rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl( var(--clr-white) / .1);
+    max-width: 600px;
+}
+
 /* Updated home grid layout */
 .grid-container--home {
     display: block;
