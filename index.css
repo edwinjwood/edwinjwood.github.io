@@ -1099,6 +1099,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
     background: hsl( var(--clr-dark) / .3);
     border-radius: 1rem;
     backdrop-filter: blur(10px);
@@ -1171,16 +1172,17 @@ body {
     .how-help-section {
         padding: 3rem 1.5rem;
         min-height: 50vh;
-        align-items: flex-start;
         background: hsl( var(--clr-dark) / .4);
         backdrop-filter: blur(8px);
     }
     
+    .what-is-section {
+        align-items: flex-start;
+    }
+    
     .what-is-section h2,
-    .how-help-section h2 {
-        font-size: 2rem;
-        margin-bottom: 1.5rem;
-        text-shadow: 2px 2px 6px hsl( var(--clr-dark) / .9);
+    .what-is-section p {
+        text-align: left;
     }
     
     .how-help-section {
@@ -1190,6 +1192,13 @@ body {
     .how-help-section h2,
     .how-help-section p {
         text-align: left;
+    }
+    
+    .what-is-section h2,
+    .how-help-section h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        text-shadow: 2px 2px 6px hsl( var(--clr-dark) / .9);
     }
     
     .what-is-section p,
