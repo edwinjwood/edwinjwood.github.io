@@ -1398,3 +1398,30 @@ body {
         left: 0;
     }
 }
+
+/* About page headshot beside name */
+.team-info-with-headshot {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.team-info-with-headshot .headshot {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 8px hsl(var(--clr-dark) / 0.25);
+  border: 2px solid hsl(var(--clr-white) / 0.7);
+}
+
+@media (max-width: 600px) {
+  .team-info-with-headshot {
+    gap: 1rem;
+  }
+  .team-info-with-headshot .headshot {
+    width: 56px;
+    height: 56px;
+  }
+}
