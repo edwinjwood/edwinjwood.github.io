@@ -970,22 +970,18 @@ body {
     display: inline-block;
     font-family: var(--ff-serif);
     color: hsl(var(--clr-white));
-    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    transition: opacity 0.8s ease-out;
     transform-origin: center center;
     /* Default visible state for previews and initial load */
     opacity: 1;
-    transform: scale(1);
 }
 
-.letter.blip-out {
-    animation: letterConverge var(--blip-duration, 0.8s) ease-in-out forwards;
+.letter.fade-out {
+    opacity: 0;
 }
 
-.letter.blip-in {
-    animation: letterExpand var(--blip-duration, 0.8s) ease-out forwards;
-    /* Ensure blip-in letters are visible */
+.letter.fade-in {
     opacity: 1;
-    transform: scale(1);
 }
 
 /* Pulsar light effect */

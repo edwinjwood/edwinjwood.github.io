@@ -11,100 +11,59 @@ document.addEventListener('DOMContentLoaded', function() {
     let scrollVelocity = 0;
     let isAnimating = false;
 
-    // Set different blip durations for each letter
-    const blipSettings = [
-        { duration: '0.8s', delay: 0 },      // L
-        { duration: '0.8s', delay: 100 },    // A
-        { duration: '0.8s', delay: 200 },    // Y
-        { duration: '0.8s', delay: 300 }     // R
+    // Set different fade delays for each letter
+    const fadeSettings = [
+        { delay: 0 },      // L
+        { delay: 150 },    // A
+        { delay: 300 },    // Y
+        { delay: 450 }     // R
     ];
 
-    // Calculate convergence point (center of the title)
-    function calculateConvergencePoints() {
-        const titleRect = companyTitle.getBoundingClientRect();
-        const centerX = titleRect.width / 2;
-        const centerY = titleRect.height / 2;
-
-        letters.forEach((letter, index) => {
-            const letterRect = letter.getBoundingClientRect();
-            const titleOffsetRect = companyTitle.getBoundingClientRect();
-            
-            // Calculate relative position of letter within title
-            const letterCenterX = letterRect.left - titleOffsetRect.left + letterRect.width / 2;
-            const letterCenterY = letterRect.top - titleOffsetRect.top + letterRect.height / 2;
-            
-            // Calculate distance to center
-            const deltaX = centerX - letterCenterX;
-            const deltaY = centerY - letterCenterY;
-            
-            // Set CSS custom properties for convergence
-            letter.style.setProperty('--converge-x', `${deltaX}px`);
-            letter.style.setProperty('--converge-y', `${deltaY}px`);
-            letter.style.setProperty('--blip-duration', blipSettings[index].duration);
-        });
-    }
-
-    function blipOut() {
+    function fadeOut() {
         if (isAnimating) return; // Prevent animation if already animating
         
         animationTriggered = true;
         isAnimating = true;
-        calculateConvergencePoints();
         
-        // Start letter convergence animations with staggered delays
+        // Start letter fade out animations with staggered delays
         letters.forEach((letter, index) => {
             setTimeout(() => {
-                letter.classList.remove('blip-in');
-                letter.classList.add('blip-out');
-            }, blipSettings[index].delay);
+                letter.classList.remove('fade-in');
+                letter.classList.add('fade-out');
+            }, fadeSettings[index].delay);
         });
 
-        // Trigger pulsar effect after all letters have converged
-        setTimeout(() => {
-            companyTitle.classList.add('pulsar');
-        }, 800);
-
-        // Hide the title page after pulsar effect completes
+        // Hide the title page after all letters have faded
         setTimeout(() => {
             titlePage.style.display = 'none';
-            companyTitle.classList.remove('pulsar');
             isAnimating = false; // Animation complete
-        }, 1800);
+        }, 1200); // Allow time for all letters to fade
     }
 
-    function blipIn() {
+    function fadeIn() {
         if (isAnimating) return; // Prevent animation if already animating
         
         animationTriggered = false;
         isAnimating = true;
         titlePage.style.display = 'flex';
-        calculateConvergencePoints();
         
-        // Reset letters to converged state (invisible at center)
+        // Start letters as faded out
         letters.forEach((letter) => {
-            letter.classList.remove('blip-in');
-            letter.classList.add('blip-out');
-            letter.style.opacity = '0';
-            letter.style.transform = `translateX(${letter.style.getPropertyValue('--converge-x')}) translateY(${letter.style.getPropertyValue('--converge-y')}) scale(0)`;
+            letter.classList.remove('fade-in');
+            letter.classList.add('fade-out');
         });
         
-        // First show the converged point
-        companyTitle.classList.add('converged-point');
-        
-        // After showing the converged point, explode letters out with staggered delays (reverse order)
+        // Fade letters back in with staggered delays (reverse order for variety)
         setTimeout(() => {
-            companyTitle.classList.remove('converged-point');
             letters.forEach((letter, index) => {
                 const reverseIndex = letters.length - 1 - index;
                 setTimeout(() => {
-                    letter.classList.remove('blip-out');
-                    letter.classList.add('blip-in');
-                    letter.style.opacity = '';
-                    letter.style.transform = '';
-                }, blipSettings[reverseIndex].delay);
+                    letter.classList.remove('fade-out');
+                    letter.classList.add('fade-in');
+                }, fadeSettings[reverseIndex].delay);
             });
             isAnimating = false; // Animation complete
-        }, 300); // Show converged point for 300ms then explode
+        }, 100); // Small delay before starting fade in
     }
 
     function checkScroll() {
@@ -146,16 +105,16 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        // Scrolling down - blip out when content comes into view
+        // Scrolling down - fade out when content comes into view
         if (scrollDirection === 'down' && !animationTriggered) {
             if (contentRect.top <= viewportHeight + triggerDistance) {
-                blipOut();
+                fadeOut();
             }
         }
-        // Scrolling up - blip in when we're near the top
+        // Scrolling up - fade in when we're near the top
         else if (scrollDirection === 'up' && animationTriggered) {
             if (currentScrollY < topThreshold) {
-                blipIn();
+                fadeIn();
             }
         }
         
@@ -163,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Initial calculation and state setup
-    calculateConvergencePoints();
+    // No longer need calculateConvergencePoints for fade effect
     
     // Check initial scroll position to set correct state
     function initializeState() {
@@ -177,18 +136,17 @@ document.addEventListener('DOMContentLoaded', function() {
         if (currentScrollY >= topThreshold) {
             animationTriggered = true;
             titlePage.style.display = 'none';
-            companyTitle.classList.remove('pulsar');
             letters.forEach((letter) => {
-                letter.classList.remove('blip-in');
-                letter.classList.add('blip-out');
+                letter.classList.remove('fade-in');
+                letter.classList.add('fade-out');
             });
         } else {
             // We're at the top, ensure title is visible
             animationTriggered = false;
             titlePage.style.display = 'flex';
             letters.forEach((letter) => {
-                letter.classList.add('blip-in');
-                letter.classList.remove('blip-out');
+                letter.classList.add('fade-in');
+                letter.classList.remove('fade-out');
             });
         }
     }
@@ -196,8 +154,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize the correct state based on scroll position
     initializeState();
 
-    // Recalculate on resize
-    window.addEventListener('resize', calculateConvergencePoints);
+    // Recalculate on resize - not needed for fade effect but kept for future use
+    // window.addEventListener('resize', calculateConvergencePoints);
 
     // Debounced scroll handler for better mobile performance
     function debouncedCheckScroll() {
