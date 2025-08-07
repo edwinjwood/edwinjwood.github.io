@@ -449,15 +449,25 @@ select {
 /* ------------------- */
 
 .large-button {
-    font-size: 2rem;
+    font-size: 1.25rem;
     position: relative;
     z-index: 1;
     display: inline-grid;
     place-items: center;
-    padding: 0 2em;
-    border-radius: 50%;
-    aspect-ratio: 1;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
     text-decoration: none;
+    min-width: 200px;
+}
+
+@media (min-width: 45em) {
+    .large-button {
+        font-size: 2rem;
+        padding: 0 2em;
+        border-radius: 50%;
+        aspect-ratio: 1;
+        min-width: auto;
+    }
 }
 
     .large-button::after {
@@ -743,17 +753,20 @@ body {
 /* destination layout */
 
 .grid-container--destination {
-    --flow-space: 2rem;
+    --flow-space: 1.5rem;
     grid-template-areas:
         'title'
         'image'
         'tabs'
         'content';
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
     .grid-container--destination > picture {
         grid-area: image;
-        max-width: 60%;
+        max-width: 40%;
         align-self: start;
     }
 
@@ -765,15 +778,35 @@ body {
         grid-area: content;
     }
 
+/* Make service content more compact on mobile */
+.grid-container--destination .destination-info h2 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.grid-container--destination .destination-info p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+}
+
+.grid-container--destination .destination-meta ul {
+    font-size: 0.9rem;
+}
+
+.grid-container--destination .destination-meta ul li {
+    padding: 0.4rem 0;
+}
+
 .destination-meta {
     flex-direction: column;
     border-top: 1px solid hsl( var(--clr-white) / .1);
-    padding-top: 2.5rem;
-    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
 }
 
     .destination-meta p {
-        font-size: 1.75rem;
+        font-size: 1.25rem;
     }
 
 /* crew layout */
@@ -867,11 +900,24 @@ body {
             '. title title .'
             '. image tabs .'
             '. image content .';
+        padding: 2rem;
     }
 
         .grid-container--destination > picture {
-            max-width: 90%;
+            max-width: 70%;
         }
+
+    /* Make service headings smaller and more compact */
+    .grid-container--destination .destination-info h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .grid-container--destination .destination-info p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
 
     .destination-meta {
         --gap: min(6vw, 6rem);
@@ -939,19 +985,20 @@ body {
 .pillars-section {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 2rem;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 4rem 1rem;
+    padding: 2rem 1rem;
 }
 
 .pillar-card {
     background: hsl( var(--clr-white) / .05);
     border: 1px solid hsl( var(--clr-white) / .1);
     border-radius: 1rem;
-    padding: 3rem 2rem;
+    padding: 2rem 1.5rem;
     text-align: left;
+    margin-bottom: 1rem;
 }
 
 .pillar-content h2 {
