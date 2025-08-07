@@ -969,8 +969,164 @@ body {
 }
 
 /* ----------------------------- */
-/* Pillar Layout (New Home Page) */
-/* ----------------------------- */
+/* Pulsar Blip Letters Title Animation */
+/* ----------------------------------- */
+
+.title-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.company-title {
+    font-size: 6rem;
+    margin: 0;
+    display: flex;
+    gap: 0.1em;
+    position: relative;
+}
+
+.letter {
+    display: inline-block;
+    font-family: var(--ff-serif);
+    color: hsl(var(--clr-white));
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    transform-origin: center center;
+}
+
+.letter.blip-out {
+    animation: letterConverge var(--blip-duration, 0.8s) ease-in-out forwards;
+}
+
+.letter.blip-in {
+    animation: letterExpand var(--blip-duration, 0.8s) ease-out forwards;
+}
+
+/* Pulsar light effect */
+.company-title::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    background: hsl(var(--clr-white));
+    border-radius: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    box-shadow: 
+        0 0 20px hsl(var(--clr-white)),
+        0 0 40px hsl(var(--clr-white)),
+        0 0 60px hsl(var(--clr-white));
+}
+
+.company-title.pulsar::after {
+    animation: pulsarEffect 0.6s ease-out forwards;
+}
+
+.company-title.converged-point::after {
+    animation: convergedPoint 0.3s ease-in forwards;
+}
+
+@keyframes letterConverge {
+    0% {
+        transform: translateX(0) translateY(0) scale(1);
+        opacity: 1;
+    }
+    70% {
+        transform: translateX(var(--converge-x, 0)) translateY(var(--converge-y, 0)) scale(0.3);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateX(var(--converge-x, 0)) translateY(var(--converge-y, 0)) scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes letterExpand {
+    0% {
+        transform: translateX(var(--converge-x, 0)) translateY(var(--converge-y, 0)) scale(0);
+        opacity: 0;
+    }
+    30% {
+        transform: translateX(var(--converge-x, 0)) translateY(var(--converge-y, 0)) scale(0.3);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateX(0) translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes convergedPoint {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow: 
+            0 0 20px hsl(var(--clr-white)),
+            0 0 40px hsl(var(--clr-white)),
+            0 0 60px hsl(var(--clr-white));
+    }
+}
+
+@keyframes pulsarEffect {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+    20% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(8);
+        box-shadow: 
+            0 0 30px hsl(var(--clr-white)),
+            0 0 60px hsl(var(--clr-white)),
+            0 0 90px hsl(var(--clr-white)),
+            0 0 120px hsl(var(--clr-white));
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(20);
+        box-shadow: 
+            0 0 50px transparent,
+            0 0 100px transparent,
+            0 0 150px transparent,
+            0 0 200px transparent;
+    }
+}
+
+.content-reveal {
+    position: relative;
+    z-index: 1;
+    margin-top: 100vh;
+    background: hsl(var(--clr-dark));
+}
+
+.tagline-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 4rem 1rem;
+    text-align: center;
+    min-height: 60vh;
+    justify-content: center;
+}
 
 .hero-section {
     display: flex;

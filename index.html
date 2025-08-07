@@ -35,25 +35,29 @@
     </header>
 
     <main id="main" class="grid-container grid-container--home">
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div>
-                <h1 class="text-accent fs-500 ff-sans-cond uppercase letter-spacing-1">
-                    <span class="d-block fs-900 ff-serif text-white">LAYR</span>
-                </h1>
+        <!-- Minimal Title Page -->
+        <section class="title-page">
+            <h1 class="company-title">
+                <span class="letter" data-letter="L">L</span>
+                <span class="letter" data-letter="A">A</span>
+                <span class="letter" data-letter="Y">Y</span>
+                <span class="letter" data-letter="R">R</span>
+            </h1>
+        </section>
 
+        <!-- Content that appears as title dissolves -->
+        <section class="content-reveal">
+            <!-- Tagline Section -->
+            <section class="tagline-section">
                 <p>
                     Strategic execution for evolving technical challenges. 
                     We connect teams, define strategy, and deliver results.
                 </p>
-            </div>
-            <div>
                 <a href="#pillars" class="large-button uppercase ff-serif text-dark bg-white">View Services</a>
-            </div>
-        </section>
+            </section>
 
-        <!-- Pillars Section -->
-        <section id="pillars" class="pillars-section">
+            <!-- Pillars Section -->
+            <section id="pillars" class="pillars-section">
             <!-- Connection Pillar -->
             <article class="pillar-card">
                 <div class="pillar-content">
@@ -110,20 +114,22 @@
                     </ul>
                 </div>
             </article>
-        </section>
+            </section>
 
-        <!-- Call to Action -->
-        <section class="cta-section">
-            <div>
-                <p>Need technical leadership or strategic guidance? LAYR works with organizations facing complex platform challenges.</p>
-            </div>
-            <div>
-                <a href="layr.html" class="large-button uppercase ff-serif text-dark bg-white">Learn More</a>
-            </div>
+            <!-- Call to Action -->
+            <section class="cta-section">
+                <div>
+                    <p>Need technical leadership or strategic guidance? LAYR works with organizations facing complex platform challenges.</p>
+                </div>
+                <div>
+                    <a href="layr.html" class="large-button uppercase ff-serif text-dark bg-white">Learn More</a>
+                </div>
+            </section>
         </section>
     </main>
 
     <script src="page-swipe.js" defer></script>
+    <script src="falling-letters.js" defer></script>
 
 </body>
 </html>
