@@ -21,19 +21,23 @@ Visit the live portfolio: [Insert your GitHub Pages URL here]
 
 ## 🎯 About
 
-LAYR represents the four pillars of technical leadership:
-- **L**eadership - Guiding vision into velocity
-- **A**rchitecture - Building platforms that scale with purpose
-- **Y**ield - Turning complexity into measurable outcomes
-- **R**elationships - People first, outcomes follow
+LAYR is a technology consulting company that bridges the gap between business strategy and technical execution. Founded on the principle that the most successful projects create layers of connection between technology, people, and business outcomes.
 
-This portfolio showcases 13+ years of technical leadership experience, including M&A integrations, platform management, and API modernization initiatives.
+This portfolio showcases LAYR's approach to technical leadership, featuring:
+- **Strategic Technology Planning** - Aligning technical capabilities with business goals
+- **Platform Development & Modernization** - Building scalable solutions that drive growth
+- **Digital Transformation Leadership** - Guiding companies through complex technical initiatives
+- **Measurable Business Impact** - Delivering solutions that create tangible results
+
+Founded by Edwin Wood, LAYR combines 13+ years of technical leadership experience with a deep understanding of business needs to help companies build technical foundations that scale with their ambitions.
 
 ## ✨ Features
 
 - **Responsive Design**: Optimized for desktop, tablet, and mobile devices
-- **Interactive Tabs**: Touch/swipe gestures for mobile navigation
-- **Smooth Animations**: CSS transitions and hover effects
+- **Parallax Scrolling**: Smooth background movement effects on all pages
+- **Glass Morphism**: Modern frosted glass design elements on About page
+- **Animated Interactions**: CSS transitions and letter animations
+- **Professional Navigation**: Clean, accessible navigation with mobile menu
 - **Accessibility**: ARIA labels, keyboard navigation, and screen reader support
 - **Modern Typography**: Google Fonts (Barlow, Barlow Condensed, Bellefair)
 - **Space Theme**: Inspired by space exploration and cosmic aesthetics
@@ -50,24 +54,23 @@ This portfolio showcases 13+ years of technical leadership experience, including
 ## 📄 Pages Overview
 
 ### Home (`index.html`)
-Landing page with hero section and exploration call-to-action.
+Landing page with animated LAYR company title and smooth transitions to main content sections.
 
-### About Me (`aboutme.html`)
-Personal introduction with professional background and animated transitions.
+### Services (`layr.html`)
+Professional services showcase featuring LAYR's three core pillars:
+- **Connection** - Bridging business strategy with technical execution
+- **Strategy** - Technology roadmap and architecture planning  
+- **Innovation** - Modern development and emerging technology integration
 
-### Skills (`skills.html`)
-Interactive LAYR framework showcase with tabbed navigation:
-- Leadership metrics and achievements
-- Architecture experience and platforms
-- Yield measurement and outcomes
-- Relationship building and team dynamics
+### About (`about.html`)
+Company story and professional background with glass morphism design:
+- The founding story of LAYR
+- Proven results and measurable impact
+- Team introduction (Edwin Wood - Founder & Lead Architect)
+- Vision for modernization, innovation, and transformation
 
 ### Contact (`contact.html`)
 Professional contact information and connection methods.
-
-### Additional Pages
-- `projects.html` - Project showcases
-- Various destination and crew pages for extended content
 
 ## 🚀 Installation
 
@@ -96,18 +99,18 @@ Professional contact information and connection methods.
 ### Navigation
 - Use the top navigation menu to explore different sections
 - On mobile: Tap the hamburger menu for navigation options
-- Skills page: Click/tap LAYR letters or swipe left/right on mobile
+- Parallax scrolling effects on Home, Services, and About pages
 
 ### Customization
 1. **Content**: Update text content in HTML files
 2. **Styling**: Modify `index.css` for visual changes
 3. **Images**: Replace images in `assets/` folders
-4. **Data**: Update `data.json` for dynamic content
+4. **Parallax**: Adjust scroll effects in `parallax.js` or custom scripts
 
 ### Key Files to Customize
-- `index.html` - Landing page content
-- `aboutme.html` - Personal information
-- `skills.html` - Professional skills and metrics
+- `index.html` - Landing page with animated title
+- `layr.html` - Services page content and pillars
+- `about.html` - Company story and team information
 - `index.css` - All styling and animations
 - `assets/` - Images and media files
 
@@ -115,18 +118,18 @@ Professional contact information and connection methods.
 
 ```
 Edwins-Portfolio/
-├── index.html              # Landing page
-├── aboutme.html            # About section
-├── skills.html             # Skills/LAYR showcase
+├── index.html              # Home page with animated title
+├── layr.html               # Services page (3 pillars)
+├── about.html              # Company About page
 ├── contact.html            # Contact information
-├── projects.html           # Projects showcase
 ├── index.css               # Main stylesheet
 ├── navigation.js           # Mobile navigation
-├── tabs.js                 # Tab functionality
-├── data.json               # Content data
+├── parallax.js             # Parallax scrolling effects
+├── page-swipe.js           # Page swipe functionality
+├── falling-letters.js      # Letter animation effects
 ├── assets/                 # Images and media
-│   ├── crew/              # Team/personal images
-│   ├── destination/       # Skills section images
+│   ├── crew/              # Personal/team images
+│   ├── destination/       # About page backgrounds
 │   ├── home/              # Landing page backgrounds
 │   ├── shared/            # Icons and logos
 │   └── technology/        # Tech-related images
@@ -148,8 +151,9 @@ Edwins-Portfolio/
 
 ### Interactive Elements
 - Hover effects on navigation and buttons
-- Smooth page transitions
-- Touch gestures for mobile interactions
+- Smooth parallax scrolling backgrounds
+- Animated letter transitions on home page
+- Glass morphism card effects on about page
 - Responsive grid layouts
 
 ## 🔧 Browser Support
@@ -163,10 +167,11 @@ Edwins-Portfolio/
 
 ## 📱 Mobile Features
 
-- Touch/swipe navigation on skills page
-- Responsive breakpoints for all screen sizes
-- Mobile-optimized typography and spacing
-- Touch-friendly button sizes
+- Responsive navigation with hamburger menu
+- Touch-optimized button sizes and spacing
+- Parallax effects work across all screen sizes
+- Mobile-optimized typography and layouts
+- Progressive enhancement for better performance
 
 ## 🤝 Contributing
 

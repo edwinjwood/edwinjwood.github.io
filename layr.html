@@ -14,8 +14,51 @@
 
     <!-- Our custom CSS -->
     <link rel="stylesheet" href="index.css">
+    <style>
+        /* Services Page Styling */
+        .services-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .services-pillars {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .pillar {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0.5rem;
+        }
+        
+        .pillar h2 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .pillar p {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .pillar ul {
+            margin: 0;
+        }
+        
+        .pillar ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .pillar {
+                padding: 1.5rem;
+            }
+        }
+    </style>
     <title>LAYR Services</title>
     <script src="navigation.js" defer></script>
+    <script src="parallax.js" defer></script>
 </head>
 
 <body class="home">
@@ -29,88 +72,77 @@
             <ul id="primary-navigation" data-visible="false" class="primary-navigation underline-indicators flex">
                 <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="index.html"><span aria-hidden="true">00</span>Home</a></li>
                 <li class="active"><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="layr.html"><span aria-hidden="true">01</span>Services</a></li>
-                <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="aboutme.html"><span aria-hidden="true">02</span>About Me</a></li>
+                <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="about.html"><span aria-hidden="true">02</span>About</a></li>
                 <li><a class="ff-sans-cond uppercase text-white letter-spacing-2" href="contact.html"><span aria-hidden="true">03</span>Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main id="main" class="grid-container grid-container--home">
-        <!-- Services Header -->
-        <section class="services-header">
-            <h1 class="fs-900 ff-serif text-white">Our Services</h1>
-            <p class="fs-400 text-white">
-                Strategic execution for evolving technical challenges. 
-                We connect teams, define strategy, and deliver results.
-            </p>
-        </section>
+        <div class="services-title">
+            <h1 class="numbered-title"><span aria-hidden="true">01</span>Services</h1>
+        </div>
 
         <!-- Pillars Section -->
-        <section class="pillars-section">
+        <div class="services-pillars">
             <!-- Connection Pillar -->
-            <article class="pillar-card">
-                <div class="pillar-content">
-                    <h2 class="fs-700 ff-serif text-white">Connection</h2>
-                    <p class="text-accent fs-300 uppercase ff-sans-cond letter-spacing-2">Who • What</p>
-                    <p>
-                        Modern systems require seamless integration across teams, applications, 
-                        and connected devices. LAYR analyzes and advises on unified approaches 
-                        that connect vendor relationships, system integrations, and IoT ecosystems.
-                    </p>
-                    <ul class="ff-serif">
-                        <li>Cross-Functional Team Coordination</li>
-                        <li>Third-Party Vendor & API Integration</li>
-                        <li>Connected Device & IoT Architecture</li>
-                        <li>End-to-End System Communication</li>
-                    </ul>
-                </div>
-            </article>
+            <div class="pillar text-center">
+                <h2 class="fs-700 ff-serif text-white">Connection</h2>
+                <p class="text-accent fs-300 uppercase ff-sans-cond letter-spacing-2">Who • What</p>
+                <p class="text-white">
+                    Modern systems require seamless integration across teams, applications, 
+                    and connected devices. LAYR analyzes and advises on unified approaches 
+                    that connect vendor relationships, system integrations, and IoT ecosystems.
+                </p>
+                <ul class="ff-serif text-white" style="list-style: none; padding: 0; text-align: left;">
+                    <li>Cross-Functional Team Coordination</li>
+                    <li>Third-Party Vendor & API Integration</li>
+                    <li>Connected Device & IoT Architecture</li>
+                    <li>End-to-End System Communication</li>
+                </ul>
+            </div>
 
             <!-- Strategy Pillar -->
-            <article class="pillar-card">
-                <div class="pillar-content">
-                    <h2 class="fs-700 ff-serif text-white">Strategy</h2>
-                    <p class="text-accent fs-300 uppercase ff-sans-cond letter-spacing-2">Why • Where • When</p>
-                    <p>
-                        Every platform needs clear direction. LAYR helps organizations 
-                        set priorities, build roadmaps, and align technical capabilities 
-                        with business goals.
-                    </p>
-                    <ul class="ff-serif">
-                        <li>Business Objective Definition & Alignment</li>
-                        <li>Technology Roadmap & Architecture Planning</li>
-                        <li>Market Timing & Competitive Positioning</li>
-                        <li>Resource Allocation & Priority Setting</li>
-                    </ul>
-                </div>
-            </article>
+            <div class="pillar text-center">
+                <h2 class="fs-700 ff-serif text-white">Strategy</h2>
+                <p class="text-accent fs-300 uppercase ff-sans-cond letter-spacing-2">Why • Where • When</p>
+                <p class="text-white">
+                    Every platform needs clear direction. LAYR helps organizations 
+                    set priorities, build roadmaps, and align technical capabilities 
+                    with business goals.
+                </p>
+                <ul class="ff-serif text-white" style="list-style: none; padding: 0; text-align: left;">
+                    <li>Business Objective Definition & Alignment</li>
+                    <li>Technology Roadmap & Architecture Planning</li>
+                    <li>Market Timing & Competitive Positioning</li>
+                    <li>Resource Allocation & Priority Setting</li>
+                </ul>
+            </div>
 
             <!-- Innovation Pillar -->
-            <article class="pillar-card">
-                <div class="pillar-content">
-                    <h2 class="fs-700 ff-serif text-white">Innovation</h2>
-                    <p class="text-accent fs-300 uppercase ff-sans-cond letter-spacing-2">How • Now</p>
-                    <p>
-                        LAYR provides strategic guidance and stays technically involved to implement 
-                        the plans we advise on. We work alongside your teams using modern technologies 
-                        and proven methods to execute strategies that deliver results.
-                    </p>
-                    <ul class="ff-serif">
-                        <li>Modern Architecture & Cloud Solutions</li>
-                        <li>Agile Development & Rapid Prototyping</li>
-                        <li>Performance Optimization & Scalability</li>
-                        <li>Emerging Technology Integration</li>
-                    </ul>
-                </div>
-            </article>
-        </section>
+            <div class="pillar text-center">
+                <h2 class="fs-700 ff-serif text-white">Innovation</h2>
+                <p class="text-accent fs-300 uppercase ff-sans-cond letter-spacing-2">How • Now</p>
+                <p class="text-white">
+                    LAYR provides strategic guidance and stays technically involved to implement 
+                    the plans we advise on. We work alongside your teams using modern technologies 
+                    and proven methods to execute strategies that deliver results.
+                </p>
+                <ul class="ff-serif text-white" style="list-style: none; padding: 0; text-align: left;">
+                    <li>Modern Architecture & Cloud Solutions</li>
+                    <li>Agile Development & Rapid Prototyping</li>
+                    <li>Performance Optimization & Scalability</li>
+                    <li>Emerging Technology Integration</li>
+                </ul>
+            </div>
+        </div>
 
         <!-- Call to Action -->
-        <section class="cta-section">
+        <div class="flow text-center" style="margin-top: 3rem;">
             <div>
                 <a href="contact.html" class="large-button uppercase ff-serif text-dark bg-white">Get Started</a>
             </div>
-        </section>
+        </div>
     </main>
 
 </body>
