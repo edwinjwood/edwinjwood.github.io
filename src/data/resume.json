@@ -1,33 +1,33 @@
 {
   "name": "Edwin J. Wood",
-  "title": "Strategic Technology & Product Innovation Leader",
+  "title": "Senior Technology & Product Innovation Leader",
   "contact": {
     "location": "Columbia, SC",
     "phone": "803.979.2778",
     "email": "edwinjwood@gmail.com",
     "linkedin": "https://linkedin.com/in/edwin-j-wood"
   },
-  "summary": "Strategic technology and product innovation leader with 13+ years' experience translating data and platforms into audience-driving digital products. Defines multi-year roadmaps, aligns cross-functional teams, and drives measurable outcomes (KPIs, experiments, reliability) while enabling engineering excellence through cloud-native delivery and observability.",
+  "summary": "Technology and product leader with 13+ years of experience driving digital innovation, data visualization, and enterprise transformation. Skilled at defining multi-year roadmaps, building high-performing teams, and turning complex data into accessible, audience-focused digital products. Hands-on full-stack experience across cloud platforms and enterprise systems, while recognized for creating clarity, measurable outcomes, and lasting impact.",
   "coreCompetencies": [
     {
       "heading": "Leadership & Strategy",
-      "text": "Product-led transformation • Multi-year roadmap architecture • Portfolio & investment governance • KPI design & benefits realization • Executive partnership"
+      "text": "Digital product innovation • Multi-year roadmap planning • Portfolio governance • KPI frameworks • Executive alignment"
     },
     {
       "heading": "Data Products & Visualization",
-      "text": "React • D3.js • Three.js • Data storytelling & dashboards • API-driven data platforms • Instrumentation & KPI design"
+      "text": "React • D3.js • Three.js • Interactive dashboards • Data storytelling • API-driven platforms"
     },
     {
-      "heading": "Cloud, Platform & Delivery",
-      "text": "Azure / GCP / AWS • Kubernetes • Docker • CI/CD (Jenkins, GitHub Actions, Azure DevOps) • Observability & Reliability Engineering"
+      "heading": "Cloud & Delivery Engineering",
+      "text": "Azure • AWS • GCP • Kubernetes • CI/CD (GitHub Actions, Azure DevOps) • Reliability & observability practices"
     },
     {
       "heading": "Enterprise Systems & Integration",
-      "text": "Dynamics 365 • ServiceNow • Salesforce • Power Platform (Power BI, Power Apps) • Integration Patterns (MuleSoft) • Identity (OAuth2 / OIDC)"
+      "text": "Dynamics 365 • ServiceNow • Salesforce • Power Platform (Power BI, Power Apps) • Integration (MuleSoft, REST APIs) • Identity & Access (OAuth2, OIDC, MFA)"
     },
     {
-      "heading": "Languages & Databases",
-      "text": ".NET / C# • Java • C++ • Node.js • SQL • MS SQL Server • Postgres • BigQuery"
+      "heading": "Programming & Databases",
+      "text": "JavaScript/Node.js • C#/.NET • SQL • PostgreSQL • MS SQL Server • BigQuery"
     }
   ],
   "experience": [
@@ -40,24 +40,24 @@
           "title": "Director of Software Development",
           "period": "2023–2025",
           "bullets": [
-            "Shifted teams to a product-led structure (pods / value streams) improving focus, accountability, and delivery cadence.",
-            "Established unified Jira / Azure DevOps taxonomy and dashboards to provide clear portfolio and execution visibility.",
-            "Introduced lifecycle from business case through benefits review to guide prioritization and reallocation.",
-            "Consolidated overlapping platforms (CRM, portal, ServiceNow, cloud) to reduce redundancy and fund modernization.",
-            "Embedded practical measurement (throughput, cycle time, service levels) into planning and review cadences.",
-            "Built capability taxonomy and progression model enhancing role clarity and internal advancement.",
-            "Partnered with executives and finance to sequence multi-year initiatives and integration work.",
-            "Led CRM consolidation, cloud migration, and portal modernization to improve scalability and customer experience.",
-            "Advanced CI/CD and observability practices accelerating safe, reliable releases.",
-            "Implemented OAuth2 and MFA to strengthen security and simplify access across platforms."
+            "Redesigned operating model into product-led pods, improving focus, accountability, and delivery cadence.",
+            "Implemented unified Jira/Azure DevOps taxonomy and dashboards for portfolio and execution visibility.",
+            "Introduced portfolio lifecycle management from business case through benefits review to guide investment decisions.",
+            "Consolidated overlapping enterprise platforms (CRM, portals, ServiceNow, cloud) to reduce redundancy and fund modernization.",
+            "Embedded KPI frameworks (throughput, cycle time, SLA adherence) into planning and review cadences.",
+            "Partnered with executives and finance to sequence multi-year initiatives and integration efforts.",
+            "Directed CRM consolidation, cloud migration, and portal modernization to improve scalability and customer experience.",
+            "Advanced CI/CD and observability practices to increase release safety and platform reliability."
           ]
         },
         {
           "title": "Senior Manager / Manager of Software Development / Technical Lead",
           "period": "2012–2023",
           "bullets": [
-            "Led engineering teams for integrations, platform, and product initiatives that supported revenue and operational improvements.",
-            "Designed integration patterns and APIs connecting CRM, portals, and analytics systems to streamline data flow and telemetry."
+            "Led engineering teams delivering integrations, platform modernization, and customer-facing products supporting revenue growth and operational efficiency.",
+            "Directed Salesforce-to-Dynamics 365 migration and developed Segra360 customer portal integrating billing, orders, service status, and analytics.",
+            "Designed API and integration patterns across CRM, portals, and analytics systems to streamline data flow and reporting.",
+            "Partnered with analytics teams to translate models into interactive dashboards and decision-making tools."
           ]
         }
       ]
