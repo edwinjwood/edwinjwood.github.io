@@ -1,0 +1,67 @@
+{
+  "name": "Edwin J. Wood",
+  "title": "Strategic Technology & Product Innovation Leader",
+  "contact": {
+    "location": "Columbia, SC",
+    "phone": "803.979.2778",
+    "email": "edwinjwood@gmail.com",
+    "linkedin": "https://linkedin.com/in/edwin-j-wood"
+  },
+  "summary": "Strategic technology and product leader who partners with business to translate data and platforms into audience-driving digital products. I define multi-year visions and roadmaps, align cross-functional teams, and prioritize measurable outcomes (KPIs, experiments, reliability) while enabling engineering excellence through modern cloud-native delivery and observability.",
+  "coreCompetencies": [
+    {
+      "heading": "Leadership & Strategy",
+      "text": "Digital Product Innovation • Multi-Year Roadmap Planning • KPI Frameworks • Cross-Functional Stakeholder Alignment • Vendor & Partner Management"
+    },
+    {
+      "heading": "Data Products & Visualization",
+      "text": "React • Node.js • D3.js • Three.js • SQL (Postgres, BigQuery) • API Design & Development • Data Storytelling"
+    },
+    {
+      "heading": "Cloud & Delivery",
+      "text": "GCP / AWS • Kubernetes • CI/CD (Jenkins, Azure DevOps, GitHub Actions) • Git/GitHub • Observability & Reliability Engineering"
+    },
+    {
+      "heading": "Enterprise Platforms",
+      "text": "Dynamics 365 • ServiceNow • Salesforce • Power Platform (Power BI, Power Apps, Power Automate) • SaaS Consolidation • Identity Modernization (OAuth2, OIDC, MFA)"
+    }
+  ],
+  "experience": [
+    {
+      "company": "Segra (formerly Spirit Communications & Lumos)",
+      "location": "Columbia, SC",
+      "period": "2012–2025",
+      "roles": [
+        {
+          "title": "Director of Software Development",
+          "period": "2018–2025",
+          "bullets": [
+            "Shifted teams to a product-led structure (pods / value streams) improving focus, accountability, and delivery cadence.",
+            "Established unified Jira / Azure DevOps taxonomy and dashboards to provide clear portfolio and execution visibility.",
+            "Introduced lifecycle from business case through benefits review to guide prioritization and reallocation.",
+            "Consolidated overlapping platforms (CRM, portal, ServiceNow, cloud) to reduce redundancy and fund modernization.",
+            "Embedded practical measurement (throughput, cycle time, service levels) into planning and review cadences.",
+            "Built capability taxonomy and progression model enhancing role clarity and internal advancement.",
+            "Partnered with executives and finance to sequence multi-year initiatives and integration work.",
+            "Led CRM consolidation, cloud migration, and portal modernization to improve scalability and customer experience.",
+            "Advanced CI/CD and observability practices accelerating safe, reliable releases.",
+            "Implemented OAuth2 and MFA to strengthen security and simplify access across platforms."
+          ]
+        },
+        {
+          "title": "Application Development Manager / Technical Lead / Analyst",
+          "period": "2012–2018",
+          "bullets": [
+            "Led engineering teams for integrations, platform, and product initiatives that supported revenue and operational improvements.",
+            "Designed integration patterns and APIs connecting CRM, portals, and analytics systems to streamline data flow and telemetry."
+          ]
+        }
+      ]
+    }
+  ],
+  "education": {
+    "school": "University of South Carolina — Columbia",
+    "degree": "Bachelor of Science in Computer Science (In Progress)",
+    "expectedGraduation": "May 2026"
+  }
+}

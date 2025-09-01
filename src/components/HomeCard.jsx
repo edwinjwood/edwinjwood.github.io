@@ -4,6 +4,42 @@ import headshotUrl from '../assets/Headshot.png';
 import homecardData from '../data/homecard.json';
 
 function HomeCard() {
+  const renderDescription = (desc, classes = 'text-xs text-gray-500 dark:text-gray-400') => {
+    if (!desc) return null;
+    const parts = desc.split('·').map(p => p.trim()).filter(Boolean);
+    return (
+      <p className={`${classes} mt-2`}> 
+        {parts.map((p, idx) => {
+          const isEmail = /\S+@\S+\.\S+/.test(p);
+          const isLinkedIn = /linkedin\.com/i.test(p) || /linkedin/i.test(p);
+          if (isEmail) {
+            return (
+              <span key={idx} className="align-middle">
+                <a href={`mailto:${p}`} className="hover:underline">{p}</a>
+                {idx < parts.length - 1 && <span className="mx-2">•</span>}
+              </span>
+            );
+          }
+          if (isLinkedIn) {
+            let url = p.startsWith('http') ? p : `https://${p.replace(/^www\./, '')}`;
+            if (!/^https?:\/\//i.test(url)) url = `https://${url}`;
+            return (
+              <span key={idx} className="align-middle">
+                <a href={url} target="_blank" rel="noopener noreferrer" title={url} className="hover:underline">LinkedIn Profile</a>
+                {idx < parts.length - 1 && <span className="mx-2">•</span>}
+              </span>
+            );
+          }
+          return (
+            <span key={idx} className="align-middle">
+              {p}
+              {idx < parts.length - 1 && <span className="mx-2">•</span>}
+            </span>
+          );
+        })}
+      </p>
+    );
+  };
   return (
     <main id="content" className="w-full h-full grid place-items-center font-sans text-gray-900 dark:text-gray-100">
       <div className="w-full px-4 flex justify-center">
@@ -25,7 +61,7 @@ function HomeCard() {
             <div className="min-w-0">
               <h1 className="text-xl font-extrabold tracking-tight">{homecardData.title}</h1>
               <p className="mt-1 text-xs text-gray-600 dark:text-gray-300">{homecardData.subtitle}</p>
-              <div className="mt-2 text-[11px] text-gray-500 dark:text-gray-400">{homecardData.description}</div>
+              <div>{renderDescription(homecardData.description, 'text-[11px] text-gray-500 dark:text-gray-400')}</div>
             </div>
           </div>
           {/* Desktop/tablet layout: side-by-side, left-aligned */}
@@ -37,7 +73,7 @@ function HomeCard() {
               <div className="min-w-0">
                 <h1 className="text-2xl font-extrabold tracking-tight">{homecardData.title}</h1>
                 <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">{homecardData.subtitle}</p>
-                <div className="mt-2 text-xs text-gray-500 dark:text-gray-400">{homecardData.description}</div>
+                <div>{renderDescription(homecardData.description, 'text-xs text-gray-500 dark:text-gray-400')}</div>
               </div>
             </div>
           </div>
