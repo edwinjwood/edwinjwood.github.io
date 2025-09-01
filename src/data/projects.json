@@ -127,6 +127,12 @@
     "description": "Built lightweight React/Vite portfolio with dark mode, hash-based deep linking for filtered project views, print-optimized layout, structured metadata for SEO/social cards, and streamlined GitHub Pages CI/CD deployment—improving discoverability and recruiter shareability.",
     "tech": ["React", "Vite", "Tailwind CSS", "HashRouter", "GitHub Pages", "CI/CD", "SEO", "Accessibility"]
   },
+  { "title": "Portfolio Builder — Payments, Webhooks & Data Platform (SaaS prototype)", 
+    "categories": ["Product", "Full-Stack", "Payments", "Reliability", "Testing"], 
+    "impact": "Makes building and publishing modern digital portfolios fast and accessible", 
+    "weight": 101, 
+    "description": "Enables creators and professionals to quickly build, customize, and publish modern digital portfolios using responsive templates, deep‑linking, SEO metadata, and simple monetization flows — lowering the barrier to shareable, recruiter‑friendly work samples. Implemented as a production‑grade prototype with hardened backend features (centralized payment provider, reliable webhook persistence, DB env handling, dual captcha support) and automated smoke tests to keep CI/local testing and deployments reliable.",
+    "tech": ["React", "Vite", "Tailwind CSS", "Node.js", "Express", "PostgreSQL", "Stripe", "hCaptcha", "reCAPTCHA", "Jest", "Supertest", "GitHub Actions", "Railway", "Docker", "dotenv"] },
   {
     "title": "LAYR Concept / Holding Pattern Site",
     "categories": ["Product", "Strategy", "Operating Model"],

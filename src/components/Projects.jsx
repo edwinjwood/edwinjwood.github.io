@@ -19,15 +19,16 @@ export default function Projects() {
 	const counts = React.useMemo(() => {
 		const map = {};
 		projects.forEach((p) => {
-			p.categories.forEach((c) => (map[c] = (map[c] || 0) + 1));
+			(p.categories || []).forEach((c) => (map[c] = (map[c] || 0) + 1));
 		});
 		return map;
 	}, []);
 
-	const categories = React.useMemo(
-		() => ["All", ...CATEGORY_ORDER.filter((c) => counts[c])],
-		[counts]
-	);
+	const categories = React.useMemo(() => {
+		const known = CATEGORY_ORDER.filter((c) => counts[c]);
+		const others = Object.keys(counts).filter((c) => !CATEGORY_ORDER.includes(c)).sort();
+		return ["All", ...known, ...others];
+	}, [counts]);
 
 	// URL hash sync supporting HashRouter (#/path?cat=Category) and legacy (#cat=Category)
 	useEffect(() => {
@@ -70,8 +71,14 @@ export default function Projects() {
 	}, [activeCategory]);
 
 	const filtered = React.useMemo(() => {
-		const base = activeCategory === "All" ? projects : projects.filter((p) => p.categories.includes(activeCategory));
-		return [...base].sort((a, b) => b.weight - a.weight);
+		const base = activeCategory === "All" ? projects : projects.filter((p) => (p.categories || []).includes(activeCategory));
+		return [...base].sort((a, b) => {
+			// featured projects first, then by weight
+			const fa = a.featured ? 1 : 0;
+			const fb = b.featured ? 1 : 0;
+			if (fb !== fa) return fb - fa;
+			return (b.weight || 0) - (a.weight || 0);
+		});
 	}, [activeCategory]);
 
 	return (
