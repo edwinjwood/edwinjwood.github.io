@@ -1,144 +1,82 @@
 [
   {
-    "title": "Engineering Transparency & Delivery Platform (Azure DevOps / Jira Alignment)",
+    "title": "Engineering Transparency & Delivery Platform",
     "categories": ["Operating Model", "Analytics"],
-    "impact": "Taxonomy alignment & delivery visibility",
+    "impact": "Improved portfolio visibility & decision-making",
     "weight": 100,
-    "description": "Established unified engineering taxonomy and delivery visibility across Azure DevOps & Jira—improved traceability from portfolio themes to work items and informed investment decisions.",
-    "tech": ["Azure DevOps", "Jira", "KPI Dashboards", "CI/CD", "Automation"]
+    "description": "Unified Jira and Azure DevOps taxonomies to improve traceability from portfolio themes to work items. Delivered KPI dashboards that guided investment decisions and improved delivery transparency.",
+    "tech": ["Azure DevOps", "Jira", "KPI Dashboards", "CI/CD"]
   },
   {
-    "title": "Lead to Logo Revenue Process Orchestration",
-    "categories": ["Operating Model", "Automation"],
-    "impact": "Lifecycle standardization & conversion insight",
+    "title": "CRM & Revenue Lifecycle Modernization",
+    "categories": ["Operating Model", "Automation", "Integration"],
+    "impact": "Standardized lifecycle & improved conversion visibility",
     "weight": 95,
-    "description": "Standardized end‑to‑end Lead → Opportunity → Quote lifecycle in Dynamics—embedded staged business logic, clarified marketing→sales handoffs, and surfaced pipeline conversion insights via dashboards.",
-    "tech": ["Microsoft Dynamics", "Power BI", "Business Rules", "Workflows", "C#", ".NET", "REST APIs"]
+    "description": "Consolidated Salesforce, Dynamics, and ServiceNow post-M&A into a unified CRM and sales platform. Standardized end-to-end Lead → Opportunity → Quote workflows, added deal guardrails, and surfaced pipeline insights with dashboards.",
+    "tech": ["Dynamics 365", "Salesforce", "ServiceNow", "MuleSoft", "REST APIs", "Power BI"]
   },
   {
-    "title": "Sales Platform Integration (Post-M&A) into ServiceNow SOM",
-    "categories": ["M&A Integration", "Operating Model", "Integration"],
-    "impact": "Post‑M&A sales platform unification",
-    "weight": 92,
-    "description": "Unified three disparate sales systems post‑M&A into single SOM platform—migrated logic, data models, and processes to standardize quoting, order capture, and lifecycle governance.",
-    "tech": ["ServiceNow SOM", "Microsoft Dynamics", "Data Migration", "Process Mapping", "Integration", "MuleSoft", "Governance"]
-  },
-  {
-    "title": "Workflow Engine & Deal Economics in Microsoft Dynamics",
-    "categories": ["Automation", "Operating Model"],
-    "impact": "Approval digitization & economic guardrails",
-    "weight": 88,
-    "description": "Digitized manual deal approvals—central workflow engine with embedded economics guardrails reduced policy drift and approval cycle time.",
-    "tech": ["C#", ".NET", "Microsoft Dynamics SDK"]
-  },
-  {
-    "title": "Contract Creation & Document Warehouse Integration",
-    "categories": ["Automation", "Integration"],
-    "impact": "Contract generation speed & accuracy",
-    "weight": 86,
-    "description": "Delivered template‑driven contract platform enabling faster, error‑reduced generation—automated assembly, SharePoint storage, and Dynamics linkage for lifecycle access.",
-    "tech": ["Microsoft Dynamics", "SharePoint", "REST APIs", "Word Templates", "C#", ".NET"]
-  },
-  {
-    "title": "E-Signature Integration within Dynamics Workflow",
-    "categories": ["Automation", "Integration"],
-    "impact": "Faster contract execution & tracking",
-    "weight": 84,
-    "description": "Embedded e‑signature orchestration—automated envelope assembly, routing, status tracking, and archival with bidirectional system links accelerating contract execution.",
-    "tech": ["Microsoft Dynamics", "e-Signature APIs", "REST APIs", "Templates", "C#", ".NET", "Webhooks"]
-  },
-  {
-    "title": "Customer Portal (Segra360) – 0-to-1 Launch",
+    "title": "Segra360 – Unified Customer Portal",
     "categories": ["Product", "Integration"],
-    "impact": "Unified customer self‑service",
-    "weight": 83,
-    "description": "Launched self-service portal consolidating billing, ticketing, orders, service status, and usage—secured with MFA/OIDC to improve engagement efficiency and reduce support volume by ~40%.",
-    "tech": ["Liferay", "Java", "MySQL", "OAuth2", "OIDC", "MFA", "SAML", "MuleSoft", "Linux", "Apache"]
+    "impact": "Reduced support volume ~40% through self-service",
+    "weight": 90,
+    "description": "Launched customer portal consolidating billing, orders, service status, and usage data. Secured with OAuth2/OIDC/MFA and integrated analytics to improve engagement efficiency.",
+    "tech": ["Java", "Liferay", "MuleSoft", "MySQL", "OAuth2", "OIDC", "MFA"]
   },
   {
-    "title": "Liferay to ServiceNow Customer Portal Migration",
-    "categories": ["Migration & Modernization", "Product", "Integration"],
-    "impact": "Portal replatform & in‑house agility",
+    "title": "SegraMaps – Data Visualization Platform",
+    "categories": ["Product", "Analytics"],
+    "impact": "Accelerated pre-sales qualification",
+    "weight": 88,
+    "description": "Built geospatial visualization platform enabling faster network qualification, pricing, and targeting decisions. Delivered interactive maps and integrated workflows to improve sales efficiency.",
+    "tech": ["ESRI", "JavaScript", "C#", ".NET", "API Integration"]
+  },
+  {
+    "title": "Cloud & Platform Migrations",
+    "categories": ["Migration & Modernization"],
+    "impact": "Increased scalability, reliability, and agility",
+    "weight": 85,
+    "description": "Led migrations of Dynamics 365 CRM and customer portals to Azure and ServiceNow, modernizing infrastructure, refactoring legacy code, and enabling Power Apps adoption.",
+    "tech": ["Azure", "ServiceNow", "Power Apps", "Functions", "Kubernetes", "CI/CD"]
+  },
+  {
+    "title": "Workflow & Contract Automation",
+    "categories": ["Automation"],
+    "impact": "Digitized approvals & contract execution",
     "weight": 82,
-    "description": "Replatformed legacy portal to ServiceNow—eliminated external vendor dependency and enabled iterative in‑house UX & capability evolution.",
-    "tech": ["Java", "JavaScript", "MuleSoft", "ServiceNow Integrations"]
+    "description": "Delivered workflow engines with economic guardrails, automated contract creation, and integrated e-signature to reduce cycle time and improve compliance.",
+    "tech": ["Dynamics 365", "C#", ".NET", "REST APIs", "SharePoint", "e-Signature APIs"]
   },
   {
-    "title": "Microsoft Dynamics On-Premises to Cloud Migration",
-    "categories": ["Migration & Modernization", "Operating Model"],
-    "impact": "Modernized scalable CRM platform",
-    "weight": 81,
-    "description": "Modernized Dynamics footprint—migrated to Azure for scalability/security, refactored legacy code, integrated serverless services, and enabled Power Apps adoption.",
-    "tech": ["Azure", "Power Apps", "Functions", "Service Bus", "C#", ".NET", "KingswaySoft", "Azure AD"]
-  },
-  {
-    "title": "Salesforce to Microsoft Dynamics Migration",
-    "categories": ["M&A Integration", "Migration & Modernization", "Operating Model", "Integration"],
-    "impact": "Post‑M&A CRM consolidation",
+    "title": "Location Validation & Data Quality Services",
+    "categories": ["Integration", "Analytics"],
+    "impact": "Improved address quality & eliminated duplicates",
     "weight": 80,
-    "description": "Consolidated CRM platforms post‑M&A—translated divergent processes, migrated active pipeline data, and unified commercial operating cadence with structured change management.",
-    "tech": ["Tibco Scribe", "C#", ".NET", "Microsoft Dynamics SDK"]
+    "description": "Built data services integrating Dynamics, ESRI, and MuleSoft to validate addresses, prevent duplication, and enable accurate network site modeling.",
+    "tech": ["Dynamics 365", "ESRI", "MuleSoft", "REST APIs"]
   },
   {
-    "title": "SegraMaps – Data Visualization Platform (0-to-1)",
-    "categories": ["Product", "Analytics", "Integration"],
-    "impact": "Faster pre‑sales qualification",
+    "title": "Business Proposal Platform",
+    "categories": ["Product", "Automation"],
+    "impact": "Faster proposal generation & consistency",
     "weight": 78,
-    "description": "Delivered geospatial network visualization platform—accelerated pre‑sales qualification and improved pricing & targeting decisions via integrated workflows.",
-    "tech": ["ESRI", "JavaScript", "C#", ".NET", "KMZ", "Microsoft Dynamics SDK"]
+    "description": "Created branded, automated proposal generation application that reduced manual coordination and accelerated sales cycles.",
+    "tech": ["C#", ".NET", "JavaScript", "HTML/CSS"]
   },
   {
-    "title": "Location Validation & Address Standardization Platform",
-    "categories": ["Integration", "Automation"],
-    "impact": "Address quality & deduplication",
-    "weight": 77,
-    "description": "Delivered location validation service integrating Dynamics, ESRI, and later MuleSoft/ServiceNow—improved address quality, eliminated duplicates, and enabled non-USPS site models.",
-    "tech": ["Microsoft Dynamics", "ESRI", "ServiceNow", "MuleSoft", "API Gateway", "C#", ".NET", "REST APIs"]
-  },
-  {
-    "title": "Business Proposal Application (0-to-1)",
-    "categories": ["Product", "Automation"],
-    "impact": "Proposal generation speed & consistency",
-    "weight": 75,
-    "description": "Streamlined proposal generation—automated branded document assembly reducing manual marketing–sales coordination effort.",
-    "tech": ["C#", ".NET", "JavaScript", "HTML", "CSS"]
-  },
-  {
-    "title": "HubSpot to ServiceNow Integration via MuleSoft",
-    "categories": ["Integration", "Automation"],
-    "impact": "Lifecycle continuity & reduced manual entry",
-    "weight": 74,
-    "description": "Delivered integration of marketing and sales objects with resilient error handling—improved lifecycle continuity and reduced manual data entry.",
-    "tech": ["REST APIs", "JSON", "OAuth2", "MuleSoft", "ServiceNow Integrations"]
-  },
-  {
-    "title": "Additional Strategic Initiatives",
-    "categories": ["Leadership", "Strategy"],
-    "impact": "Broader transformation leadership",
+    "title": "Interactive Resume / Portfolio Site",
+    "categories": ["Product"],
+    "impact": "Improved recruiter engagement & discoverability",
     "weight": 76,
-    "description": "Led platform rationalization, vendor portfolio optimization, KPI framework design, and enterprise operating model shifts aligning technology delivery with business priorities. Managed multi-year roadmaps, multimillion-dollar budgets, and global Agile teams with cross-functional alignment across technology domains.",
-    "tech": []
+    "description": "Built React/Vite portfolio site with SEO metadata, dark mode, filtered views, and print-optimized layout. Deployed on GitHub Pages with automated CI/CD.",
+    "tech": ["React", "Vite", "Tailwind CSS", "GitHub Pages", "CI/CD"]
   },
   {
-    "title": "Interactive Resume / Portfolio Site (This Site)",
-    "categories": ["Product", "Automation"],
-    "impact": "Fast-loading & shareable executive profile",
-    "weight": 73,
-    "description": "Built lightweight React/Vite portfolio with dark mode, hash-based deep linking for filtered project views, print-optimized layout, structured metadata for SEO/social cards, and streamlined GitHub Pages CI/CD deployment—improving discoverability and recruiter shareability.",
-    "tech": ["React", "Vite", "Tailwind CSS", "HashRouter", "GitHub Pages", "CI/CD", "SEO", "Accessibility"]
-  },
-  { "title": "Portfolio Builder — Payments, Webhooks & Data Platform (SaaS prototype)", 
-    "categories": ["Product", "Full-Stack", "Payments", "Reliability", "Testing"], 
-    "impact": "Makes building and publishing modern digital portfolios fast and accessible", 
-    "weight": 101, 
-    "description": "Enables creators and professionals to quickly build, customize, and publish modern digital portfolios using responsive templates, deep‑linking, SEO metadata, and simple monetization flows — lowering the barrier to shareable, recruiter‑friendly work samples. Implemented as a production‑grade prototype with hardened backend features (centralized payment provider, reliable webhook persistence, DB env handling, dual captcha support) and automated smoke tests to keep CI/local testing and deployments reliable.",
-    "tech": ["React", "Vite", "Tailwind CSS", "Node.js", "Express", "PostgreSQL", "Stripe", "hCaptcha", "reCAPTCHA", "Jest", "Supertest", "GitHub Actions", "Railway", "Docker", "dotenv"] },
-  {
-    "title": "LAYR Concept / Holding Pattern Site",
-    "categories": ["Product", "Strategy", "Operating Model"],
-    "impact": "Brand narrative scaffold & platform runway",
-    "weight": 72,
-    "description": "Maintained lightweight static 'holding pattern' site (HTML/CSS/vanilla JS) to iterate branding, messaging, and positioning rapidly while future platform scope (engineering transparency, delivery alignment, telemetry) and integration contracts (Azure DevOps / Jira) mature—establishing narrative + taxonomy runway for eventual data & metrics layers.",
-    "tech": ["HTML5", "CSS3", "JavaScript", "Semantic Markup", "Responsive Design"]
+    "title": "Portfolio Builder SaaS Prototype",
+    "categories": ["Product", "Full-Stack", "Innovation"],
+    "impact": "Lowered barriers to building shareable portfolios",
+    "weight": 101,
+    "description": "Developed SaaS prototype with monetization, webhook persistence, and automated testing. Enabled rapid creation of recruiter-friendly portfolios with Stripe integration and reliability built into CI/CD pipelines.",
+    "tech": ["React", "Vite", "Node.js", "PostgreSQL", "Stripe", "Railway", "Docker", "Jest"]
   }
 ]
