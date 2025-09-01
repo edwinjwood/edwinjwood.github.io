@@ -39,6 +39,7 @@ export default function Resume() {
           <section className="mb-8">
             <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-2">Professional Summary</h3>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-sm sm:text-base">{r.summary}</p>
+            {/* Technical skills are rendered as a competency in coreCompetencies */}
           </section>
         )}
 

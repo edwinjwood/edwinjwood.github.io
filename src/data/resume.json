@@ -7,23 +7,27 @@
     "email": "edwinjwood@gmail.com",
     "linkedin": "https://linkedin.com/in/edwin-j-wood"
   },
-  "summary": "Strategic technology and product innovation leader, with over 13+ years of experience, who partners with business to translate data and platforms into audience-driving digital products. I define multi-year visions and roadmaps, align cross-functional teams, and prioritize measurable outcomes (KPIs, experiments, reliability) while enabling engineering excellence through modern cloud-native delivery and observability.",
+  "summary": "Strategic technology and product innovation leader with 13+ years' experience translating data and platforms into audience-driving digital products. Defines multi-year roadmaps, aligns cross-functional teams, and drives measurable outcomes (KPIs, experiments, reliability) while enabling engineering excellence through cloud-native delivery and observability.",
   "coreCompetencies": [
     {
       "heading": "Leadership & Strategy",
-      "text": "Digital Product Innovation • Multi-Year Roadmap Planning • KPI Frameworks • Cross-Functional Stakeholder Alignment • Vendor & Partner Management"
+      "text": "Product-led transformation • Multi-year roadmap architecture • Portfolio & investment governance • KPI design & benefits realization • Executive partnership"
     },
     {
       "heading": "Data Products & Visualization",
-      "text": "React • Node.js • D3.js • Three.js • SQL (Postgres, BigQuery) • API Design & Development • Data Storytelling"
+      "text": "React • D3.js • Three.js • Data storytelling & dashboards • API-driven data platforms • Instrumentation & KPI design"
     },
     {
-      "heading": "Cloud & Delivery",
-      "text": "GCP / AWS • Kubernetes • CI/CD (Jenkins, Azure DevOps, GitHub Actions) • Git/GitHub • Observability & Reliability Engineering"
+      "heading": "Cloud, Platform & Delivery",
+      "text": "Azure / GCP / AWS • Kubernetes • Docker • CI/CD (Jenkins, GitHub Actions, Azure DevOps) • Observability & Reliability Engineering"
     },
     {
-      "heading": "Enterprise Platforms",
-      "text": "Dynamics 365 • ServiceNow • Salesforce • Power Platform (Power BI, Power Apps, Power Automate) • SaaS Consolidation • Identity Modernization (OAuth2, OIDC, MFA)"
+      "heading": "Enterprise Systems & Integration",
+      "text": "Dynamics 365 • ServiceNow • Salesforce • Power Platform (Power BI, Power Apps) • Integration Patterns (MuleSoft) • Identity (OAuth2 / OIDC)"
+    },
+    {
+      "heading": "Languages & Databases",
+      "text": ".NET / C# • Java • C++ • Node.js • SQL • MS SQL Server • Postgres • BigQuery"
     }
   ],
   "experience": [
@@ -34,7 +38,7 @@
       "roles": [
         {
           "title": "Director of Software Development",
-          "period": "2018–2025",
+          "period": "2023–2025",
           "bullets": [
             "Shifted teams to a product-led structure (pods / value streams) improving focus, accountability, and delivery cadence.",
             "Established unified Jira / Azure DevOps taxonomy and dashboards to provide clear portfolio and execution visibility.",
@@ -49,8 +53,8 @@
           ]
         },
         {
-          "title": "Application Development Manager / Technical Lead / Analyst",
-          "period": "2012–2018",
+          "title": "Senior Manager / Manager of Software Development / Technical Lead",
+          "period": "2012–2023",
           "bullets": [
             "Led engineering teams for integrations, platform, and product initiatives that supported revenue and operational improvements.",
             "Designed integration patterns and APIs connecting CRM, portals, and analytics systems to streamline data flow and telemetry."
