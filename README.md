@@ -18,44 +18,42 @@ Visit the printed local URL (default <http://localhost:5173>).
 
 ---
 
-## 🧪 Development Workflow
+## 🧪 Development Workflow (content-first)
 
-1. Stay on dev while editing.
-1. Update resume (`src/Resume.jsx`), projects (`src/Projects.jsx`), and the home business card (`src/App.jsx`).
-1. Add routes in `src/App.jsx` (HashRouter in use).
-1. Commit changes normally.
-1. Deploy using the script (see Deploy section below).
+This site separates content (JSON) from presentation (React components). For most edits you should update the JSON files under `src/data/` rather than editing JSX.
+
+1. Stay on the `dev` branch while working on drafts.
+
+2. Edit content in `src/data/`:
+
+    - `src/data/resume.json` — canonical resume content (summary, competencies, experience, education)
+    - `src/data/projects.json` — project entries (title, categories, weight, description, tech)
+    - `src/data/homecard.json` — home card (title, subtitle, description)
+
+3. Preview changes locally with `npm run dev`.
+
+4. Only edit JSX (`src/components/*.jsx`) for structural or styling changes. Avoid changing copy inside component files.
+
+5. Commit and use `./deploy.ps1` to publish (see Deploy).
+
+Why JSON? It keeps copy as the single source of truth and makes safe edits possible without touching code.
 
 ---
 
 ## 🚀 Deploy
 
-Production is served from the main branch. Run the script from dev.
-
-Deploy:
+Production is served from the `main` branch. Run the script from `dev` to build and publish a production snapshot to `main`.
 
 ```powershell
 ./deploy.ps1
 ```
 
-Skip pulling remotes first:
+Options:
 
 ```powershell
-./deploy.ps1 -SkipPull
+./deploy.ps1 -SkipPull   # skip pulling remote branches first
+./deploy.ps1 -AutoCommit # auto-stage/commit any local changes during deploy
 ```
-
-Auto-stage/commit when prompted (optional):
-
-```powershell
-./deploy.ps1 -AutoCommit
-```
-
-URLs:
-
-- User page: <https://YOUR_USERNAME.github.io/#/>
-- Resume page: <https://YOUR_USERNAME.github.io/#/resume>
-- Projects page: <https://YOUR_USERNAME.github.io/#/projects>
-- Filtered view: <https://YOUR_USERNAME.github.io/#/projects?cat=Automation>
 
 ---
 
@@ -65,67 +63,58 @@ URLs:
 npm run build
 ```
 
-Outputs go to dist/ (ignored by git). The deploy script selectively copies required files.
+Outputs go to `dist/` (ignored by git). The deploy script copies only the built artifacts it needs.
 
-Preview the production build locally (no deploy):
+Preview the production build locally:
 
 ```powershell
 npm run build
 npm run preview
 ```
 
-Then open the printed URL (default <http://localhost:4173/#/projects>) to validate before pushing. You can also check the resume at <http://localhost:4173/#/resume>.
+Open the preview URL and validate pages (for example `#/resume` and `#/projects`).
 
 ---
 
 ## 🌐 Routing Strategy
 
-GitHub Pages can’t serve SPA history routes. HashRouter keeps the path client-side (#/...). If migrating to Netlify or Vercel you can switch to BrowserRouter and add rewrite rules.
+The app uses HashRouter so client-side routes live after `#` (helps GitHub Pages). If you migrate to a host that supports SPA rewrites you can switch to BrowserRouter.
 
 ---
 
-## 🧩 Customization Guide
+## 🧩 Content & Customization Guide
 
-| Area | Where | Notes |
-|------|-------|-------|
-| Resume content | `src/Resume.jsx` | Replace sections / bullet points |
-| Home business card | `src/components/App.jsx` | Edit HomeCard (name, subtitle, layout) |
-| Projects list | `src/components/Projects.jsx` | Edit the projects array or update `src/data/projects.json` |
-| Home card data | `src/data/homecard.json` | Update the JSON file for home card details |
-| Styles / Theme | tailwind.config.js, index.css | Extend colors, fonts, etc. |
-| Favicon | vite.svg | Replace file + link tag |
-| SEO Meta | index.html | Update title + description |
-| Navigation | `src/components/App.jsx` | Add `Link` + `Route` |
-| Deployment msg | deploy.ps1 | Adjust commit message template |
+Edit content via JSON files (preferred). Only adjust JSX for layout or adding new UI features.
 
-Dark mode: add `darkMode: 'class'` to tailwind config, toggle `classList` on the html element.
+| Area | Canonical file | Notes |
+|------|----------------|-------|
+| Resume content | `src/data/resume.json` | Edit summary, coreCompetencies, experience, education — JSON is the canonical source |
+| Projects list | `src/data/projects.json` | Add/edit projects. Use `weight` and `featured` to control ordering. |
+| Home card data | `src/data/homecard.json` | Change title, subtitle, and description (email/link handled automatically) |
+| Components / Layout | `src/components/*.jsx` | Only change for structural or styling updates; avoid copy edits here |
+| Styles / Theme | `tailwind.config.js`, `src/styles/index.css` | Tailwind + custom CSS |
+| SEO Meta | `index.html` | Title, description, Open Graph tags |
+| Deployment | `deploy.ps1` | Build/merge/publish workflow (run from `dev`) |
 
 ---
 
 ## 🔍 Quality & Accessibility
 
-- Single h1 per view
+- Single `h1` per view
 - Sufficient color contrast
-- Keyboard check (Tab through nav)
+- Keyboard navigation (Tab through links)
 - Descriptive link text
 
-Behavior notes
+Behavior notes:
 
-- Export PDF button is shown on the Resume page only (hidden on Home and Projects).
-- The Home card is fully clickable (opens Resume) and includes quick links in the top-right.
-
-
----
-
-## 🔄 Alternative Publication (gh-pages branch)
-
-Prefer not committing build output on main? Publish dist/ to a gh-pages branch via GitHub Action or the gh-pages npm package. (Not used here because a user site root must be built content.)
+- Resume is printable and optimized for PDF export.
+- Home card is clickable and links to the Resume.
 
 ---
 
-## 📜 License
+## 🔄 Alternative Publication
 
-Personal use orientation. Fork and adapt freely for your own resume / portfolio.
+If you prefer not committing built artifacts to `main`, publish `dist/` to a `gh-pages` branch or use a CI workflow to build & publish automatically.
 
 ---
 
