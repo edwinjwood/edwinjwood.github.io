@@ -40,24 +40,23 @@
   "title": "Director of Software Development",
   "period": "2023–2025",
     "bullets": [
-    "Redesigned operating model into product-led pods, improving delivery focus and reducing cycle time across teams.",
-    "Created unified delivery visibility and portfolio KPIs that improved prioritization and reduced time-to-decision for investments.",
-    "Established portfolio lifecycle governance from business case through benefits realization, improving program execution and ROI tracking.",
-    "Consolidated and modernized enterprise platforms to reduce operating cost, improve security posture, and simplify operations.",
-    "Led cloud migrations and platform modernization efforts that increased scalability and reduced incidents related to legacy infrastructure.",
-    "Enhanced release confidence by integrating CI/CD, observability, and automated end-to-end testing into pipelines, reducing regressions in production.",
-    "Partnered with executives and finance to sequence strategic programs, improving cross-functional alignment and on-time delivery."
+    "Redesigned operating model into product-led pods, improving delivery focus and reducing cycle time.",
+    "Created unified delivery visibility and portfolio KPIs to improve prioritization and investment decisions.",
+    "Established portfolio lifecycle governance from business case through benefits realization to improve ROI tracking.",
+    "Consolidated and modernized enterprise platforms and led cloud migrations to reduce operating cost, improve reliability, and simplify operations.",
+    "Integrated CI/CD, observability, and automated end-to-end testing into delivery pipelines to enhance release confidence.",
+    "Partnered with executives and finance to sequence strategic programs and improve on-time delivery."
   ]
 },
 {
   "title": "Senior Manager | Manager of Software Development | Technical Lead",
   "period": "2012–2023",
-  "bullets": [
-    "Built and led engineering teams that delivered customer-facing products and platform integrations, contributing to measurable improvements in revenue and operational efficiency.",
-    "Implemented integration patterns and APIs to standardize data flow and enable reliable enterprise reporting.",
-    "Delivered portals and visualization tools that improved self-service adoption (reducing support volume) and supported commercial decision-making.",
-    "Partnered with analytics to operationalize insights through dashboards and product features, improving stakeholder adoption of data-driven decisions.",
-    "Executed system migrations and integrations to align processes after organizational changes, shortening transition timelines and minimizing disruption."
+    "bullets": [
+    "Built and led engineering teams delivering customer-facing products and platform integrations that improved revenue and efficiency.",
+    "Implemented integration patterns and APIs to standardize data flow and enable reliable reporting.",
+    "Delivered portals and visualization tools to increase self-service adoption and support commercial decisions.",
+    "Partnered with analytics to operationalize insights through dashboards and product features.",
+    "Executed system migrations and integrations post-reorg to align processes and minimize disruption."
   ]
 }
       ]

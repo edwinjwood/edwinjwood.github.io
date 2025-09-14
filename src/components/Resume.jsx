@@ -38,7 +38,7 @@ export default function Resume() {
         {r.summary && (
           <section className="mb-8">
             <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-2">Professional Summary</h3>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed text-sm sm:text-base">{r.summary}</p>
+            <p className="resume-summary text-gray-700 dark:text-gray-300 leading-relaxed text-sm sm:text-base">{r.summary}</p>
             {/* Technical skills are rendered as a competency in coreCompetencies */}
           </section>
         )}
@@ -47,12 +47,12 @@ export default function Resume() {
         {Array.isArray(r.coreCompetencies) && (
           <section className="mb-8">
             <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-3">Core Leadership & Technical Competencies</h3>
-            <div className="space-y-4 text-sm text-gray-700 dark:text-gray-300">
+            <div className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
               {r.coreCompetencies.map((c, i) => (
-                <div key={i}>
-                  <p className="font-semibold text-gray-800 dark:text-gray-200 mb-1">{c.heading}</p>
-                  <p>{c.text}</p>
-                </div>
+                <p key={i} className="mb-1 text-sm">
+                  <span className="font-semibold text-gray-800 dark:text-gray-200">{c.heading}:</span>{' '}
+                  <span className="text-gray-700 dark:text-gray-300">{c.text}</span>
+                </p>
               ))}
             </div>
           </section>
