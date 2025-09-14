@@ -15,19 +15,19 @@
     },
     {
       "heading": "Data Products & Visualization",
-      "text": "React • D3.js • Three.js • Interactive dashboards • Data storytelling • API-driven platforms"
+      "text": "Modern web frameworks • Interactive dashboards • Data storytelling • API-driven platforms"
     },
     {
       "heading": "Cloud & Delivery Engineering",
-      "text": "Azure • AWS • GCP • Kubernetes • CI/CD (GitHub Actions, Azure DevOps) • Reliability & observability practices"
+      "text": "Cloud platforms • Container orchestration • CI/CD pipelines • Reliability & observability"
     },
     {
       "heading": "Enterprise Systems & Integration",
-      "text": "Dynamics 365 • ServiceNow • Salesforce • Power Platform (Power BI, Power Apps) • Integration (MuleSoft, REST APIs) • Identity & Access (OAuth2, OIDC, MFA)"
+      "text": "CRM & enterprise platforms • Integration patterns • Workflow automation • Identity & access"
     },
     {
       "heading": "Programming & Databases",
-      "text": "JavaScript/Node.js • C#/.NET • SQL • PostgreSQL • MS SQL Server • BigQuery"
+      "text": "Full-stack development • Object-oriented languages (C#, Java, Python) • Relational & NoSQL databases • SQL"
     }
   ],
   "experience": [
@@ -39,26 +39,25 @@
         {
   "title": "Director of Software Development",
   "period": "2023–2025",
-  "bullets": [
-    "Redesigned operating model into product-led pods, improving delivery focus, accountability, and cadence.",
-    "Unified Jira and Azure DevOps into a single taxonomy and dashboard framework, providing clear portfolio visibility and KPIs.",
-    "Established portfolio lifecycle management from business case to benefits review, enabling data-driven investment decisions.",
-    "Consolidated redundant platforms (CRM, portals) into ServiceNow to reduce cost and accelerate modernization.",
-    "Directed CRM consolidation, cloud migration, and portal modernization, improving scalability, security, and customer experience.",
-    "Advanced CI/CD and observability practices, increasing release confidence and platform reliability.",
-    "Partnered with executives and finance to sequence multi-year strategic initiatives and integration efforts."
+    "bullets": [
+    "Redesigned operating model into product-led pods, improving delivery focus and reducing cycle time across teams.",
+    "Created unified delivery visibility and portfolio KPIs that improved prioritization and reduced time-to-decision for investments.",
+    "Established portfolio lifecycle governance from business case through benefits realization, improving program execution and ROI tracking.",
+    "Consolidated and modernized enterprise platforms to reduce operating cost, improve security posture, and simplify operations.",
+    "Led cloud migrations and platform modernization efforts that increased scalability and reduced incidents related to legacy infrastructure.",
+    "Enhanced release confidence by integrating CI/CD, observability, and automated end-to-end testing into pipelines, reducing regressions in production.",
+    "Partnered with executives and finance to sequence strategic programs, improving cross-functional alignment and on-time delivery."
   ]
 },
 {
   "title": "Senior Manager | Manager of Software Development | Technical Lead",
   "period": "2012–2023",
   "bullets": [
-    "Built and led engineering teams delivering integrations, platform modernization, and customer-facing products that improved revenue growth and operational efficiency.",
-    "Established API and integration frameworks across CRM, portals, and analytics systems to standardize data flow and reporting.",
-    "Launched Segra360, a 0-to-1 customer portal integrating OSS/BSS systems (billing, orders, ticketing, and service status) — improved self-service engagement and reduced support volume by ~40%.",
-    "Created SegraMaps, a 0-to-1 geospatial data visualization platform integrated with CRM — enabled pre-sales teams to visualize network reach, accelerate deal qualification, and improve pricing and targeting accuracy.",
-    "Partnered with analytics teams to translate predictive models into interactive dashboards and visualization tools for sales and operations.",
-    "Directed Salesforce-to-Dynamics 365 migration post-M&A, aligning commercial processes and migrating pipeline data to unify sales operations."
+    "Built and led engineering teams that delivered customer-facing products and platform integrations, contributing to measurable improvements in revenue and operational efficiency.",
+    "Implemented integration patterns and APIs to standardize data flow and enable reliable enterprise reporting.",
+    "Delivered portals and visualization tools that improved self-service adoption (reducing support volume) and supported commercial decision-making.",
+    "Partnered with analytics to operationalize insights through dashboards and product features, improving stakeholder adoption of data-driven decisions.",
+    "Executed system migrations and integrations to align processes after organizational changes, shortening transition timelines and minimizing disruption."
   ]
 }
       ]
