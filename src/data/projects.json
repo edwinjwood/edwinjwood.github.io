@@ -79,4 +79,13 @@
     "description": "Developed SaaS prototype with monetization, webhook persistence, and automated testing. Enabled rapid creation of recruiter-friendly portfolios with Stripe integration and reliability built into CI/CD pipelines.",
     "tech": ["React", "Vite", "Node.js", "PostgreSQL", "Stripe", "Railway", "Docker", "Jest"]
   }
+  ,
+  {
+    "title": "Automated Testing",
+    "categories": ["Quality Assurance", "Automation"],
+    "impact": "Automated regression validation to catch regressions during feature rollouts",
+    "weight": 79,
+    "description": "Implemented an automated Selenium-based end-to-end test suite to validate application features. Tests were provisioned and executed in Azure DevOps pipelines as part of the regression suite to validate new feature releases and prevent regressions.",
+    "tech": ["Selenium", "Azure DevOps", "CI/CD", "Automated Regression Testing"]
+  }
 ]
