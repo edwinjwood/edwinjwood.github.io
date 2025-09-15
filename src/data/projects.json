@@ -2,90 +2,89 @@
   {
     "title": "Engineering Transparency & Delivery Platform",
     "categories": ["Operating Model", "Analytics"],
-    "impact": "Improved portfolio visibility & decision-making",
+    "impact": "Improved visibility and portfolio decision-making",
     "weight": 100,
-    "description": "Unified Jira and Azure DevOps taxonomies to improve traceability from portfolio themes to work items. Delivered KPI dashboards that guided investment decisions and improved delivery transparency.",
+    "description": "Standardized Jira and Azure DevOps taxonomies to unify reporting across teams. Delivered KPI dashboards with throughput, velocity, and SLA metrics, enabling traceability from strategic themes to work items.",
     "tech": ["Azure DevOps", "Jira", "KPI Dashboards", "CI/CD"]
   },
   {
     "title": "CRM & Revenue Lifecycle Modernization",
-    "categories": ["Operating Model", "Automation", "Integration"],
-    "impact": "Standardized lifecycle & improved conversion visibility",
+    "categories": ["Operating Model", "Integration", "Automation"],
+    "impact": "Standardized revenue processes and improved conversion insights",
     "weight": 95,
-    "description": "Consolidated Salesforce, Dynamics, and ServiceNow post-M&A into a unified CRM and sales platform. Standardized end-to-end Lead → Opportunity → Quote workflows, added deal guardrails, and surfaced pipeline insights with dashboards.",
+    "description": "Unified Salesforce, Dynamics, and ServiceNow into a single CRM and sales platform post-M&A. Automated Lead → Opportunity → Quote workflows with embedded guardrails and surfaced pipeline performance through dashboards.",
     "tech": ["Dynamics 365", "Salesforce", "ServiceNow", "MuleSoft", "REST APIs", "Power BI"]
   },
   {
     "title": "Segra360 – Unified Customer Portal",
     "categories": ["Product", "Integration"],
-    "impact": "Reduced support volume ~40% through self-service",
+    "impact": "Reduced customer support volume by 40% through self-service",
     "weight": 90,
-    "description": "Launched customer portal consolidating billing, orders, service status, and usage data. Secured with OAuth2/OIDC/MFA and integrated analytics to improve engagement efficiency.",
+    "description": "Directed the 0-to-1 launch of Segra360, a secure self-service portal integrating billing, orders, service status, and usage. Implemented OAuth2, OIDC, and MFA while embedding analytics to improve engagement and product roadmap insights.",
     "tech": ["Java", "Liferay", "MuleSoft", "MySQL", "OAuth2", "OIDC", "MFA"]
   },
   {
     "title": "SegraMaps – Data Visualization Platform",
     "categories": ["Product", "Analytics"],
-    "impact": "Accelerated pre-sales qualification",
+    "impact": "Accelerated pre-sales qualification and targeting",
     "weight": 88,
-    "description": "Built geospatial visualization platform enabling faster network qualification, pricing, and targeting decisions. Delivered interactive maps and integrated workflows to improve sales efficiency.",
+    "description": "Developed SegraMaps, a geospatial visualization system integrated with CRM. Enabled faster network qualification and pricing decisions through interactive maps and workflow integration.",
     "tech": ["ESRI", "JavaScript", "C#", ".NET", "API Integration"]
   },
   {
     "title": "Cloud & Platform Migrations",
     "categories": ["Migration & Modernization"],
-    "impact": "Increased scalability, reliability, and agility",
+    "impact": "Improved scalability, security, and agility of enterprise systems",
     "weight": 85,
-    "description": "Led migrations of Dynamics 365 CRM and customer portals to Azure and ServiceNow, modernizing infrastructure, refactoring legacy code, and enabling Power Apps adoption.",
+    "description": "Led modernization programs including Dynamics 365 CRM migration to Azure and portal replatforming to ServiceNow. Refactored legacy code, integrated serverless services, and enabled Power Apps adoption.",
     "tech": ["Azure", "ServiceNow", "Power Apps", "Functions", "Kubernetes", "CI/CD"]
   },
   {
     "title": "Workflow & Contract Automation",
     "categories": ["Automation"],
-    "impact": "Digitized approvals & contract execution",
+    "impact": "Reduced approval and contract cycle times",
     "weight": 82,
-    "description": "Delivered workflow engines with economic guardrails, automated contract creation, and integrated e-signature to reduce cycle time and improve compliance.",
+    "description": "Implemented workflow engines with embedded economics guardrails, automated contract generation, and integrated e-signature. Reduced policy drift and accelerated execution while improving compliance.",
     "tech": ["Dynamics 365", "C#", ".NET", "REST APIs", "SharePoint", "e-Signature APIs"]
   },
   {
     "title": "Location Validation & Data Quality Services",
     "categories": ["Integration", "Analytics"],
-    "impact": "Improved address quality & eliminated duplicates",
+    "impact": "Enhanced data quality and eliminated duplicates",
     "weight": 80,
-    "description": "Built data services integrating Dynamics, ESRI, and MuleSoft to validate addresses, prevent duplication, and enable accurate network site modeling.",
+    "description": "Built validation services integrating Dynamics, ESRI, and MuleSoft to improve address accuracy, prevent duplication, and enable accurate network site modeling.",
     "tech": ["Dynamics 365", "ESRI", "MuleSoft", "REST APIs"]
   },
   {
     "title": "Business Proposal Platform",
     "categories": ["Product", "Automation"],
-    "impact": "Faster proposal generation & consistency",
+    "impact": "Accelerated proposal generation and improved consistency",
     "weight": 78,
-    "description": "Created branded, automated proposal generation application that reduced manual coordination and accelerated sales cycles.",
+    "description": "Created a branded proposal generation system with automated document assembly. Reduced manual coordination between marketing and sales and improved turnaround speed.",
     "tech": ["C#", ".NET", "JavaScript", "HTML/CSS"]
   },
   {
     "title": "Interactive Resume / Portfolio Site",
     "categories": ["Product"],
-    "impact": "Improved recruiter engagement & discoverability",
+    "impact": "Improved recruiter engagement and discoverability",
     "weight": 76,
-    "description": "Built React/Vite portfolio site with SEO metadata, dark mode, filtered views, and print-optimized layout. Deployed on GitHub Pages with automated CI/CD.",
+    "description": "Built a personal portfolio site with React/Vite, featuring SEO metadata, dark mode, filtered project views, and a print-optimized layout. Deployed via GitHub Pages with automated CI/CD pipelines.",
     "tech": ["React", "Vite", "Tailwind CSS", "GitHub Pages", "CI/CD"]
   },
   {
     "title": "Portfolio Builder SaaS Prototype",
     "categories": ["Product", "Full-Stack", "Innovation"],
-    "impact": "Lowered barriers to building shareable portfolios",
+    "impact": "Enabled rapid creation of professional digital portfolios",
     "weight": 101,
-    "description": "Developed SaaS prototype with monetization, webhook persistence, and automated testing. Enabled rapid creation of recruiter-friendly portfolios with Stripe integration and reliability built into CI/CD pipelines.",
+    "description": "Developed a SaaS prototype that simplifies building shareable portfolios with Stripe-based monetization, webhook persistence, and automated testing. Delivered production-grade reliability through CI/CD and containerized deployment.",
     "tech": ["React", "Vite", "Node.js", "PostgreSQL", "Stripe", "Railway", "Docker", "Jest"]
-  }
-  ,
+  },
   {
-    "title": "Automated Testing",
+    "title": "Automated Testing Framework",
     "categories": ["Quality Assurance", "Automation"],
-    "impact": "Automated regression validation to catch regressions during feature rollouts",
+    "impact": "Improved reliability of feature rollouts through regression testing",
     "weight": 79,
-    "description": "Implemented an automated Selenium-based end-to-end test suite to validate application features. Tests were provisioned and executed in Azure DevOps pipelines as part of the regression suite to validate new feature releases and prevent regressions.",
-    "tech": ["Selenium", "Azure DevOps", "CI/CD", "Automated Regression Testing"]
+    "description": "Implemented a Selenium-based end-to-end regression test suite. Integrated tests into Azure DevOps pipelines to validate new features and prevent regressions during releases.",
+    "tech": ["Selenium", "Azure DevOps", "CI/CD", "Automated Testing"]
   }
 ]

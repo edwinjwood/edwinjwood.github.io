@@ -7,7 +7,7 @@
     "email": "edwinjwood@gmail.com",
     "linkedin": "https://linkedin.com/in/edwin-j-wood"
   },
-  "summary": "Technology and product leader with 13+ years of experience driving digital innovation, data visualization, and enterprise transformation. Skilled at defining multi-year roadmaps, building high-performing teams, and turning complex data into accessible, audience-focused digital products. Hands-on full-stack experience across cloud platforms and enterprise systems, while recognized for creating clarity, measurable outcomes, and lasting impact.",
+  "summary": "Technology and product leader with 13+ years of experience delivering digital innovation, enterprise transformation, and data visualization products. Skilled at defining multi-year roadmaps, leading high-performing teams, and turning complex data into accessible, audience-focused solutions with measurable business outcomes.",
   "coreCompetencies": [
     {
       "heading": "Leadership & Strategy",
@@ -15,19 +15,15 @@
     },
     {
       "heading": "Data Products & Visualization",
-      "text": "Modern web frameworks • Interactive dashboards • Data storytelling • API-driven platforms"
+      "text": "Interactive dashboards • Data storytelling • Modern web frameworks • API-driven platforms"
     },
     {
       "heading": "Cloud & Delivery Engineering",
-      "text": "Cloud platforms • Container orchestration • CI/CD pipelines • Reliability & observability"
+      "text": "Cloud platforms (Azure, AWS) • Container orchestration • CI/CD pipelines • Reliability & observability"
     },
     {
       "heading": "Enterprise Systems & Integration",
-      "text": "CRM & enterprise platforms • Integration patterns • Workflow automation • Identity & access"
-    },
-    {
-      "heading": "Programming & Databases",
-      "text": "Full-stack development • Object-oriented languages (C#, Java, Python) • Relational & NoSQL databases • SQL"
+      "text": "CRM & enterprise platforms • Integration patterns • Workflow automation • Identity & access management"
     }
   ],
   "experience": [
@@ -37,28 +33,27 @@
       "period": "2012–2025",
       "roles": [
         {
-  "title": "Director of Software Development",
-  "period": "2023–2025",
-    "bullets": [
-    "Redesigned operating model into product-led pods, improving delivery focus and reducing cycle time.",
-    "Created unified delivery visibility and portfolio KPIs to improve prioritization and investment decisions.",
-    "Established portfolio lifecycle governance from business case through benefits realization to improve ROI tracking.",
-    "Consolidated and modernized enterprise platforms and led cloud migrations to reduce operating cost, improve reliability, and simplify operations.",
-    "Integrated CI/CD, observability, and automated end-to-end testing into delivery pipelines to enhance release confidence.",
-    "Partnered with executives and finance to sequence strategic programs and improve on-time delivery."
-  ]
-},
-{
-  "title": "Senior Manager | Manager of Software Development | Technical Lead",
-  "period": "2012–2023",
-    "bullets": [
-    "Built and led engineering teams delivering customer-facing products and platform integrations that improved revenue and efficiency.",
-    "Implemented integration patterns and APIs to standardize data flow and enable reliable reporting.",
-    "Delivered portals and visualization tools to increase self-service adoption and support commercial decisions.",
-    "Partnered with analytics to operationalize insights through dashboards and product features.",
-    "Executed system migrations and integrations post-reorg to align processes and minimize disruption."
-  ]
-}
+          "title": "Director of Software Development",
+          "period": "2023–2025",
+          "bullets": [
+            "Redesigned operating model into product-led pods, improving delivery focus and reducing cycle time.",
+            "Established portfolio governance from business case through benefits realization, enabling KPI-driven prioritization and ROI tracking.",
+            "Consolidated and modernized enterprise platforms, including CRM and customer portals, reducing cost while accelerating modernization.",
+            "Directed cloud migrations and advanced CI/CD, observability, and automated testing practices to improve release safety and reliability.",
+            "Partnered with executives and finance to sequence strategic programs, ensuring alignment of multi-year roadmaps with business goals."
+          ]
+        },
+        {
+          "title": "Senior Manager | Manager of Software Development | Technical Lead",
+          "period": "2012–2023",
+          "bullets": [
+            "Built and led engineering teams delivering customer-facing products and platform integrations that supported revenue growth and efficiency.",
+            "Launched Segra360, a 0-to-1 customer portal integrating OSS/BSS systems for billing, orders, service status, and analytics.",
+            "Developed SegraMaps, a geospatial data visualization platform integrated with CRM to accelerate pre-sales targeting and qualification.",
+            "Implemented API and integration patterns across CRM, portals, and analytics systems to standardize data flow and reporting.",
+            "Executed CRM and portal migrations post-M&A, unifying platforms while minimizing business disruption."
+          ]
+        }
       ]
     }
   ],

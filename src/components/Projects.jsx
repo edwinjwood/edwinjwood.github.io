@@ -7,10 +7,13 @@ export default function Projects() {
 		"Operating Model",
 		"M&A Integration",
 		"Product",
+		"Full-Stack",
 		"Automation",
 		"Integration",
 		"Migration & Modernization",
 		"Analytics",
+		"Quality Assurance",
+		"Innovation",
 		"Leadership",
 		"Strategy",
 	];
@@ -86,7 +89,7 @@ export default function Projects() {
 			<div className="max-w-3xl mx-auto py-12 px-4">
 				<h1 className="text-3xl font-bold mb-6 text-gray-800 dark:text-gray-100">Major Projects</h1>
 				<p className="mb-8 text-gray-700 dark:text-gray-300 text-sm sm:text-base leading-relaxed">
-					In addition to the projects below, I’ve led and collaborated across teams on enterprise initiatives—from product‑led operating model shifts and post‑M&A platform consolidation to KPI transparency, vendor rationalization, and modernization. These selections reflect breadth across operating model, product delivery, migration, and integration domains.
+					Beyond the projects highlighted below, I have directed enterprise-wide initiatives that redefined operating models, unified platforms post-M&A, and established KPI frameworks that created visibility and accountability at the executive level. I have overseen vendor rationalization and modernization programs that unlocked capacity, reduced costs, and improved scalability—while also staying close enough to the work to roll up my sleeves and solve technical challenges when the situation required. These selections demonstrate both strategic leadership and the ability to drive product delivery, migration, and integration at scale.
 				</p>
 	{/* Category Filter */}
 				<div className="mb-8">
