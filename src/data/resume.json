@@ -11,22 +11,38 @@
   "coreCompetencies": [
     {
       "heading": "Leadership & Strategy",
-      "text": "Digital product innovation • Multi-year roadmap planning • Portfolio governance • KPI frameworks • Executive alignment"
+      "text": "Product innovation, multi-year roadmap planning, portfolio governance, KPI frameworks, executive and stakeholder alignment"
     },
     {
       "heading": "Data Products & Visualization",
-      "text": "Interactive dashboards • Data storytelling • Modern web frameworks • API-driven platforms"
+      "text": "Data modeling, analytics-ready datasets, dashboard development, data storytelling, web application frameworks, API design"
     },
     {
-      "heading": "Cloud & Delivery Engineering",
-      "text": "Cloud platforms (Azure, AWS) • Container orchestration • CI/CD pipelines • Reliability & observability"
+      "heading": "Cloud & Data Engineering",
+      "text": "Snowflake, Azure, AWS, SQL Server, S3 data ingestion, pipeline automation, workflow orchestration (dbt, Dagster), CI/CD, containerization, data replication, reverse ETL"
     },
     {
-      "heading": "Enterprise Systems & Integration",
-      "text": "CRM & enterprise platforms • Integration patterns • Workflow automation • Identity & access management"
+      "heading": "Systems Integration & Applications",
+      "text": "CRM systems (Salesforce, Dynamics 365), enterprise application integration, workflow automation, identity and access management, API integration, post-M&A platform migration"
     }
   ],
   "experience": [
+    {
+      "company": "Atlanta Braves",
+      "location": "Atlanta, GA",
+      "period": "2025–Present",
+      "roles": [
+        {
+          "title": "Senior Data Engineer",
+          "period": "Oct 2025–Present",
+          "bullets": [
+            "Build and maintain robust data pipelines to migrate enterprise data from SQL Server to Snowflake, orchestrating end-to-end workflows using dbt and Dagster.",
+            "Automate ingestion and transformation of S3 files into Snowflake, modeling data through staging and fact tables, and enabling analytics-ready datasets.",
+            "Support data replication workflows using Sling to synchronize curated Snowflake data back to SQL Server, ensuring downstream applications have access to the latest datasets."
+          ]
+        }
+      ]
+    },
     {
       "company": "Segra (formerly Spirit Communications & Lumos)",
       "location": "Columbia, SC",

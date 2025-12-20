@@ -46,7 +46,7 @@ export default function Resume() {
         {/* Core Competencies & Leadership Skills */}
         {Array.isArray(r.coreCompetencies) && (
           <section className="mb-8">
-            <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-3">Core Leadership & Technical Competencies</h3>
+            <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-3">Skills</h3>
             <div className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
               {r.coreCompetencies.map((c, i) => (
                 <p key={i} className="mb-1 text-sm">
