@@ -36,7 +36,7 @@
   .mb-8, .mb-6, .mb-4, .mb-3, .mb-2, .mb-1 { margin-bottom: 0 !important; }
 
   /* Avoid breaking inside small sections like Education */
-  section, #content > div, main h3 { break-inside: avoid !important; page-break-inside: avoid !important; }
+  #content > div, main h3 { break-inside: avoid !important; page-break-inside: avoid !important; }
   /* Prefer to keep the final section (Education) together */
   section:last-of-type { break-inside: avoid !important; page-break-after: avoid !important; }
 
