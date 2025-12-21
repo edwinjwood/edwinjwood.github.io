@@ -43,12 +43,12 @@ export default function Resume() {
           </section>
         )}
 
-        {/* Core Competencies & Leadership Skills */}
-        {Array.isArray(r.coreCompetencies) && (
+        {/* Skills Section */}
+        {Array.isArray(r.skills) && (
           <section className="mb-8">
             <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-3">Skills</h3>
             <div className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
-              {r.coreCompetencies.map((c, i) => (
+              {r.skills.map((c, i) => (
                 <p key={i} className="mb-1 text-sm">
                   <span className="font-semibold text-gray-800 dark:text-gray-200">{c.heading}:</span>{' '}
                   <span className="text-gray-700 dark:text-gray-300">{c.text}</span>
