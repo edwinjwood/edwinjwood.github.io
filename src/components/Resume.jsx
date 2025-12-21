@@ -18,7 +18,7 @@ export default function Resume() {
             {contact.email && <span className="hidden sm:inline mx-2">•</span>}
             {contact.website && (
               <>
-                <a href={contact.website} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                <a href={contact.website} className="hover:underline">
                   {(() => {
                     try {
                       const u = new URL(contact.website);
@@ -40,7 +40,7 @@ export default function Resume() {
                 // leave as-is if parsing fails
               }
               return (
-                <a href={contact.linkedin} target="_blank" rel="noopener noreferrer" className="hover:underline">{display}</a>
+                <a href={contact.linkedin} className="hover:underline">{display}</a>
               );
             })()}
           </div>
