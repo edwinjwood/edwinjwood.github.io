@@ -1,7 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from 'react-router-dom';
 import projects from '../data/projects.json';
 
 export default function Projects() {
+	const location = useLocation();
+	useEffect(() => {
+		document.title = 'Edwin J. Wood - Projects';
+		return () => {
+			// Optionally reset title on unmount
+		};
+	}, [location.pathname]);
 	// Category derivation with defined ordering and counts
 	const CATEGORY_ORDER = [
 		"Operating Model",
@@ -87,7 +95,7 @@ export default function Projects() {
 	return (
 		<main className="bg-gray-50 dark:bg-gray-900 min-h-screen font-sans text-gray-900 dark:text-gray-100 transition-colors">
 			<div className="max-w-3xl mx-auto py-12 px-4">
-				<h1 className="text-3xl font-bold mb-6 text-gray-800 dark:text-gray-100">Major Projects</h1>
+				<h1 className="text-3xl font-bold mb-6 text-gray-800 dark:text-gray-100">Projects</h1>
 				<p className="mb-8 text-gray-700 dark:text-gray-300 text-sm sm:text-base leading-relaxed">
 					  In addition to the projects below, my experience spans both strategic leadership and hands-on technical delivery. As a director, I have led enterprise transformation, unified platforms post-M&A, and established KPI frameworks to drive business outcomes. As a data engineer, I have modernized data platforms, migrated enterprise data to the cloud, automated data pipelines, and delivered analytics-ready solutions—building robust workflows for data migration, ingestion, transformation, and replication. These projects reflect my ability to drive change at scale while remaining deeply technical.
 				</p>

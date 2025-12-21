@@ -2,12 +2,12 @@
   "name": "Edwin J. Wood",
   "title": "Senior Technology & Product Innovation Leader",
   "contact": {
-    "location": "Columbia, SC",
-    "phone": "803.979.2778",
+    
     "email": "edwinjwood@gmail.com",
-    "linkedin": "https://linkedin.com/in/edwin-j-wood"
+    "linkedin": "https://linkedin.com/in/edwin-j-wood",
+    "website": "https://edwinjwood.github.io/#/"
   },
-  "summary": "Technology and product leader with 13+ years of experience driving digital innovation, enterprise transformation, and data platform modernization. At Segra, led and built engineering teams, modernized platforms, and delivered measurable business outcomes through hands-on technical leadership. As a Senior Data Engineer for the Atlanta Braves, deliver robust data pipelines and analytics solutions as an individual contributor. Equally effective as a strategic leader and as a hands-on engineer solving complex data challenges.",
+  "summary": "Technology and product leader with 13+ years of experience driving digital innovation, enterprise transformation, and data platform modernization. At SEGRA, led and built engineering teams, modernized platforms, and delivered measurable business outcomes through hands-on technical leadership. As a Senior Data Engineer for the Atlanta Braves, deliver robust data pipelines and analytics solutions as an individual contributor. Equally effective as a strategic leader and as a hands-on engineer solving complex data challenges.",
   "skills": [
     {
       "heading": "Leadership & Strategy",
@@ -44,7 +44,7 @@
       ]
     },
     {
-      "company": "Segra (formerly Spirit Communications & Lumos)",
+      "company": "SEGRA (formerly Spirit Communications & Lumos)",
       "location": "Columbia, SC",
       "period": "2012–2025",
       "roles": [
@@ -64,8 +64,8 @@
           "period": "2012–2023",
           "bullets": [
             "Built and led engineering teams delivering customer-facing products and platform integrations that supported revenue growth and efficiency.",
-            "Launched Segra360, a 0-to-1 customer portal integrating OSS/BSS systems for billing, orders, service status, and analytics.",
-            "Developed SegraMaps, a geospatial data visualization platform integrated with CRM to accelerate pre-sales targeting and qualification.",
+            "Launched SEGRA360, a 0-to-1 customer portal integrating OSS/BSS systems for billing, orders, service status, and analytics.",
+            "Developed SEGRAmaps, a geospatial data visualization platform integrated with CRM to accelerate pre-sales targeting and qualification.",
             "Implemented API and integration patterns across CRM, portals, and analytics systems to standardize data flow and reporting.",
             "Executed CRM and portal migrations post-M&A, unifying platforms while minimizing business disruption."
           ]

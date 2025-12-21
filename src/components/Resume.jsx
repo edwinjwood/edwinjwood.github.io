@@ -13,12 +13,24 @@ export default function Resume() {
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-800 dark:text-gray-100 mb-2">{r.name}</h1>
           <h2 className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 font-medium mb-2">{r.title}</h2>
           <div className="flex flex-col sm:flex-row sm:items-center text-gray-500 text-sm gap-1">
-            {contact.location && <span>{contact.location}</span>}
-            {contact.location && <span className="hidden sm:inline mx-2">•</span>}
-            {contact.phone && <span>{contact.phone}</span>}
-            {contact.phone && <span className="hidden sm:inline mx-2">•</span>}
+            {/* Location and phone removed as requested */}
             {contact.email && <a href={`mailto:${contact.email}`} className="hover:underline">{contact.email}</a>}
             {contact.email && <span className="hidden sm:inline mx-2">•</span>}
+            {contact.website && (
+              <>
+                <a href={contact.website} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                  {(() => {
+                    try {
+                      const u = new URL(contact.website);
+                      return u.host + u.pathname;
+                    } catch (e) {
+                      return contact.website;
+                    }
+                  })()}
+                </a>
+                <span className="hidden sm:inline mx-2">•</span>
+              </>
+            )}
             {contact.linkedin && (() => {
               let display = contact.linkedin;
               try {
@@ -65,12 +77,17 @@ export default function Resume() {
             {r.experience.map((org, orgIdx) => (
               <div key={orgIdx} className="mb-6">
                 <div className="mb-2">
-                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 mb-4 sm:mb-0">
                     <span className="font-bold text-gray-800 dark:text-gray-100 tracking-tight">{org.company} — {org.location}</span>
                     <span className="text-gray-500 dark:text-gray-400 text-xs sm:text-sm">{org.period}</span>
                   </div>
                   {org.roles && org.roles.map((role, rIdx) => (
-                    <div key={rIdx} className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm">{role.title} {role.period ? `| ${role.period}` : ''}</div>
+                    <div
+                      key={rIdx}
+                      className={`text-gray-600 dark:text-gray-300 text-xs sm:text-sm${rIdx === 0 ? ' mt-3 sm:mt-0' : ' mt-2 sm:mt-0'}`}
+                    >
+                      {role.title} {role.period ? `| ${role.period}` : ''}
+                    </div>
                   ))}
                 </div>
                 {org.roles && (

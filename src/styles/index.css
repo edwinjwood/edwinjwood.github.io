@@ -56,7 +56,11 @@
   * { color: #000 !important; }
 
   /* Ensure the summary uses the same print body sizing */
-  .resume-summary { font-size: inherit !important; line-height: inherit !important; }
+  section .resume-summary, .resume-summary, .resume-summary * {
+    font-size: 10pt !important;
+    line-height: 1.06 !important;
+    color: #000 !important;
+  }
 
   /* Make sure markers and list bullets are visible */
   ::marker { color: #000 !important; }
@@ -64,8 +68,12 @@
   /* Slightly reduce container padding to help fit one page */
   #content > div { padding: 0.03in !important; }
 
-  /* Links should render as plain text in print */
-  a { color: #000 !important; text-decoration: none !important; }
+  /* Links should remain clickable and styled for print */
+  a {
+    color: #0000EE !important;
+    text-decoration: underline !important;
+    word-break: break-all;
+  }
 
   /* Increase space after headings for readability (kept minimal) */
   main h3 { margin-bottom: 0.06in !important; padding-bottom: 0.01in !important; }

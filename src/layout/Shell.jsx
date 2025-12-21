@@ -19,6 +19,17 @@ function Shell() {
     if (dark) root.classList.add('dark'); else root.classList.remove('dark');
   }, [dark]);
   useEffect(() => { firstRenderRef.current = false; }, []);
+  
+  useEffect(() => {
+    // Dynamically set the document title based on the current route
+    if (location.pathname === '/resume' || location.hash.includes('/resume')) {
+      document.title = 'Edwin J. Wood - Resume';
+    } else if (location.pathname === '/projects' || location.hash.includes('/projects')) {
+      document.title = 'Edwin J. Wood - Projects';
+    } else {
+      document.title = 'Edwin J. Wood - Home';
+    }
+  }, [location]);
 
   return (
     <div className="min-h-screen flex flex-col">

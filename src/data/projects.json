@@ -1,6 +1,6 @@
 [
   {
-    "title": "Data Platform Modernization (Atlanta Braves)",
+    "title": "Data Platform Modernization & Migration",
     "categories": ["Migration & Modernization", "Analytics"],
     "impact": "Modernized data infrastructure and enabled advanced analytics",
     "weight": 110,
@@ -24,19 +24,19 @@
     "tech": ["Dynamics 365", "Salesforce", "ServiceNow", "MuleSoft", "REST APIs", "Power BI"]
   },
   {
-    "title": "Segra360 – Unified Customer Portal",
+    "title": "SEGRA360 – Unified Customer Portal",
     "categories": ["Product", "Integration"],
     "impact": "Reduced customer support volume by 40% through self-service",
     "weight": 90,
-    "description": "Directed the 0-to-1 launch of Segra360, a secure self-service portal integrating billing, orders, service status, and usage. Implemented OAuth2, OIDC, and MFA while embedding analytics to improve engagement and product roadmap insights.",
+    "description": "Directed the 0-to-1 launch of SEGRA360, a secure self-service portal integrating billing, orders, service status, and usage. Implemented OAuth2, OIDC, and MFA while embedding analytics to improve engagement and product roadmap insights.",
     "tech": ["Java", "Liferay", "MuleSoft", "MySQL", "OAuth2", "OIDC", "MFA"]
   },
   {
-    "title": "SegraMaps – Data Visualization Platform",
+    "title": "SEGRAmaps – Data Visualization Platform",
     "categories": ["Product", "Analytics"],
     "impact": "Accelerated pre-sales qualification and targeting",
     "weight": 88,
-    "description": "Developed SegraMaps, a geospatial visualization system integrated with CRM. Enabled faster network qualification and pricing decisions through interactive maps and workflow integration.",
+    "description": "Developed SEGRAmaps, a geospatial visualization system integrated with CRM. Enabled faster network qualification and pricing decisions through interactive maps and workflow integration.",
     "tech": ["ESRI", "JavaScript", "C#", ".NET", "API Integration"]
   },
   {
