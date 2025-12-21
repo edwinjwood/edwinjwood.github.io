@@ -49,7 +49,7 @@ export default function Resume() {
         {/* Professional Summary */}
         {r.summary && (
           <section className="mb-8">
-            <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-2">Professional Summary</h3>
+            <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-2">Summary</h3>
             <p className="resume-summary text-gray-700 dark:text-gray-300 leading-relaxed text-sm sm:text-base">{r.summary}</p>
             {/* Technical skills are rendered as a competency in coreCompetencies */}
           </section>
@@ -73,7 +73,7 @@ export default function Resume() {
         {/* Professional Experience */}
         {Array.isArray(r.experience) && (
           <section className="mb-6">
-            <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-4">Professional Experience</h3>
+            <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-4">Experience</h3>
             {r.experience.map((org, orgIdx) => (
               <div key={orgIdx} className="mb-6">
                 <div className="mb-2">

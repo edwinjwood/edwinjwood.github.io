@@ -16,34 +16,61 @@
     padding: 0 !important;
     print-color-adjust: exact !important;
     -webkit-print-color-adjust: exact !important;
-  /* Slightly larger for readability while maintaining one-page layout */
-  font-size: 10pt !important;
-  line-height: 1.06 !important;
+    /* Professional serif font for print */
+    font-family: Georgia, 'Times New Roman', serif !important;
+    font-size: 10.5pt !important;
+    line-height: 1.4 !important;
   }
 
   /* Use more of the page width and remove large paddings */
   main { box-shadow: none !important; padding-top: 0 !important; background: #fff !important; }
   #content > div { max-width: 7.5in !important; width: auto !important; margin: 0.08in auto !important; padding: 0.08in !important; }
 
-  /* Slightly larger header spacing for clearer separation (compensated elsewhere) */
-  header { margin-bottom: 0.07in !important; padding-bottom: 0.03in !important; border-bottom: none !important; }
-  header h1 { font-size: 15pt !important; margin-bottom: 0 !important; }
-  header h2 { font-size: 9.5pt !important; margin-bottom: 0.03in !important; }
-  header .flex { gap: 0.03in !important; }
+  /* Header spacing and styling - centered for professional look */
+  header { 
+    margin-bottom: 0.15in !important; 
+    padding-bottom: 0.08in !important; 
+    border-bottom: 1.5pt solid #000 !important;
+    text-align: center !important;
+  }
+  header h1 { 
+    font-size: 20pt !important; 
+    margin-bottom: 0.02in !important; 
+    font-weight: 700 !important; 
+    letter-spacing: 0.02em !important;
+  }
+  header h2 { 
+    font-size: 10.5pt !important; 
+    margin-bottom: 0.06in !important; 
+    font-weight: 400 !important; 
+    color: #333 !important;
+    font-style: italic !important;
+  }
+  header .flex { 
+    gap: 0.15in !important; 
+    font-size: 9pt !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+  }
+  header .flex .hidden { display: inline !important; }
 
-  /* Reduce spacing between sections (compensate for larger header) */
-  section { margin-bottom: 0.03in !important; }
+  /* Section spacing for better separation */
+  section { margin-bottom: 0.1in !important; page-break-inside: avoid !important; }
+  section:last-of-type { margin-bottom: 0 !important; }
   .mb-8, .mb-6, .mb-4, .mb-3, .mb-2, .mb-1 { margin-bottom: 0 !important; }
+  /* Specific fix for skills section */
+  section .space-y-2 { margin-bottom: 0 !important; }
 
   /* Avoid breaking inside small sections like Education */
   #content > div, main h3 { break-inside: avoid !important; page-break-inside: avoid !important; }
   /* Prefer to keep the final section (Education) together */
   section:last-of-type { break-inside: avoid !important; page-break-after: avoid !important; }
 
-  /* Compact lists */
-  ul { margin-top: 0 !important; margin-bottom: 0.038in !important; padding-left: 0.98em !important; }
-  ul li { margin-bottom: 0.022in !important; }
-  .space-y-4 > * + * { margin-top: 0.04in !important; }
+  /* List spacing */
+  ul { margin-top: 0.06in !important; margin-bottom: 0.08in !important; padding-left: 1.2em !important; }
+  ul li { margin-bottom: 0.04in !important; line-height: 1.35 !important; }
+  .space-y-4 > * + * { margin-top: 0.06in !important; }
+  .space-y-2 > * + * { margin-top: 0.04in !important; }
 
   /* Remove paper textures and translucent overlays */
   .paper-texture, .paper-card, .paper-card:after, .dark .paper-card:after {
@@ -55,11 +82,12 @@
   /* Force all text to black for print */
   * { color: #000 !important; }
 
-  /* Ensure the summary uses the same print body sizing */
+  /* Professional summary styling */
   section .resume-summary, .resume-summary, .resume-summary * {
-    font-size: 10pt !important;
-    line-height: 1.06 !important;
+    font-size: 10.5pt !important;
+    line-height: 1.4 !important;
     color: #000 !important;
+    margin-bottom: 0.08in !important;
   }
 
   /* Make sure markers and list bullets are visible */
@@ -68,16 +96,31 @@
   /* Slightly reduce container padding to help fit one page */
   #content > div { padding: 0.03in !important; }
 
-  /* Links should remain clickable and styled for print */
+  /* Links styled for professional PDF */
   a {
-    color: #0000EE !important;
-    text-decoration: underline !important;
-    word-break: break-all;
+    color: #000 !important;
+    text-decoration: none !important;
+    word-break: break-word;
+  }
+  header a {
+    color: #1a1a1a !important;
   }
 
-  /* Increase space after headings for readability (kept minimal) */
-  main h3 { margin-bottom: 0.06in !important; padding-bottom: 0.01in !important; }
-  main h3::after { margin-top: 0 !important; margin-bottom: 0.06in !important; height: 1px !important; }
+  /* Section headings with clear visual hierarchy */
+  main h3 { 
+    font-size: 12pt !important;
+    margin-bottom: 0.08in !important;
+    margin-top: 0 !important;
+    padding-bottom: 0.03in !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+  }
+  main h3::after { 
+    margin-top: 0.02in !important;
+    margin-bottom: 0 !important;
+    height: 1pt !important;
+  }
 
   /* Avoid large hover/focus transforms affecting layout in print */
   .paper-card:hover, .paper-card:focus-within { transform: none !important; box-shadow: none !important; }
@@ -98,26 +141,7 @@ main h3::after { display: none; }
 }
 
 /* Stronger divider for print to ensure visibility: header has no divider; headings show lines */
-@media print {
-  header { border-bottom: none !important; }
-  /* Larger print font for readability (adjusted to 11pt) */
-  html, body { font-size: 11pt !important; line-height: 1.06 !important; }
-  /* Compensate by tightening other vertical spacing to keep content on one page */
-  @page { margin: 0.4in; }
-  #content > div { padding: 0.02in !important; }
-  section { margin-bottom: 0.02in !important; }
-  main h3 { margin-bottom: 0.04in !important; padding-bottom: 0 !important; }
-  ul { margin-bottom: 0.03in !important; }
-  ul li { margin-bottom: 0.015in !important; }
-  main h3::after { content: ""; display: block !important; height: 1px !important; width: 100% !important; background-color: rgba(0,0,0,0.18) !important; margin-top: 0 !important; margin-bottom: 0.06in !important; }
-  /* Force the summary paragraph to match print body sizing exactly */
-  /* Highly specific rule to override utility classes and ensure printed summary matches body text */
-  main#content p.resume-summary, main p.resume-summary, .resume-summary {
-    font-size: 11pt !important;
-    font-size: 14.67px !important; /* 11pt ≈ 14.67px (96dpi) as a pixel fallback */
-    line-height: 1.06 !important;
-  }
-}
+/* Duplicate print styles removed - main print block above handles all formatting */
 
 /* Global background to prevent white footer / gaps in dark mode */
 html, body { background-color: #f9fafb; color: #111827; }
