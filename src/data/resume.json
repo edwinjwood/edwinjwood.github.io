@@ -5,9 +5,9 @@
     
     "email": "edwinjwood@gmail.com",
     "linkedin": "https://linkedin.com/in/edwin-j-wood",
-    "website": "https://edwinjwood.github.io/#/"
+    "website": "https://edwinjwood.github.io"
   },
-  "summary": "Technology and product leader with 13+ years of experience driving digital innovation, enterprise transformation, and data platform modernization. At SEGRA, led and built engineering teams, modernized platforms, and delivered measurable business outcomes through hands-on technical leadership. As a Senior Data Engineer for the Atlanta Braves, deliver robust data pipelines and analytics solutions as an individual contributor. Equally effective as a strategic leader and as a hands-on engineer solving complex data challenges.",
+  "summary": "Technology and product leader with 13+ years of experience driving digital innovation, enterprise transformation, and data platform modernization. At SEGRA, led and built engineering teams, modernized platforms, and delivered measurable business outcomes through hands-on technical leadership. Currently building robust data pipelines and analytics solutions as a Senior Data Engineer for the Atlanta Braves. Equally effective as a strategic leader and as a hands-on engineer solving complex data challenges.",
   "skills": [
     {
       "heading": "Leadership & Strategy",
@@ -52,22 +52,17 @@
           "title": "Director of Software Development",
           "period": "2023–2025",
           "bullets": [
-            "Redesigned operating model into product-led pods, improving delivery focus and reducing cycle time.",
-            "Established portfolio governance from business case through benefits realization, enabling KPI-driven prioritization and ROI tracking.",
-            "Consolidated and modernized enterprise platforms, including CRM and customer portals, reducing cost while accelerating modernization.",
-            "Directed cloud migrations and advanced CI/CD, observability, and automated testing practices to improve release safety and reliability.",
-            "Partnered with executives and finance to sequence strategic programs, ensuring alignment of multi-year roadmaps with business goals."
+            "Redesigned operating model into product-led pods with portfolio governance from business case through benefits realization, enabling KPI-driven prioritization, ROI tracking, and improved delivery focus.",
+            "Consolidated and modernized enterprise platforms including CRM (Salesforce, Dynamics 365) and customer portals, reducing costs while accelerating platform modernization and cloud migration initiatives.",
+            "Partnered with executives and finance to sequence strategic programs and align multi-year roadmaps with business goals, advancing CI/CD, observability, and automated testing practices."
           ]
         },
         {
           "title": "Senior Manager | Manager of Software Development | Technical Lead",
           "period": "2012–2023",
           "bullets": [
-            "Built and led engineering teams delivering customer-facing products and platform integrations that supported revenue growth and efficiency.",
-            "Launched SEGRA360, a 0-to-1 customer portal integrating OSS/BSS systems for billing, orders, service status, and analytics.",
-            "Developed SEGRAmaps, a geospatial data visualization platform integrated with CRM to accelerate pre-sales targeting and qualification.",
-            "Implemented API and integration patterns across CRM, portals, and analytics systems to standardize data flow and reporting.",
-            "Executed CRM and portal migrations post-M&A, unifying platforms while minimizing business disruption."
+            "Built and led engineering teams delivering customer-facing products including SEGRA360 (0-to-1 customer portal integrating OSS/BSS systems for billing, orders, and service status) and SEGRAmaps (geospatial data visualization platform with CRM integration).",
+            "Implemented API and integration patterns across CRM, portals, and analytics systems to standardize data flow and reporting, executing post-M&A platform migrations while minimizing business disruption."
           ]
         }
       ]
