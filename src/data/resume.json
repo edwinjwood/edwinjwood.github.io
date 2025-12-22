@@ -37,8 +37,8 @@
           "period": "Oct 2025–Present",
           "bullets": [
             "Build and maintain robust data pipelines to migrate enterprise data from SQL Server to Snowflake, orchestrating end-to-end workflows using dbt and Dagster.",
-            "Automate ingestion and transformation of S3 files into Snowflake, modeling data through staging and fact tables, and enabling analytics-ready datasets.",
-            "Support data replication workflows using Sling to synchronize curated Snowflake data back to SQL Server, ensuring downstream applications have access to the latest datasets."
+            "Automate data ingestion and transformation workflows into Snowflake, applying environment-aware logic, reusable macros, and layered modeling to deliver reliable, analytics-ready datasets from diverse sources.",
+            "Enable seamless data replication and synchronization between cloud and on-premises systems, ensuring curated datasets are consistently available for downstream analytics and business operations."
           ]
         }
       ]
@@ -54,7 +54,7 @@
           "bullets": [
             "Redesigned operating model into product-led pods with portfolio governance from business case through benefits realization, enabling KPI-driven prioritization, ROI tracking, and improved delivery focus.",
             "Consolidated and modernized enterprise platforms including CRM (Salesforce, Dynamics 365) and customer portals, reducing costs while accelerating platform modernization and cloud migration initiatives.",
-            "Partnered with executives and finance to sequence strategic programs and align multi-year roadmaps with business goals, advancing CI/CD, observability, and automated testing practices."
+            "Partnered with executives and finance to sequence strategic programs and align multi-year roadmaps with business goals, driving improvements in CI/CD, observability, and automated testing that accelerated delivery and enabled on-time project completion."
           ]
         },
         {

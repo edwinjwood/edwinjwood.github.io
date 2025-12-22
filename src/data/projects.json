@@ -4,7 +4,7 @@
     "categories": ["Migration & Modernization", "Analytics"],
     "impact": "Modernized data infrastructure and enabled advanced analytics",
     "weight": 110,
-    "description": "Migrating enterprise data from SQL Server to Snowflake: automate ingestion of files from S3, transform and model data through staging and fact tables, and replicate curated datasets back to SQL Server using Sling for downstream applications.",
+    "description": "Migrating enterprise data from SQL Server to Snowflake: automate ingestion of files from S3, apply environment-aware logic, reusable macros, and layered modeling (staging, fact, intermediate, base, constants) to deliver analytics-ready datasets, and replicate curated data back to SQL Server using Sling for downstream applications.",
     "tech": ["Snowflake", "SQL Server", "S3", "dbt", "Dagster", "Sling"]
   },
   {
