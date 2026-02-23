@@ -1,29 +1,28 @@
 {
   "name": "Edwin J. Wood",
-  "title": "Senior Technology & Product Innovation Leader",
+  "title": "Technology & Product Leader | Enterprise Platforms, Data & Digital Transformation",
   "contact": {
-    
     "email": "edwinjwood@gmail.com",
     "linkedin": "https://linkedin.com/in/edwin-j-wood",
     "website": "https://edwinjwood.github.io"
   },
-  "summary": "Technology and product leader with 13+ years of experience driving digital innovation, enterprise transformation, and data platform modernization. At SEGRA, led and built engineering teams, modernized platforms, and delivered measurable business outcomes through hands-on technical leadership. Currently building robust data pipelines and analytics solutions as a Senior Data Engineer for the Atlanta Braves. Equally effective as a strategic leader and as a hands-on engineer solving complex data challenges.",
+  "summary": "Technology and product leader with 13+ years of experience guiding enterprise modernization, digital platform strategy, and data ecosystem transformation across complex operational environments. Proven track record building engineering teams, aligning multi-year technology roadmaps to business priorities, and delivering mission-critical systems that improve operational visibility, customer experience, and enterprise scalability. Combines executive-level strategic leadership with deep hands-on engineering expertise across cloud platforms, enterprise applications, integrations, and analytics infrastructure.",
   "skills": [
     {
-      "heading": "Leadership & Strategy",
-      "text": "Product innovation, multi-year roadmap planning, portfolio governance, KPI frameworks, executive and stakeholder alignment"
+      "heading": "Technology Leadership & Strategy",
+      "text": "Enterprise technology roadmaps, organizational operating models, portfolio governance, KPI frameworks, executive stakeholder alignment, digital transformation leadership"
     },
     {
-      "heading": "Data Products & Visualization",
-      "text": "Data modeling, analytics-ready datasets, dashboard development, data storytelling, web application frameworks, API design"
+      "heading": "Data Platforms & Analytics",
+      "text": "Data architecture, analytics-ready modeling, reporting ecosystems, dashboard strategy, data governance, API-driven data services, enterprise visualization platforms"
     },
     {
       "heading": "Cloud & Data Engineering",
-      "text": "Snowflake, Azure, AWS, SQL Server, S3 data ingestion, pipeline automation, workflow orchestration (dbt, Dagster), CI/CD, containerization, data replication, reverse ETL"
+      "text": "Snowflake, Azure, AWS, SQL Server, S3 ingestion, automated pipelines, workflow orchestration (dbt, Dagster), CI/CD, containerization, data replication, reverse ETL"
     },
     {
-      "heading": "Systems Integration & Applications",
-      "text": "CRM systems (Salesforce, Dynamics 365), enterprise application integration, workflow automation, identity and access management, API integration, post-M&A platform migration"
+      "heading": "Enterprise Systems & Integration",
+      "text": "Salesforce, Dynamics 365, enterprise system integration, workflow automation, identity and access management, API architecture, post-M&A platform consolidation"
     }
   ],
   "experience": [
@@ -36,9 +35,10 @@
           "title": "Senior Data Engineer",
           "period": "Oct 2025–Present",
           "bullets": [
-            "Build and maintain robust data pipelines to migrate enterprise data from SQL Server to Snowflake, orchestrating end-to-end workflows using dbt and Dagster.",
-            "Automate data ingestion and transformation workflows into Snowflake, applying environment-aware logic, reusable macros, and layered modeling to deliver reliable, analytics-ready datasets from diverse sources.",
-            "Enable seamless data replication and synchronization between cloud and on-premises systems, ensuring curated datasets are consistently available for downstream analytics and business operations."
+            "Lead development of enterprise data pipelines supporting migration from SQL Server to Snowflake, enabling scalable analytics and cross-system reporting.",
+            "Design automated ingestion and transformation workflows using dbt and orchestration frameworks to deliver trusted, analytics-ready datasets across multiple business domains.",
+            "Implement layered data models, reusable transformation logic, and environment-aware deployment practices that improve reliability, maintainability, and auditability of enterprise reporting infrastructure.",
+            "Enable synchronization between cloud and on-premises systems to ensure curated enterprise datasets remain consistently available for downstream analytics and operational decision-making."
           ]
         }
       ]
@@ -52,17 +52,23 @@
           "title": "Director of Software Development",
           "period": "2023–2025",
           "bullets": [
-            "Redesigned operating model into product-led pods with portfolio governance from business case through benefits realization, enabling KPI-driven prioritization, ROI tracking, and improved delivery focus.",
-            "Consolidated and modernized enterprise platforms including CRM (Salesforce, Dynamics 365) and customer portals, reducing costs while accelerating platform modernization and cloud migration initiatives.",
-            "Partnered with executives and finance to sequence strategic programs and align multi-year roadmaps with business goals, driving improvements in CI/CD, observability, and automated testing that accelerated delivery and enabled on-time project completion."
+            "Redesigned the engineering organization into product-aligned delivery pods with governance from business case through measurable benefits realization, enabling KPI-driven prioritization, ROI tracking, and improved execution focus.",
+            "Led enterprise modernization initiatives across CRM ecosystems, customer portals, and integration platforms, supporting cloud adoption and improved operational scalability.",
+            "Partnered with executive leadership and finance to sequence strategic programs and align multi-year technology roadmaps with corporate growth priorities.",
+            "Directed post-acquisition platform consolidation efforts that reduced system complexity, improved reliability, and strengthened long-term technology sustainability.",
+            "Drove adoption of CI/CD, automated testing, and observability practices that improved delivery confidence and release stability across engineering teams."
           ]
         },
         {
           "title": "Senior Manager | Manager of Software Development | Technical Lead",
           "period": "2012–2023",
           "bullets": [
-            "Built and led engineering teams delivering customer-facing products including SEGRA360 (0-to-1 customer portal integrating OSS/BSS systems for billing, orders, and service status) and SEGRAmaps (geospatial data visualization platform with CRM integration).",
-            "Implemented API and integration patterns across CRM, portals, and analytics systems to standardize data flow and reporting, executing post-M&A platform migrations while minimizing business disruption."
+            "Built and led engineering teams delivering major enterprise customer platforms including SEGRA360, a 0-to-1 customer portal integrating OSS/BSS systems for billing, orders, and service visibility.",
+            "Led development of SEGRAmaps, a geospatial intelligence platform integrating CRM and network data to support sales, engineering, and operational planning decisions.",
+            "Established API-driven integration patterns across CRM, customer portals, and analytics systems to standardize enterprise data flow and reporting capabilities.",
+            "Oversaw enterprise reporting strategy across sales, finance, and operations using PowerBI dashboards embedded directly within business applications.",
+            "Led data governance and quality initiatives including deduplication strategies, workflow validation rules, and integration-level controls to improve enterprise data accuracy and reporting trust.",
+            "Supported large-scale system migrations involving Salesforce, Dynamics 365, and enterprise integrations while minimizing operational disruption."
           ]
         }
       ]
@@ -70,7 +76,7 @@
   ],
   "education": {
     "school": "University of South Carolina — Columbia",
-    "degree": "Bachelor of Science in Computer Science (In Progress)",
+    "degree": "Bachelor of Science in Computer Science",
     "expectedGraduation": "May 2026"
   }
 }
