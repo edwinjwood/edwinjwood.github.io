@@ -103,14 +103,28 @@ export default function Resume() {
         )}
 
         {/* Education */}
-        {r.education && (
+        {(r.education || Array.isArray(r.education)) && (
           <section>
             <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-2">Education</h3>
-            <div>
-              <span className="font-bold text-gray-800 dark:text-gray-100">{r.education.school}</span>
-              <div className="text-gray-600 dark:text-gray-400 text-sm">{r.education.degree}</div>
-              {r.education.expectedGraduation && <div className="text-gray-700 dark:text-gray-300 text-sm">Expected Graduation: {r.education.expectedGraduation}</div>}
-              {r.education.notes && <div className="text-gray-700 dark:text-gray-300 text-sm mt-2">{r.education.notes}</div>}
+            <div className="space-y-3">
+              {Array.isArray(r.education) ? (
+                r.education.map((edu, idx) => (
+                  <div key={idx}>
+                    <span className="font-bold text-gray-800 dark:text-gray-100">{edu.school}</span>
+                    <div className="text-gray-600 dark:text-gray-400 text-sm">{edu.degree}</div>
+                    {edu.expectedGraduation && <div className="text-gray-700 dark:text-gray-300 text-sm">Expected Graduation: {edu.expectedGraduation}</div>}
+                    {edu.status && <div className="text-gray-700 dark:text-gray-300 text-sm italic">{edu.status}</div>}
+                    {edu.notes && <div className="text-gray-700 dark:text-gray-300 text-sm mt-1">{edu.notes}</div>}
+                  </div>
+                ))
+              ) : (
+                <div>
+                  <span className="font-bold text-gray-800 dark:text-gray-100">{r.education.school}</span>
+                  <div className="text-gray-600 dark:text-gray-400 text-sm">{r.education.degree}</div>
+                  {r.education.expectedGraduation && <div className="text-gray-700 dark:text-gray-300 text-sm">Expected Graduation: {r.education.expectedGraduation}</div>}
+                  {r.education.notes && <div className="text-gray-700 dark:text-gray-300 text-sm mt-2">{r.education.notes}</div>}
+                </div>
+              )}
             </div>
           </section>
         )}

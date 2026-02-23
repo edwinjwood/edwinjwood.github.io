@@ -14,6 +14,7 @@ export default function Projects() {
 	const CATEGORY_ORDER = [
 		"Operating Model",
 		"M&A Integration",
+		"Security",
 		"Product",
 		"Full-Stack",
 		"Automation",

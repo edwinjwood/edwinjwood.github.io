@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Cover letters and personal documents
+*cover*letter*.txt
+*Cover*Letter*.txt
+*_cover_letter.*
+*_Cover_Letter.*
+cover_letter.*
+Cover_Letter.*

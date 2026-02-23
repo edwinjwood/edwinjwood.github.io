@@ -27,9 +27,9 @@
   #content > div { max-width: 7.5in !important; width: auto !important; margin: 0.08in auto !important; padding: 0.08in !important; }
 
   /* Header spacing and styling - centered for professional look */
-  header { 
-    margin-bottom: 0.15in !important; 
-    padding-bottom: 0.08in !important; 
+  header {
+    margin-bottom: 0.1in !important;
+    padding-bottom: 0.06in !important;
     border-bottom: 1.5pt solid #000 !important;
     text-align: center !important;
   }
@@ -55,22 +55,24 @@
   header .flex .hidden { display: inline !important; }
 
   /* Section spacing for better separation */
-  section { margin-bottom: 0.1in !important; page-break-inside: avoid !important; }
+  section { margin-bottom: 0.02in !important; }
   section:last-of-type { margin-bottom: 0 !important; }
   .mb-8, .mb-6, .mb-4, .mb-3, .mb-2, .mb-1 { margin-bottom: 0 !important; }
   /* Specific fix for skills section */
   section .space-y-2 { margin-bottom: 0 !important; }
+  section .space-y-3 { margin-bottom: 0 !important; }
 
-  /* Avoid breaking inside small sections like Education */
-  #content > div, main h3 { break-inside: avoid !important; page-break-inside: avoid !important; }
-  /* Prefer to keep the final section (Education) together */
-  section:last-of-type { break-inside: avoid !important; page-break-after: avoid !important; }
+  /* Allow sections to break naturally, but keep headings with content */
+  main h3 { break-after: avoid !important; page-break-after: avoid !important; }
+  /* Only prevent breaking inside the Education section to keep it together */
+  section:last-of-type { break-inside: avoid !important; page-break-inside: avoid !important; }
 
   /* List spacing */
-  ul { margin-top: 0.06in !important; margin-bottom: 0.08in !important; padding-left: 1.2em !important; }
-  ul li { margin-bottom: 0.04in !important; line-height: 1.35 !important; }
-  .space-y-4 > * + * { margin-top: 0.06in !important; }
-  .space-y-2 > * + * { margin-top: 0.04in !important; }
+  ul { margin-top: 0.04in !important; margin-bottom: 0.04in !important; padding-left: 1.2em !important; }
+  ul li { margin-bottom: 0.03in !important; line-height: 1.35 !important; }
+  .space-y-4 > * + * { margin-top: 0.04in !important; }
+  .space-y-2 > * + * { margin-top: 0.03in !important; }
+  .space-y-3 > * + * { margin-top: 0.04in !important; }
 
   /* Remove paper textures and translucent overlays */
   .paper-texture, .paper-card, .paper-card:after, .dark .paper-card:after {
@@ -87,7 +89,7 @@
     font-size: 10.5pt !important;
     line-height: 1.4 !important;
     color: #000 !important;
-    margin-bottom: 0.08in !important;
+    margin-bottom: 0.04in !important;
   }
 
   /* Make sure markers and list bullets are visible */
@@ -107,11 +109,11 @@
   }
 
   /* Section headings with clear visual hierarchy */
-  main h3 { 
+  main h3 {
     font-size: 12pt !important;
-    margin-bottom: 0.08in !important;
+    margin-bottom: 0.05in !important;
     margin-top: 0 !important;
-    padding-bottom: 0.03in !important;
+    padding-bottom: 0.02in !important;
     font-weight: 700 !important;
     text-transform: uppercase !important;
     letter-spacing: 0.05em !important;

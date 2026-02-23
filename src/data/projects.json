@@ -2,34 +2,43 @@
   {
     "title": "Data Platform Modernization & Migration",
     "categories": ["Migration & Modernization", "Analytics"],
-    "impact": "Modernized data infrastructure and enabled advanced analytics",
+    "impact": "Modernized data infrastructure at massive scale and enabled advanced analytics",
     "weight": 110,
-    "description": "Migrating enterprise data from SQL Server to Snowflake: automate ingestion of files from S3, apply environment-aware logic, reusable macros, and layered modeling (staging, fact, intermediate, base, constants) to deliver analytics-ready datasets, and replicate curated data back to SQL Server using Sling for downstream applications.",
-    "tech": ["Snowflake", "SQL Server", "S3", "dbt", "Dagster", "Sling"]
+    "featured": true,
+    "description": "Leading enterprise-scale data migration from SQL Server to Snowflake, processing datasets exceeding 50TB and trillions of rows including complex skeletal tracking data. Architecting and orchestrating automated ingestion from S3 using Dagster, applying environment-aware logic and reusable dbt macros, implementing layered modeling (staging, fact, intermediate, base, constants) to deliver analytics-ready datasets, building data visualizations, and replicating curated data back to SQL Server using Sling for downstream applications.",
+    "tech": ["Snowflake", "SQL Server", "S3", "dbt", "Dagster", "Sling", "Data Visualization", "Big Data"]
+  },
+  {
+    "title": "Enterprise Identity & Access Management Platform",
+    "categories": ["Security", "Integration", "Migration & Modernization"],
+    "impact": "Established secure, scalable authentication and authorization for enterprise customer platforms",
+    "weight": 105,
+    "description": "Led implementation of enterprise IAM infrastructure using PingFederate and Ping Identity to provide centralized authentication, MFA, and SSO across customer-facing platforms. Coordinated penetration testing engagements, triaged findings, and implemented security hardening recommendations. Established identity governance controls, session management policies, and security monitoring to protect customer data and ensure compliance.",
+    "tech": ["PingFederate", "Ping Identity", "MFA", "OAuth2", "OIDC", "SAML", "Penetration Testing", "Security Remediation"]
   },
   {
     "title": "Engineering Transparency & Delivery Platform",
-    "categories": ["Operating Model", "Analytics"],
-    "impact": "Improved visibility and portfolio decision-making",
+    "categories": ["Operating Model", "Analytics", "Leadership"],
+    "impact": "Improved visibility, portfolio governance, and delivery accountability",
     "weight": 100,
-    "description": "Standardized Jira and Azure DevOps taxonomies to unify reporting across teams. Delivered KPI dashboards with throughput, velocity, and SLA metrics, enabling traceability from strategic themes to work items.",
-    "tech": ["Azure DevOps", "Jira", "KPI Dashboards", "CI/CD"]
+    "description": "Standardized Jira and Azure DevOps taxonomies to unify reporting across teams. Delivered KPI dashboards with throughput, velocity, and SLA metrics, enabling traceability from strategic themes to work items. Established governance framework for portfolio prioritization, capacity planning, and ROI tracking across engineering organization.",
+    "tech": ["Azure DevOps", "Jira", "KPI Dashboards", "CI/CD", "Portfolio Governance"]
   },
   {
     "title": "CRM & Revenue Lifecycle Modernization",
-    "categories": ["Operating Model", "Integration", "Automation"],
-    "impact": "Standardized revenue processes and improved conversion insights",
+    "categories": ["M&A Integration", "Operating Model", "Integration", "Automation"],
+    "impact": "Standardized revenue processes, improved data security, and enhanced conversion insights",
     "weight": 95,
-    "description": "Unified Salesforce, Dynamics, and ServiceNow into a single CRM and sales platform post-M&A. Automated Lead → Opportunity → Quote workflows with embedded guardrails and surfaced pipeline performance through dashboards.",
-    "tech": ["Dynamics 365", "Salesforce", "ServiceNow", "MuleSoft", "REST APIs", "Power BI"]
+    "description": "Unified Salesforce, Dynamics, and ServiceNow into a single CRM and sales platform post-M&A. Automated Lead → Opportunity → Quote workflows with embedded guardrails, data validation, and access controls. Established data governance policies, customer data protection standards, and surfaced pipeline performance through secure dashboards.",
+    "tech": ["Dynamics 365", "Salesforce", "ServiceNow", "MuleSoft", "REST APIs", "Power BI", "Data Governance"]
   },
   {
     "title": "SEGRA360 – Unified Customer Portal",
     "categories": ["Product", "Integration"],
     "impact": "Reduced customer support volume by 40% through self-service",
     "weight": 90,
-    "description": "Directed the 0-to-1 launch of SEGRA360, a secure self-service portal integrating billing, orders, service status, and usage. Implemented OAuth2, OIDC, and MFA while embedding analytics to improve engagement and product roadmap insights.",
-    "tech": ["Java", "Liferay", "MuleSoft", "MySQL", "OAuth2", "OIDC", "MFA"]
+    "description": "Directed the 0-to-1 launch of SEGRA360, a secure self-service portal integrating billing, orders, service status, and usage across multiple back-office systems. Embedded analytics to track customer engagement, identify feature adoption patterns, and inform product roadmap decisions. Delivered full-stack platform from architecture through production deployment.",
+    "tech": ["Java", "Liferay", "MuleSoft", "MySQL", "REST APIs", "Analytics"]
   },
   {
     "title": "SEGRAmaps – Data Visualization Platform",
@@ -41,11 +50,11 @@
   },
   {
     "title": "Cloud & Platform Migrations",
-    "categories": ["Migration & Modernization"],
-    "impact": "Improved scalability, security, and agility of enterprise systems",
+    "categories": ["Migration & Modernization", "Security"],
+    "impact": "Improved scalability, security posture, and operational agility of enterprise systems",
     "weight": 85,
-    "description": "Led modernization programs including Dynamics 365 CRM migration to Azure and portal replatforming to ServiceNow. Refactored legacy code, integrated serverless services, and enabled Power Apps adoption.",
-    "tech": ["Azure", "ServiceNow", "Power Apps", "Functions", "Kubernetes", "CI/CD"]
+    "description": "Led modernization programs including Dynamics 365 CRM migration to Azure and portal replatforming to ServiceNow. Refactored legacy code, integrated serverless services with security controls, implemented encryption at rest and in transit, and enabled Power Apps adoption with governance policies. Ensured compliance with security standards throughout migration lifecycle.",
+    "tech": ["Azure", "ServiceNow", "Power Apps", "Functions", "Kubernetes", "CI/CD", "Security Controls"]
   },
   {
     "title": "Workflow & Contract Automation",
@@ -57,11 +66,11 @@
   },
   {
     "title": "Location Validation & Data Quality Services",
-    "categories": ["Integration", "Analytics"],
-    "impact": "Enhanced data quality and eliminated duplicates",
+    "categories": ["Integration", "Analytics", "Quality Assurance"],
+    "impact": "Enhanced data quality, governance, and eliminated duplicates",
     "weight": 80,
-    "description": "Built validation services integrating Dynamics, ESRI, and MuleSoft to improve address accuracy, prevent duplication, and enable accurate network site modeling.",
-    "tech": ["Dynamics 365", "ESRI", "MuleSoft", "REST APIs"]
+    "description": "Built validation services integrating Dynamics, ESRI, and MuleSoft to improve address accuracy, prevent duplication, and enable accurate network site modeling. Established data quality rules, validation workflows, and governance controls to ensure data integrity across enterprise systems.",
+    "tech": ["Dynamics 365", "ESRI", "MuleSoft", "REST APIs", "Data Quality"]
   },
   {
     "title": "Business Proposal Platform",
@@ -80,12 +89,13 @@
     "tech": ["React", "Vite", "Tailwind CSS", "GitHub Pages", "CI/CD"]
   },
   {
-    "title": "Portfolio Builder SaaS Prototype",
+    "title": "facet – AI-Powered Portfolio Builder",
     "categories": ["Product", "Full-Stack", "Innovation"],
-    "impact": "Enabled rapid creation of professional digital portfolios",
-    "weight": 101,
-    "description": "Developed a SaaS prototype that simplifies building shareable portfolios with Stripe-based monetization, webhook persistence, and automated testing. Delivered production-grade reliability through CI/CD and containerized deployment.",
-    "tech": ["React", "Vite", "Node.js", "PostgreSQL", "Stripe", "Railway", "Docker", "Jest"]
+    "impact": "Live SaaS platform enabling rapid creation of professional digital portfolios using conversational AI",
+    "weight": 108,
+    "featured": true,
+    "description": "Built and launched facet, an AI-powered portfolio builder that uses conversational AI to generate professional digital portfolios. Developed end-to-end product from concept through production deployment, including Stripe-based monetization, webhook persistence, and automated testing. Pitched at University of South Carolina's Boyd Innovation Center and currently operating as a live SaaS platform with production-grade reliability through CI/CD and containerized deployment.",
+    "tech": ["React", "Vite", "Node.js", "PostgreSQL", "Stripe", "Railway", "Docker", "Jest", "AI/ML", "Conversational AI"]
   },
   {
     "title": "Automated Testing Framework",

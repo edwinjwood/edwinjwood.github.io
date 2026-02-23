@@ -6,23 +6,31 @@
     "linkedin": "https://linkedin.com/in/edwin-j-wood",
     "website": "https://edwinjwood.github.io"
   },
-  "summary": "Technology and product leader with 13+ years of experience guiding enterprise modernization, digital platform strategy, and data ecosystem transformation across complex operational environments. Proven track record building engineering teams, aligning multi-year technology roadmaps to business priorities, and delivering mission-critical systems that improve operational visibility, customer experience, and enterprise scalability. Combines executive-level strategic leadership with deep hands-on engineering expertise across cloud platforms, enterprise applications, integrations, and analytics infrastructure.",
+  "summary": "Technology leader with 14+ years of progressive experience spanning software engineering, data platforms, enterprise IT, and digital transformation, grounded in military service and operational leadership. Proven track record building high-performing engineering teams, aligning multi-year technology roadmaps with business priorities, and delivering secure, scalable, mission-critical systems across complex operational environments. Deep expertise in cloud infrastructure, data analytics, enterprise systems integration, and governance frameworks. Experienced partnering with executive leadership on cybersecurity, operational resilience, platform modernization, and technology-enabled business outcomes. Combines strategic vision with hands-on technical depth across infrastructure, data, applications, and automation.",
   "skills": [
     {
       "heading": "Technology Leadership & Strategy",
-      "text": "Enterprise technology roadmaps, organizational operating models, portfolio governance, KPI frameworks, executive stakeholder alignment, digital transformation leadership"
+      "text": "Enterprise technology roadmaps, organizational operating models, portfolio governance, KPI frameworks, cross-functional leadership, executive stakeholder alignment, digital transformation, vendor and partner management"
+    },
+    {
+      "heading": "Security, Risk & Compliance",
+      "text": "Cybersecurity frameworks, identity and access management, data protection and privacy, security governance, risk assessment and mitigation, compliance oversight, operational resilience planning"
     },
     {
       "heading": "Data Platforms & Analytics",
-      "text": "Data architecture, analytics-ready modeling, reporting ecosystems, dashboard strategy, data governance, API-driven data services, enterprise visualization platforms"
+      "text": "Data architecture, analytics-ready modeling, reporting ecosystems, dashboard strategy, data governance, API-driven data services, enterprise visualization platforms, predictive analytics"
     },
     {
-      "heading": "Cloud & Data Engineering",
-      "text": "Snowflake, Azure, AWS, SQL Server, S3 ingestion, automated pipelines, workflow orchestration (dbt, Dagster), CI/CD, containerization, data replication, reverse ETL"
+      "heading": "Cloud & Engineering Infrastructure",
+      "text": "Snowflake, Azure, AWS, SQL Server, automated pipelines, workflow orchestration (dbt, Dagster), CI/CD, containerization, infrastructure as code, DevOps practices, system reliability and uptime"
     },
     {
       "heading": "Enterprise Systems & Integration",
-      "text": "Salesforce, Dynamics 365, enterprise system integration, workflow automation, identity and access management, API architecture, post-M&A platform consolidation"
+      "text": "Salesforce, Dynamics 365, enterprise application strategy, workflow automation, API architecture, post-M&A platform consolidation, legacy system modernization"
+    },
+    {
+      "heading": "Emerging Technologies & Innovation",
+      "text": "AI and machine learning adoption, automation and intelligent workflows, technology evaluation and proof-of-concept delivery, innovation pipeline management"
     }
   ],
   "experience": [
@@ -35,10 +43,10 @@
           "title": "Senior Data Engineer",
           "period": "Oct 2025–Present",
           "bullets": [
-            "Lead development of enterprise data pipelines supporting migration from SQL Server to Snowflake, enabling scalable analytics and cross-system reporting.",
-            "Design automated ingestion and transformation workflows using dbt and orchestration frameworks to deliver trusted, analytics-ready datasets across multiple business domains.",
-            "Implement layered data models, reusable transformation logic, and environment-aware deployment practices that improve reliability, maintainability, and auditability of enterprise reporting infrastructure.",
-            "Enable synchronization between cloud and on-premises systems to ensure curated enterprise datasets remain consistently available for downstream analytics and operational decision-making."
+            "Lead development of enterprise data pipelines at scale, processing datasets exceeding 50TB and trillions of rows including complex skeletal tracking data, supporting migration from SQL Server to Snowflake and enabling advanced analytics and data-driven decision-making across baseball operations.",
+            "Architect and orchestrate automated ingestion and transformation workflows using dbt and Dagster to deliver trusted, analytics-ready datasets across multiple business domains with high availability, reliability, and performance at enterprise scale.",
+            "Design and implement layered data models, reusable transformation logic, environment-aware deployment practices, and data quality controls that improve reliability, maintainability, auditability, and governance of massive-scale reporting infrastructure.",
+            "Build data visualizations and enable secure synchronization between cloud and on-premises systems to ensure curated enterprise datasets remain consistently available for downstream analytics, operational decision-making, and emerging AI/ML use cases."
           ]
         }
       ]
@@ -52,31 +60,72 @@
           "title": "Director of Software Development",
           "period": "2023–2025",
           "bullets": [
-            "Redesigned the engineering organization into product-aligned delivery pods with governance from business case through measurable benefits realization, enabling KPI-driven prioritization, ROI tracking, and improved execution focus.",
-            "Led enterprise modernization initiatives across CRM ecosystems, customer portals, and integration platforms, supporting cloud adoption and improved operational scalability.",
-            "Partnered with executive leadership and finance to sequence strategic programs and align multi-year technology roadmaps with corporate growth priorities.",
-            "Directed post-acquisition platform consolidation efforts that reduced system complexity, improved reliability, and strengthened long-term technology sustainability.",
-            "Drove adoption of CI/CD, automated testing, and observability practices that improved delivery confidence and release stability across engineering teams."
+            "Redesigned the engineering organization into product-aligned delivery pods with governance from business case through measurable benefits realization, enabling KPI-driven prioritization, ROI tracking, and improved execution focus across cross-functional teams.",
+            "Led enterprise modernization initiatives across CRM ecosystems, customer portals, and integration platforms, supporting cloud adoption, improved operational scalability, and mission-critical system reliability.",
+            "Partnered with executive leadership, finance, and risk management to sequence strategic programs, align multi-year technology roadmaps with corporate growth priorities, and oversee cybersecurity and compliance initiatives.",
+            "Directed post-acquisition platform consolidation efforts that reduced system complexity, improved reliability, strengthened data security and governance, and ensured long-term technology sustainability.",
+            "Drove adoption of CI/CD, automated testing, observability practices, and security controls that improved delivery confidence, release stability, and operational resilience across engineering teams.",
+            "Established technology governance frameworks, vendor management processes, and architectural standards to ensure secure, reliable, well-integrated systems across the enterprise."
           ]
         },
         {
           "title": "Senior Manager | Manager of Software Development | Technical Lead",
           "period": "2012–2023",
           "bullets": [
-            "Built and led engineering teams delivering major enterprise customer platforms including SEGRA360, a 0-to-1 customer portal integrating OSS/BSS systems for billing, orders, and service visibility.",
-            "Led development of SEGRAmaps, a geospatial intelligence platform integrating CRM and network data to support sales, engineering, and operational planning decisions.",
-            "Established API-driven integration patterns across CRM, customer portals, and analytics systems to standardize enterprise data flow and reporting capabilities.",
-            "Oversaw enterprise reporting strategy across sales, finance, and operations using PowerBI dashboards embedded directly within business applications.",
-            "Led data governance and quality initiatives including deduplication strategies, workflow validation rules, and integration-level controls to improve enterprise data accuracy and reporting trust.",
-            "Supported large-scale system migrations involving Salesforce, Dynamics 365, and enterprise integrations while minimizing operational disruption."
+            "Built and led engineering teams delivering mission-critical enterprise customer platforms including SEGRA360, a 0-to-1 customer portal integrating OSS/BSS systems for billing, orders, and service visibility with high availability requirements.",
+            "Led development of SEGRAmaps, a geospatial intelligence platform integrating CRM and network data to support sales, engineering, and operational planning decisions, serving as a strategic business enablement tool.",
+            "Established API-driven integration patterns and security controls across CRM, customer portals, and analytics systems to standardize enterprise data flow, ensure data protection, and enable trusted reporting capabilities.",
+            "Oversaw enterprise reporting strategy across sales, finance, and operations using PowerBI dashboards embedded directly within business applications, enabling data-driven decision-making at all organizational levels.",
+            "Led data governance, quality initiatives, and compliance frameworks including deduplication strategies, workflow validation rules, access controls, and integration-level security to improve enterprise data accuracy, privacy, and reporting trust.",
+            "Supported large-scale system migrations involving Salesforce, Dynamics 365, and enterprise integrations while ensuring security, minimizing operational disruption, and maintaining business continuity."
+          ]
+        }
+      ]
+    },
+    {
+      "company": "Harper's Restaurant",
+      "location": "Columbia, SC",
+      "period": "2006–2008",
+      "roles": [
+        {
+          "title": "Key Employee (Acting Manager)",
+          "period": "",
+          "bullets": [
+            "Managed daily operations and led team of 30 employees, overseeing scheduling, training, performance management, and operational execution.",
+            "Maintained accountability for customer experience, quality standards, and business continuity during high-volume service periods.",
+            "Developed leadership and organizational skills managing cross-functional teams in fast-paced, mission-critical operational environment."
+          ]
+        }
+      ]
+    },
+    {
+      "company": "United States Navy",
+      "location": "Active Duty",
+      "period": "2000–2004",
+      "roles": [
+        {
+          "title": "Petty Officer Third Class, Interior Communication Electrician (IC3)",
+          "period": "",
+          "bullets": [
+            "Maintained and operated mission-critical electrical and communications systems aboard naval vessels, ensuring 24/7 operational readiness and system reliability.",
+            "Performed preventive maintenance, troubleshooting, and repair of complex integrated systems including power distribution, internal communications, and alarm networks.",
+            "Led technical teams and trained junior personnel on safety protocols, system operations, and maintenance procedures in high-stakes operational environments."
           ]
         }
       ]
     }
   ],
-  "education": {
-    "school": "University of South Carolina — Columbia",
-    "degree": "Bachelor of Science in Computer Science",
-    "expectedGraduation": "May 2026"
-  }
+  "education": [
+    {
+      "school": "University of South Carolina — Columbia",
+      "degree": "Master of Engineering in Technology Innovation and Entrepreneurial Engineering",
+      "status": "Applied for admission",
+      "notes": "Focus on technology strategy, innovation management, and entrepreneurial leadership"
+    },
+    {
+      "school": "University of South Carolina — Columbia",
+      "degree": "Bachelor of Science in Computer Science",
+      "expectedGraduation": "May 2026"
+    }
+  ]
 }
